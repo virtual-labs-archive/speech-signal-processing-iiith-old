@@ -81,11 +81,11 @@ body
 
 #lab-article-heading, #experiment-article-heading
 {
-	font-size: 50px;
+	font-size: 30px;
 	font-family: Georgia, "Times New Roman", Times, Serif;
 	font-weight: normal;
 	text-transform: none;
-	line-height: 60px;
+	line-height: 40px;
 	color: #3d414c;
 	padding: 10px 30px;
 	letter-spacing: 0;
