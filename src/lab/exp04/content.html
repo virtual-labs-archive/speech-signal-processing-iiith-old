@@ -1,0 +1,416 @@
+<!-- This file needs to be edited by the lab developer to suit
+the requirements of their lab in particular.-->
+
+<!-- Add class="default" to include any element as it is
+specified in default.html. 
+Do not include class="default" to the elements that you want to
+edit -->
+
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+
+<div id="experiment"> <!-- The Experiment Document Container-->
+
+  <!-- The lab Header contains the logo and the name of the lab,
+  usually displayed on the top of the page-->
+
+  <header id="experiment-header" class="default">
+  
+    <div id="experiment-header-logo" class="logo">
+      <!-- Enclose the logo image of your lab or write it in 
+      text
+     <img src="../images/logo.jpg" />
+	-->
+    </div>
+
+    <div id="experiment-header-heading" class="heading">
+      <!-- Write the name of your lab and link it to the home 
+      page of your lab (h1 tag is preferred while writing your 
+      lab name)-->
+      <a href="../index.html">Speech Signal Processing Virtual Lab</a>	
+    </div>
+
+    <!-- Add any additional element you want to add to the lab 
+    header, For example : Help (Enclosing them with suitable 
+    div is recommended)-->
+
+  </header>
+
+
+  <!-- The lab article is the main content area where all the 
+  experiment content sits-->
+  <article id="experiment-article">
+  
+    <!-- The lab article has an header, optional navigational 
+    menu, number of sections, an optional sidebar and a closing 
+    footer-->
+    
+      <header id="experiment-article-heading" class="heading">
+        <!-- You can add a welcome message or title of the 
+        experiment here -->
+	Expt-4: Basics of DSP
+        <!-- Add any additional element if required with proper 
+        enclosing-->
+      </header>
+
+      <!-- Navigation menu is useful to organize the view of 
+      multiple sections inside the article-->
+      <nav id="experiment-article-navigation" class="default">
+        <ul id="experiment-article-navigation-menu">
+          <!-- The menu can be dynamically generated to contain 
+          the headings of your sections or instead write the 
+          menu items of your choice individually enclosedu in 
+          <li> tag as shown below-->
+        </ul>
+      </nav>
+
+      <!-- All the sections of your lab or experiment can be 
+      enclosed together with a div element as shown below-->
+      <div id="experiment-article-sections">
+
+        <!-- First section of the article-->
+        <section id="experiment-article-section-1">
+          
+          <div id="experiment-article-section-1-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab -->
+	    <img src="../images/introduction.jpg" />
+	  </div>	
+          
+          <!-- The heading for the section can be enclosed in a 
+          div tag. -->
+          <div id="experiment-article-section-1-heading" 
+          class="heading">
+            Objective
+          </div>
+
+          <!-- Write the section content inside a paragraph 
+          element, You can also include images with <img> tag -->
+          <div id="experiment-article-section-1-content" 
+          class="content">	
+	    <!-- PUT CONTENT HERE -->
+	<p>
+	    To study the effects of sampling, aliasing and quantization 
+	    on speech signals by playing them at different rates 
+	    (stretching and expanding the time scale) and observation
+	    of effect of quantization (upto 1bit/sample).
+	</p>
+	    
+        </div>
+      </section>
+
+
+      <section id="experiment-article-section-3">
+        
+        <div id="experiment-article-section-3-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/objective.jpg" />
+	</div>
+     
+        <div id="experiment-article-section-3-heading" 
+        class="heading">
+          Tutorial
+        </div>
+
+        <div id="experiment-article-section-3-content" 
+        class="content">
+	    <!-- PUT CONTENT HERE -->
+<h3>1. Recording Speech Signal</h3>
+<p>Record a short sentence of speech using wavesurfer at 16kHz and
+16bits/sample and save it as <span style="font-style: italic;">filename1.wav</span>.&nbsp;
+<br>
+</p>
+<h3>2. Study of Quantization Effect</h3>
+<ul>
+<li>The short segment of speech recorded is at a sampling frequency
+of 16kHz and resolution of 16 bits/sample.</li>
+<li>Load this segment of speech into MATLAB workspace using<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span
+style="font-style: italic;">− &gt;&gt; [p, fs, nbits] =
+wavread(filename1.wav);</span><br>
+where wavread is MATLAB function which reads contents of a file in wave
+format into a array.</li>
+<li>Change resolution from 16 bits/sample to 8 bits/sample<br>
+<span style="font-style: italic;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; − &gt;&gt;
+wavwrite(p,fs,8,filename2.wav);</span><br style="font-style: italic;">
+<span style="font-style: italic;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; − &gt;&gt; p1 =
+wavread(filename2.wav);</span></li>
+<li>Change resolution from 16 bits/sample to 1bit/sample <br>
+<span style="font-style: italic;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; − &gt;&gt; p2 = [p1 &gt; 0];</span></li>
+<li>Now <span style="font-style: italic;">p, p1, p2</span>
+respectively contains same speech at different resolutions 16
+bits/sample, 8bits/sample and 1 bit/sample, but all at the same
+sampling frequency 8 kHz.</li>
+<li>Play these sequences and note the observations:<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span
+style="font-style: italic;">− &gt;&gt; sound(p,8000); </span><br>
+<span style="font-style: italic;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; − &gt;&gt; sound(p1,8000); </span><br
+style="font-style: italic;">
+<span style="font-style: italic;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; − &gt;&gt; sound(p2,8000);</span><br
+style="font-style: italic;">
+</li>
+</ul>
+<h3>3. Study of Aliasing Effect</h3>
+<ul>
+<li>The short segment of speech recorded is at a sampling frequency
+of 8 kHz and 16 bits/sample resolution.</li>
+<li>
+<p>Load this segment into MATLAB workspace using<br>
+<span style="font-style: italic;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp; &nbsp;&nbsp; − &gt;&gt; q1 = wavread(filename1.wav);</span></p>
+</li>
+<li>
+<p>Choose every alternate sample from q1<br>
+<span style="font-style: italic;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; − &gt;&gt; i = [1 : 2 :
+length(q1)];<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; − &gt;&gt; q2
+= q1(i);</span></p>
+</li>
+<li>
+<p>Choose every alternate sample from q2<br>
+<span style="font-style: italic;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; − &gt;&gt; j = [2 : 2 :
+length(q2)];<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; − &gt;&gt; q3
+= q2(j);</span></p>
+</li>
+<li>Now <span style="font-style: italic;">q1</span>, <span
+style="font-style: italic;">q2</span> and <span
+style="font-style: italic;">q3</span> respectively contains 8000,
+4000, 2000 samples/sec. These are equivalent to sampling the speech
+respectively at 8 kHz, 4 kHz and 2 kHz ( Low pass filtering is not done
+for studying the<br>
+aliasing effect).</li>
+<li>
+<p>Play these sequences and note the observations:<br>
+<span style="font-style: italic;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; − &gt;&gt; sound(p,8000);<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; − &gt;&gt;
+sound(p1,8000);<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; − &gt;&gt;
+sound(p2,8000);</span></p>
+</li>
+</ul>
+<h3>4. Study the effects of filtering<br>
+</h3>
+<ul>
+<li>Generate filter coefficients for various types of filters (low
+pass, high pass, band pass).</li>
+<li>Pass the speech signal in <span style="font-style: italic;">p</span>
+through the filters represented by the coefficients using <br
+style="font-style: italic;">
+<span style="font-style: italic;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; − &gt;&gt; y = filter( b, a, p ) ;</span></li>
+<li>Playback the audio <span style="font-style: italic;">y</span>
+obtained using various filters.<br>
+</li>
+</ul>
+
+        </div>
+
+      </section>
+
+      <!-- Second section of the article-->
+      <section id="experiment-article-section-2">
+        
+        <div id="experiment-article-section-2-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/theory.jpg" />
+	</div>
+				
+        <!-- The heading for the section can be enclosed in a 
+        div tag. -->
+        <div id="experiment-article-section-2-heading" 
+        class="heading">
+          Procedure
+        </div>
+
+        <!-- Write the section content inside a paragraph 
+        element, we can also include images with <img> tag -->
+        <div id="experiment-article-section-2-content" 
+        class="content">
+	    <!-- PUT CONTENT HERE -->
+	    <ol style="list-style-type: lower-alpha;">
+	      <li>Record a short utterance of speech for 2 to 3 sec (16 kHz, 16
+		bits).</li><br>
+	      <li>Listen to speech at different bit rates (16 bits/sample, 8
+		bits/sample and 1 bit/sample).</li><br>
+	      <li>Listen to speech at different sampling rates (16 kHz, 8 kHz, 4 kHz
+		and 2 kHz) with and without aliasing.</li><br>
+	      <li>Design a second order resonator, i.e., an all-pole filter with complex conjugate pole-pair, given the resonance frequency and the bandwidth.</li>
+	      <li>Write a brief note on the observations.</li><br>
+	    </ol>
+        </div>
+      </section>
+
+
+      <section id="experiment-article-section-4">
+
+        <div id="experiment-article-section-4-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab.-->
+	  <img src="../images/simulation.jpg" />
+	</div>
+
+        <div id="experiment-article-section-4-heading" 
+        class="heading">
+          Experiment
+        </div>
+
+        <div id="experiment-article-section-4-content" 
+        class="content">
+	    <!-- PUT CONTENT HERE -->
+	<p>
+	<IFRAME src="part1.php" width="900" height="800" > </IFRAME>
+	</p>
+<!--
+	    <applet code=dspBasics/DSPBasicsApplet.class 
+		      archive="media/svlAudioTool.jar"
+		      width=520 height=460>
+		      <param name=foo value="bar">
+	    </applet>
+-->
+        </div>
+
+      </section>
+
+      <section id="experiment-article-section-5">
+   
+        <div id="experiment-article-section-5-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab.-->
+	  <img src="../images/manual.jpg" />
+	</div>
+
+        <div id="experiment-article-section-5-heading" 
+        class="heading">
+          Observations
+        </div>
+
+        <div id="experiment-article-section-5-content" 
+        class="content">
+	    <!-- PUT CONTENT HERE -->
+<ul>
+<li>The quality of speech is directly proportional to the number of
+quantization levels ( that is, number of bits used for
+quantization).Though quantization results in loss of information the
+human perception mechanism can still get the information present in the
+speech signal. <br>
+</li><br>
+</ul>
+<ul>
+<li>It is interesting to note that even with 1 bit/sample, most of
+the speech is intelligible. Hence we can conclude that information lies
+in the sequence and not in the set of numbers. <br>
+</li><br>
+</ul>
+<ul>
+<li>The aliasing effect is perceived as distortions in the output
+signal. This is due to the effect of overlapping of frequency
+components.</li><br>
+</ul>
+          </div>
+
+        </section>
+
+
+   <section id="experiment-article-section-8">
+
+        <div id="experiment-article-section-8-icon" 
+        class="icon">
+          <!-- Enclose the icon image of your lab.-->
+          <img src="../images/manual.jpg" />
+        </div>
+
+        <div id="experiment-article-section-8-heading" 
+        class="heading">
+          Assignments
+        </div>
+
+        <div id="experiment-article-section-8-content" 
+        class="content">
+        <ul>
+	<li>Explain why one can make out the message even with one bit quantization?</li><br>
+        <li>Write an algorithm for reducing the number of bits per sample (quantization levels) from a 16 bits to any given value say 8, 4, 2 or 1.
+(<font size=-1>HINT: Assume that an "int floor(double)" function exists which takes in a float or double number and returns a integer part of the number.</font>)
+        </li><br>
+
+        <li>Show that the radius <font size=-1>\( r \)</font> of a pole in the <font size=-1>\( z \)</font>-plane is related to the bandwidth <font size=-2>\( B \)</font> by the expression
+<font size=-1> $$ r = e^{-\pi B T}, $$</font> 
+where <font size=-2>\( T \)</font> is the sampling interval.</li><br>
+
+	<li>Using the result <font size=-1> \( r = e^{-\pi B T} \)</font>, show that the transfer function of a resonator with a pair of complex conjugate poles is given by
+<font size=-1>$$ H(z) = \frac{1}{1-2e^{-\pi B_1 T}\cos{(2\pi F_1 T)} z^{-1} + e^{-2\pi B_1 T} z^{-2} },$$</font> 
+where  <font size=-2>\( F_1 \)</font> is the frequency of the resonator,  <font size=-2>\( B_1 \)</font> is the bandwidth of the resonator, <font size=-1>\( r \)</font> is the radius of the pole in the <font size=-1>\( z \)</font>-plane, and <font size=-2>\( T \)</font> is the sampling interval.
+</li><br>
+        </ul>
+          </div>
+
+        </section>
+
+		
+
+        <section id="experiment-article-section-9">
+   
+          <div id="experiment-article-section-9-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/readings.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-9-heading" 
+          class="heading">
+            Further Reading
+          </div>
+
+          <div id="experiment-article-section-9-content" 
+          class="content">
+    		<ul>
+			<li> <i>Digital Processing of Speech Signals</i>, L.R. Rabiner and R.W. Schafer, Chapter 2</li>
+			<li> <i>Digital Processing of Speech Signals</i>, L.R. Rabiner and R.W. Schafer, Chapter 5</li>
+		</ul> 
+          </div>
+
+        </section>
+
+      </div>
+
+
+    <!-- An article can have a sidebar that contain related 
+    links and additional material (however it is kept optional 
+    at this moment) -->
+    <aside id="lab-article-sidebar" class="default">
+      <!-- put the content that you want to appear in the 
+      sidebar -->	
+    </aside>
+
+
+    <!-- Article footer can display related content and 
+    additional links -->						
+    <footer id="lab-article-footer" class="default">
+      <!-- Put the content that you want to appear here -->
+    </footer>
+
+  </article>
+
+
+  <!-- Links to other labs, about us page can be kept the lab 
+  footer-->
+  <footer id="lab-footer" class="default">
+    <!-- Put the content here-->
+  </footer>
+
+</div>		
+
+</body>
+</html>

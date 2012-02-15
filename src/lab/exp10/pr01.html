@@ -1,0 +1,386 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Speech Processing: Theory of LPC Analysis and Synthesis</title><link rel="stylesheet" href="css/offline-zip-overrides.css" type="text/css"/><meta name="generator" content="DocBook XSL-NS Stylesheets V1.75.2"/><meta name="description" content="Speech analysis and synthesis with Linear Predictive Coding (LPC) exploit the predictable nature of speech signals. Cross-correlation, autocorrelation, and autocovariance provide the mathematical tools to determine this predictability. If we know the autocorrelation of the speech sequence, we can use the Levinson-Durbin algorithm to find an efficient solution to the least mean-square modeling problem and use the solution to compress or resynthesize the speech."/><meta name="keywords" content="autocorrelation, autocovariance, correlation, cross-correlation, DSP, levinson-durbin, linear predicitive coding, speech, speech coding, speech compression, speech synthesis"/></head><body><div class="preface" title="Speech Processing: Theory of LPC Analysis and Synthesis" id="id503233"><div class="titlepage"><div><div><h1 class="title"></h1></div><div><div class="abstract" title="Summary"><p class="title"><b>Summary</b></p><p>Speech analysis and synthesis with Linear Predictive Coding (LPC) exploit the predictable nature of speech signals.  Cross-correlation, autocorrelation, and autocovariance provide the mathematical tools to determine this predictability.  If we know the autocorrelation of the speech sequence, we can use the Levinson-Durbin algorithm to find an efficient solution to the least mean-square modeling problem and use the solution to compress or resynthesize the speech.</p></div></div></div></div><div class="section" title="1.&#160;Introduction"><div class="titlepage"><div><div><h1 class="title" id="m10482.section1">1.&#160;Introduction</h1></div></div></div><p><span id="m10482.para1"> </span>
+	        <em class="glossterm">Linear predictive coding</em> (<em class="glossterm">LPC</em>) is a
+	popular technique for speech compression and speech synthesis.
+	The theoretical foundations of both are described below.
+      </p><div class="section" title="Correlation coefficients"><div class="titlepage"><div><div><h2 class="title" id="m10482.subsection1">Correlation coefficients</h2></div></div></div><p><span id="m10482.para2"> </span>
+	  Correlation, a measure of similarity between two signals, is
+	  frequently used in the analysis of speech and other signals.
+	  The cross-correlation between two discrete-time signals
+          <span class="token">
+               <span class="emphasis mathml-mi"><em>x</em></span>[<span class="emphasis mathml-mi"><em>n</em></span>]
+          </span> and
+          <span class="token">
+               <span class="emphasis mathml-mi"><em>y</em></span>[<span class="emphasis mathml-mi"><em>n</em></span>]
+          </span> is defined as
+          <span class="inlinemediaobject"><img src="media/m10482.id272087.png" style="width:111.24656134118143pt; height:27.434366197183095pt; vertical-align:-10.247887323943658pt;"/></span>
+	  where 
+	  <span class="token">
+	              <span class="emphasis mathml-mi"><em>n</em></span>
+	           </span> is the sample index, and 
+	  <span class="token">
+	              <span class="emphasis mathml-mi"><em>l</em></span>
+	           </span> is the lag or time shift between the two signals
+	  <span class="emphasis cite-title"><em>Proakis and Manolakis</em></span> [<a class="link" href="pr01.html#m10482.reference1">link</a>]
+	  (<span class="emphasis cite-title"><em>pg. 120</em></span>).  Since speech signals are not
+	  stationary, we are typically interested in the similarities
+	  between signals only over a short time duration
+	  (<span class="token">
+	     &lt; 30
+	  </span> ms).  In this case, the cross-correlation is
+	  computed only over a window of time samples and for only a
+	  few time delays
+          <span class="token">
+	              <span class="emphasis mathml-mi"><em>l</em></span> = {0, 1, <span class="emphasis mathml-mi"><em>&#8230;</em></span>, <span class="emphasis mathml-mi"><em>P</em></span>}
+          </span>. 
+	</p><p><span id="m10482.para2a"> </span>
+
+	Now consider the autocorrelation sequence
+	  <span class="token">
+	              <span class="emphasis mathml-mi"><em>r</em></span>
+               <sub>
+                  <span class="bold mathml-mi"><strong>ss</strong></span>
+               </sub>[<span class="emphasis mathml-mi"><em>l</em></span>]
+	  </span>, which describes the redundancy in the signal
+
+	  <span class="token">
+	              <span class="emphasis mathml-mi"><em>s</em></span>[<span class="emphasis mathml-mi"><em>n</em></span>]
+	  </span>.
+
+          <span class="inlinemediaobject"><img src="media/m10482.id272512.png" style="width:124.21120691838445pt; height:33.408957746478876pt; vertical-align:-14.134478873239438pt;"/></span> where
+
+	  <span class="token">
+	              <span class="emphasis mathml-mi"><em>s</em></span>[<span class="emphasis mathml-mi"><em>n</em></span>]
+	  </span>,
+
+          <span class="token">
+	              <span class="emphasis mathml-mi"><em>n</em></span> = {-P, (-P) + 1, <span class="emphasis mathml-mi"><em>&#8230;</em></span>, <span class="emphasis mathml-mi"><em>N</em></span> &#8722; 1}
+          </span> are the known samples (see <a class="xref" href="pr01.html#m10482.figure1" title="Figure&#160;1.&#160;">Figure&#160;1</a>) and the
+	  <span class="inlinemediaobject"><img src="media/m10482.id272706.png" style="width:12.803333333333333pt; height:20.065pt; vertical-align:-7.734999999999999pt;"/></span> is a normalizing factor.
+	</p><div class="figure"><span id="m10482.figure1"> </span><p class="title"><b>Figure&#160;1.&#160;</b></p><div class="figure-contents"><div class="mediaobject"><span id="m10482.id6840907"> </span><img src="media/correlation.png" alt="Correlation coefficients"/></div><div class="caption">
+	    Computing the autocorrelation coefficients
+	  </div></div></div><br class="figure-break"/><p><span id="m10482.para3"> </span>
+	  Another related method of measuring the redundancy in a
+	  signal is to compute its autocovariance
+
+
+          <span class="inlinemediaobject"><img src="media/m10482.id272763.png" style="width:140.50564691838449pt; height:33.408957746478876pt; vertical-align:-14.134478873239438pt;"/></span> where the summation is over 
+
+	  <span class="token">
+	              <span class="emphasis mathml-mi"><em>N</em></span> &#8722; <span class="emphasis mathml-mi"><em>l</em></span>
+	           </span> products (the samples
+
+          <span class="token">
+	    {<span class="emphasis mathml-mi"><em>s</em></span>[-P], <span class="emphasis mathml-mi"><em>&#8230;</em></span>, <span class="emphasis mathml-mi"><em>s</em></span>[-1]}
+          </span> are ignored).
+	</p></div><div class="section" title="Linear prediction model"><div class="titlepage"><div><div><h2 class="title" id="m10482.subsection2">Linear prediction model</h2></div></div></div><p><span id="m10482.para4"> </span>
+	           <em class="glossterm">Linear prediction</em> is a good tool for analysis
+	  of speech signals.  Linear prediction models the human vocal
+	  tract as an <em class="glossterm">infinite impulse response</em>
+	  (<em class="glossterm">IIR</em>) system that produces the speech signal.
+	  For vowel sounds and other voiced regions of speech, which
+	  have a resonant structure and high degree of similarity over
+	  time shifts that are multiples of their pitch period, this
+	  modeling produces an efficient representation of the
+	  sound. <a class="xref" href="pr01.html#m10482.figure2" title="Figure&#160;2.&#160;">Figure&#160;2</a> shows how the resonant
+	  structure of a vowel could be captured by an IIR system.
+	</p><div class="figure"><span id="m10482.figure2"> </span><p class="title"><b>Figure&#160;2.&#160;</b></p><div class="figure-contents"><div class="mediaobject"><span id="m10482.id8203635"> </span><img src="media/lpc_model.png" alt="Linear prediction model"/></div><div class="caption">
+	    Linear Prediction (IIR) Model of Speech
+	  </div></div></div><br class="figure-break"/><p><span id="m10482.para5"> </span>
+	  The linear prediction problem can be stated as finding the
+	  coefficients
+	  <span class="token">
+	              <span class="emphasis mathml-mi"><em>a</em></span>
+               <sub>
+                  <span class="emphasis mathml-mi"><em>k</em></span>
+               </sub>
+	           </span>
+	  which result in the best prediction (which minimizes
+	  mean-squared prediction error) of the speech sample
+	  <span class="token">
+	              <span class="emphasis mathml-mi"><em>s</em></span>[<span class="emphasis mathml-mi"><em>n</em></span>]
+	  </span> in terms of the past samples 
+	  <span class="token">
+	              <span class="emphasis mathml-mi"><em>s</em></span>[<span class="emphasis mathml-mi"><em>n</em></span> &#8722; <span class="emphasis mathml-mi"><em>k</em></span>]
+	  </span>,
+          <span class="token">
+	              <span class="emphasis mathml-mi"><em>k</em></span> = {1, <span class="emphasis mathml-mi"><em>&#8230;</em></span>, <span class="emphasis mathml-mi"><em>P</em></span>}
+          </span>. The predicted sample 
+	  <span class="inlinemediaobject"><img src="media/m10482.id273166.png" style="width:21.189776000000002pt; height:16.235999999999997pt; vertical-align:-3.519999999999998pt;"/></span> is then given by <span class="emphasis cite-title"><em>Rabiner
+	  and Juang</em></span> [<a class="link" href="pr01.html#m10482.reference2">link</a>]
+	 <span class="inlinemediaobject"><img src="media/m10482.id273201.png" style="width:94.66486446555952pt; height:31.1703661971831pt; vertical-align:-12.199887323943663pt;"/></span> where 
+	  <span class="token">
+	              <span class="emphasis mathml-mi"><em>P</em></span>
+	           </span> is the number of past samples of 
+	  <span class="token">
+	              <span class="emphasis mathml-mi"><em>s</em></span>[<span class="emphasis mathml-mi"><em>n</em></span>]
+	  </span> which we wish to examine. 
+	 </p><p><span id="m10482.para5b"> </span>
+	  Next we derive the frequency response of the system
+	  in terms of the prediction coefficients
+	  <span class="token">
+	              <span class="emphasis mathml-mi"><em>a</em></span>
+               <sub>
+                  <span class="emphasis mathml-mi"><em>k</em></span>
+               </sub>
+	           </span>. In <a class="xref" href="pr01.html#m10482.eq4">Equation</a>, when the predicted
+	  sample equals the actual signal (<span class="foreignphrase"><em class="foreignphrase">i.e.</em></span>,
+	  <span class="inlinemediaobject"><img src="media/m10482.id273356.png" style="width:46.923116pt; height:16.235999999999997pt; vertical-align:-3.519999999999998pt;"/></span>), we have
+
+	  <span class="inlinemediaobject"><img src="media/m10482.id273394.png" style="width:93.02508846555953pt; height:31.170366197183107pt; vertical-align:-12.19988732394367pt;"/></span>
+
+	           <span class="inlinemediaobject"><img src="media/m10482.id273463.png" style="width:87.67018104267395pt; height:31.1703661971831pt; vertical-align:-12.199887323943663pt;"/></span>
+
+	           <span class="inlinemediaobject"><img src="media/m10482.id273530.png" style="width:90.15720184079603pt; height:36.381pt; vertical-align:-24.051pt;"/></span> The optimal solution to this problem is <span class="emphasis cite-title"><em>Rabiner and Juang</em></span> [<a class="link" href="pr01.html#m10482.reference2">link</a>]
+
+	  <span class="inlinemediaobject"><img src="media/m10482.id273610.png" style="width:79.66133999999998pt; height:12.530000000000001pt; vertical-align:-3.6950000000000003pt;"/></span>
+
+	           <span class="inlinemediaobject"><img src="media/m10482.id273667.png" style="width:121.17118589054726pt; height:15.154000000000002pt; vertical-align:-3.7460000000000004pt;"/></span>
+
+	           <span class="inlinemediaobject"><img src="media/m10482.id272167.png" style="width:171.46707269841272pt; height:51.996pt; vertical-align:-23.428pt;"/></span>
+
+
+	           <span class="token">
+	                 <span class="emphasis mathml-mi"><em>a</em></span> = <span class="emphasis mathml-mi"><em>R</em></span>
+                  <sup>-1</sup>
+                  <span class="emphasis mathml-mi"><em>r</em></span>
+	              </span>
+	  
+	  Due to the Toeplitz property of the 
+	  <span class="token">
+	              <span class="emphasis mathml-mi"><em>R</em></span> 
+	           </span> matrix (it is symmetric with equal diagonal
+	  elements), an efficient algorithm is available for computing
+	  <span class="token">
+	              <span class="emphasis mathml-mi"><em>a</em></span> 
+	           </span> without the computational expense of finding
+	  <span class="token"> 
+	              <span class="emphasis mathml-mi"><em>R</em></span>
+               <sup>-1</sup>
+	           </span>.  The <em class="glossterm">Levinson-Durbin algorithm</em> is an
+	  iterative method of computing the predictor coefficients
+	  <span class="token">
+	              <span class="emphasis mathml-mi"><em>a</em></span> 
+	           </span> 
+            <span class="emphasis cite-title"><em>Rabiner and Juang</em></span> [<a class="link" href="pr01.html#m10482.reference2">link</a>]
+	  (<span class="emphasis cite-title"><em>p.115</em></span>).
+	</p><p><span id="m10482.para5point5"> </span>
+	  Initial Step:
+	  <span class="token">
+	              <span class="emphasis mathml-mi"><em>E</em></span>
+               <sub>0</sub> = <span class="emphasis mathml-mi"><em>r</em></span>
+               <sub>
+                  <span class="bold mathml-mi"><strong>ss</strong></span>
+               </sub>[0]
+	  </span>,
+	  <span class="token">
+	              <span class="emphasis mathml-mi"><em>i</em></span> = 1
+	  </span>
+	        </p><p><span id="m10482.para5point6"> </span>
+	  for
+	  <span class="token">
+	              <span class="emphasis mathml-mi"><em>i</em></span> = 1
+	  </span>
+	  to 
+	  <span class="token">
+	              <span class="emphasis mathml-mi"><em>P</em></span>
+	           </span>. 
+	</p><p><span id="m10482.para5point7"> </span>
+	           </p><div xmlns:d="http://docbook.org/ns/docbook" xmlns:db="http://docbook.org/ns/docbook" xmlns:pmml2svg="https://sourceforge.net/projects/pmml2svg/" xmlns:c="http://cnx.rice.edu/cnxml" xmlns:ncx="http://www.daisy.org/z3986/2005/ncx/" xmlns:ext="http://cnx.org/ns/docbook+" class="orderedlist" title="Steps"><span id="m10482.list1"> </span><p class="title"><b>Steps</b></p><ol class="orderedlist" type="1"><li class="listitem"><p>
+	                    <span class="inlinemediaobject"><img src="media/m10482.id274118.png" style="width:166.4361239227665pt; height:33.34495774647887pt; vertical-align:-14.102478873239434pt;"/></span>
+	                 </p></li><li class="listitem"><p>
+	                    </p><div class="itemizedlist"><span id="m10482.sublist"> </span><ul class="itemizedlist"><li class="listitem"><p>
+		                            <span class="token">
+		                               <span class="emphasis mathml-mi"><em>&#945;</em></span>
+                                 <sub>
+			                                 <span class="emphasis mathml-mi"><em>j</em></span>
+			    ,
+			    <span class="emphasis mathml-mi"><em>i</em></span>
+			                              </sub> = <span class="emphasis mathml-mi"><em>&#945;</em></span>
+                                 <sub>
+				                                <span class="emphasis mathml-mi"><em>j</em></span>
+				  ,
+			 	  <span class="emphasis mathml-mi"><em>i</em></span>
+				   &#8211; 
+			 	  1
+				</sub> &#8722; <span class="emphasis mathml-mi"><em>k</em></span>
+                                 <sub>
+                                    <span class="emphasis mathml-mi"><em>i</em></span>
+                                 </sub>
+                                 <span class="emphasis mathml-mi"><em>&#945;</em></span>
+                                 <sub>
+			   	                             <span class="emphasis mathml-mi"><em>i</em></span>
+			  	 &#8211; 
+			  	j
+			  	,
+			   	<span class="emphasis mathml-mi"><em>i</em></span>
+			    	 &#8211; 
+			    	1
+			      </sub>
+		                            </span>
+		                            <span class="token">
+		                               <span class="emphasis mathml-mi"><em>j</em></span> = {1, <span class="emphasis mathml-mi"><em>&#8230;</em></span>, <span class="emphasis mathml-mi"><em>i</em></span> &#8722; 1}
+		  </span>
+		                         </p></li><li class="listitem"><p>
+		                            <span class="token">
+		                               <span class="emphasis mathml-mi"><em>&#945;</em></span>
+                                 <sub>
+			                                 <span class="emphasis mathml-mi"><em>i</em></span>
+			    ,
+			    <span class="emphasis mathml-mi"><em>i</em></span>
+			                              </sub> = <span class="emphasis mathml-mi"><em>k</em></span>
+                                 <sub>
+                                    <span class="emphasis mathml-mi"><em>i</em></span>
+                                 </sub>
+		                            </span>
+		                         </p></li></ul></div><p>
+	                 </p></li><li class="listitem"><p>
+	                    <span class="token">
+		                      <span class="emphasis mathml-mi"><em>E</em></span>
+                        <sub>
+                           <span class="emphasis mathml-mi"><em>i</em></span>
+                        </sub> = (1 &#8722; <span class="emphasis mathml-mi"><em>k</em></span>
+                        <sub>
+                           <span class="emphasis mathml-mi"><em>i</em></span>
+                        </sub>
+                        <sup>2</sup>)<span class="emphasis mathml-mi"><em>E</em></span>
+                        <sub>
+			                        <span class="emphasis mathml-mi"><em>i</em></span>
+			   &#8211; 
+			  1
+			</sub>
+	                    </span>
+
+	                 </p></li></ol></div><p>
+	        </p></div><div class="section" title="LPC-based synthesis"><div class="titlepage"><div><div><h2 class="title" id="m10482.subsection3">LPC-based synthesis</h2></div></div></div><p><span id="m10482.para6"> </span>
+	  It is possible to use the prediction coefficients to
+	  synthesize the original sound by applying
+	  <span class="token">
+	              <span class="emphasis mathml-mi"><em>&#948;</em></span>[<span class="emphasis mathml-mi"><em>n</em></span>]
+	  </span>, the unit impulse, to the IIR system with lattice
+	  coefficients
+	  <span class="token">
+	              <span class="emphasis mathml-mi"><em>k</em></span>
+               <sub>
+                  <span class="emphasis mathml-mi"><em>i</em></span>
+               </sub>
+	    ,
+	    <span class="emphasis mathml-mi"><em>i</em></span> = {1, <span class="emphasis mathml-mi"><em>&#8230;</em></span>, <span class="emphasis mathml-mi"><em>P</em></span>}
+          </span>
+
+	  as shown in <a class="xref" href="pr01.html#m10482.figure3" title="Figure&#160;3.&#160;">Figure&#160;3</a>.  Applying
+	  <span class="token">
+	              <span class="emphasis mathml-mi"><em>&#948;</em></span>[<span class="emphasis mathml-mi"><em>n</em></span>]
+	  </span>
+	  to consecutive IIR systems (which represent consecutive
+	  speech segments) yields a longer segment of synthesized
+	  speech.
+	</p><p><span id="m10482.para7"> </span>
+	  In this application, lattice filters are used rather than
+	  direct-form filters since the lattice filter coefficients
+	  have magnitude less than one and, conveniently, are
+	  available directly as a result of the Levinson-Durbin
+	  algorithm.  If a direct-form implementation is desired
+	  instead, the 
+	  <span class="token">
+	              <span class="emphasis mathml-mi"><em>&#945; </em></span>
+	           </span> coefficients must be factored into second-order
+	  stages with very small gains to yield a more stable
+	  implementation.
+	</p><div class="figure"><span id="m10482.figure3"> </span><p class="title"><b>Figure&#160;3.&#160;</b></p><div class="figure-contents"><div class="mediaobject"><span id="m10482.id6260545"> </span><img src="media/lattice.png" alt="LPC-based synthesis"/></div><div class="caption">
+	    IIR lattice filter implementation.
+	  </div></div></div><br class="figure-break"/><p><span id="m10482.para8"> </span>
+	  When each segment of speech is synthesized in this manner,
+	  two problems occur.  First, the synthesized speech is
+	  monotonous, containing no changes in pitch, because the
+	  <span class="token">
+	              <span class="emphasis mathml-mi"><em>&#948;</em></span>[<span class="emphasis mathml-mi"><em>n</em></span>]
+	  </span>'s, which represent pulses of air from the vocal
+	  chords, occur with fixed periodicity equal to the analysis
+	  segment length; in normal speech, we vary the frequency of
+	  air pulses from our vocal chords to change pitch.  Second,
+	  the states of the lattice filter (<span class="foreignphrase"><em class="foreignphrase">i.e.</em></span>,
+	  past samples stored in the delay boxes) are cleared at the
+	  beginning of each segment, causing discontinuity in the
+	  output.
+	</p><p><span id="m10482.para9"> </span>
+	  To estimate the pitch, we look at the autocorrelation coefficients of 
+	  each segment.  A large peak in the autocorrelation coefficient at 
+	  lag 
+	  <span class="token">
+	              <span class="emphasis mathml-mi"><em> l </em></span> &#8800;  0 
+	  </span> implies the speech segment is periodic (or, more
+	  often, approximately periodic) with period
+	  <span class="token">
+	              <span class="emphasis mathml-mi"><em>l</em></span>
+	           </span>.  In synthesizing these segments, we recreate the
+	  periodicity by using an impulse train as input and varying
+	  the delay between impulses according to the pitch period.
+	  If the speech segment does not have a large peak in the
+	  autocorrelation coefficients, then the segment is an
+	  unvoiced signal which has no periodicity.  Unvoiced segments
+	  such as consonants are best reconstructed by using noise
+	  instead of an impulse train as input.
+	</p><p><span id="m10482.para10"> </span>
+	  To reduce the discontinuity between segments, do not clear
+	  the states of the IIR model from one segment to the next.
+	  Instead, load the new set of reflection coefficients,
+	  <span class="token">
+	              <span class="emphasis mathml-mi"><em>k</em></span>
+               <sub>
+                  <span class="emphasis mathml-mi"><em>i</em></span>
+               </sub>
+	           </span>, and continue with the lattice filter computation.
+	</p></div></div><div class="section" title="2.&#160;Additional Issues"><div class="titlepage"><div><div><h1 class="title" id="m10482.section4">2.&#160;Additional Issues</h1></div></div></div><p><span id="m10482.para18"> </span>
+	        </p><div class="itemizedlist"><span id="m10482.list2"> </span><ul class="itemizedlist"><li class="listitem"><p>Spanish vowels (m<span class="bold"><strong>o</strong></span>p,
+	  <span class="bold"><strong>a</strong></span>ce, <span class="bold"><strong>ea</strong></span>sy,
+	  g<span class="bold"><strong>o</strong></span>, b<span class="bold"><strong>u</strong></span>t) are
+	  easier to recognize using LPC.</p></li><li class="listitem"><p>Error can be computed as
+
+	    <span class="token">
+	                    <span class="emphasis mathml-mi"><em>a</em></span>
+                     <sup>T</sup>
+                     <span class="emphasis mathml-mi"><em>R</em></span>
+                     <span class="emphasis mathml-mi"><em>a</em></span>
+	                 </span>, where 
+	    <span class="token">
+	                    <span class="emphasis mathml-mi"><em>R</em></span>
+	                 </span>
+	    is the autocovariance or autocorrelation matrix of a test
+	    segment and 
+	    <span class="token">
+	                    <span class="emphasis mathml-mi"><em>a</em></span>
+	                 </span> is the vector of prediction coefficients of a
+	    template segment.
+	  </p></li><li class="listitem"><p>
+	    A pre-emphasis filter before LPC, emphasizing frequencies
+	    of interest in the recognition or synthesis, can improve
+	    performance.
+	  </p></li><li class="listitem"><p>
+	    The pitch period for males
+	     (<span class="token">
+	      80
+	    </span>-
+	    <span class="token">
+	      150
+	    </span> kHz) is different from the pitch period for
+	    females.
+	  </p></li><li class="listitem"><p>
+	    For voiced segments,
+
+	    <span class="inlinemediaobject"><img src="media/m10482.id275047.png" style="width:56.78734pt; height:23.789pt; vertical-align:-9.687000000000001pt;"/></span>, where 
+	    <span class="token">
+	                    <span class="emphasis mathml-mi"><em>T</em></span>
+	                 </span> is the pitch period.
+
+	  </p></li></ul></div><p>
+      </p></div><div class="section" title="3.&#160;References"><div class="titlepage"><div><div><h1 class="title" id="id515374">3.&#160;References</h1></div></div></div><div xmlns:d="http://docbook.org/ns/docbook" xmlns:db="http://docbook.org/ns/docbook" xmlns:pmml2svg="https://sourceforge.net/projects/pmml2svg/" xmlns:c="http://cnx.rice.edu/cnxml" xmlns:ncx="http://www.daisy.org/z3986/2005/ncx/" xmlns:ext="http://cnx.org/ns/docbook+" class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p><span id="m10482.reference1"> </span><span id="m10482.reference1"> </span>
+               J. G. Proakis and D. G. Manolakis. (1996). <i>Digital Signal Processing: Principles, Algorithms, and Applications</i>. Upper Saddle River, NJ: Prentice-Hall. 
+            </p></li><li class="listitem"><p><span id="m10482.reference2"> </span><span id="m10482.reference2"> </span>
+               L. Rabiner and B. H. Juang. (1993). <i>Fundamentals of Speech Recognition</i>. Englewood Cliffs, NJ: Prentice-Hall. 
+            </p></li></ol></div></div></div>
+<p>
+Source: Jones, D., Appadwedula, S., Berry, M., Haun, M., Janevitz, J., Kramer, M., Moussa, D., Sachs, D., & Wade, B. 2009. Speech Processing: Theory of LPC Analysis and Synthesis. Connexions, June 1, 2009. http://cnx.org/content/m10482/2.19/
+</p>
+
+</body></html>

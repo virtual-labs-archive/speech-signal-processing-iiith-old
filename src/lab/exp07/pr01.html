@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+			<title>Cepstrum</title>
+			<link rel="stylesheet" href="offline-zip-overrides.css" type="text/css"/>
+			<meta name="generator" content="DocBook XSL-NS Stylesheets V1.75.2"/>
+			<meta name="description" content="Use and application of the cepstrum domain for speech analysis."/>
+			<meta name="keywords" content="cepstrum, liftering, quefrency, speech, unvoiced, voiced"/></head>
+
+<body>
+
+<div class="preface" title="Cepstrum" id="id355876">
+	<div class="titlepage">
+		<div>
+			<div>
+				<h1 class="title">Cepstrum
+				</h1>
+			</div>
+			
+			<div>
+				<div class="abstract" title="Summary">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="section" title="1.&#160;The Cepstrum Domain">
+		<div class="titlepage">
+			<div>
+				<div>
+					<h2 class="title" id="m12469.Cepstrum">1.&#160;The Cepstrum Domain
+					</h2>
+				</div>
+			</div>
+		</div>
+		<p>
+			<span id="m12469.Introduction"> </span>
+     
+The <em class="glossterm">cepstrum</em> is a common transform used to gain information from a person&#8217;s speech signal.  It can be used to separate the <em class="glossterm">excitation</em> signal (which contains the words and the pitch) and the transfer function (which contains the voice quality). It is similar to a channel vocoder or <a class="link external-content" href="http://cnx.org/content/m12473/latest/" target="">LPC</a> in its applications, but using the cepstrum as a spectral analyzer is a completely different process. (It is also worth pointing out that cepstrum is &#8220;spectrum&#8221; with the first syllable flipped&#8230; we will encounter several words with this naming convention.) Before describing the details of the cepstrum, a little background in speech models is needed.
+    </p></div><div class="section" title="2.&#160;Background Information"><div class="titlepage"><div><div><h1 class="title" id="m12469.Background">2.&#160;Background Information</h1></div></div></div><p><span id="m12469.BackgroundInfo"> </span>
+Within human speech, there are two methods employed to form our words.  These sounds are categorized into the <em class="glossterm">voiced</em> and <em class="glossterm">unvoiced</em>.  For the voiced part, our throat acts like a transfer function. The vowel sounds are included in this category. The unvoiced part describes the &#8220;noisy&#8221; sounds of speech.  These are the sounds made with our mouth and tongue (as opposed to our throat), such as the &#8220;f&#8221; sound, the &#8220;s&#8221; sound, and the "th" sound. 
+
+This way of looking at speech as two seperable parts is known as the <a class="link external-content" href="http://cnx.org/content/m12470/latest/" target=""> Source Filter Model of Speech </a> or the Linear Separable Equivalent Circuit Model.  Mathematically, they are described in the time domain as:
+    </p><p><span id="m12469.formula1"> </span>
+
+         <span class="inlinemediaobject"><img src="media/m12469.id211547.png" style="width:93.16778pt; height:32.08867605633803pt; vertical-align:-14.006338028169015pt;"/></span>
+
+
+      </p><p><span id="m12469.frequency"> </span>
+Since convolution in the time domain is multiplication in the frequency domain, this become:
+</p><p><span id="m12469.formula2"> </span>
+         <span class="token">
+ 
+            <span class="emphasis mathml-mi"><em>X</em></span>(<span class="emphasis mathml-mi"><em>&#969;</em></span>) = <span class="emphasis mathml-mi"><em>G</em></span>(<span class="emphasis mathml-mi"><em>&#969;</em></span>)<span class="emphasis mathml-mi"><em>H</em></span>(<span class="emphasis mathml-mi"><em>&#969;</em></span>)
+  
+</span>
+
+      </p><p><span id="m12469.log"> </span>
+
+There is a mathematical process with which we are familiar that can separate two multiplied variables.  If we take the log of the magnitude of both sides of this transform, we reach:
+</p><p><span id="m12469.formula3"> </span>
+         <span class="token">
+ 
+   log&#8289;| 
+    <span class="emphasis mathml-mi"><em>X</em></span>(<span class="emphasis mathml-mi"><em>&#969;</em></span>)
+    | = log&#8289;| 
+    <span class="emphasis mathml-mi"><em>G</em></span>(<span class="emphasis mathml-mi"><em>&#969;</em></span>)
+    | + log&#8289;| 
+    <span class="emphasis mathml-mi"><em>H</em></span>(<span class="emphasis mathml-mi"><em>&#969;</em></span>)
+    |
+  
+</span>
+
+      </p><p><span id="m12469.FinalStep"> </span>
+
+Computing the inverse Fourier Transform of this equation brings us into the realm of "quefrency."
+</p><p><span id="m12469.formula4"> </span>
+         <span class="token">
+ 
+            <span class="emphasis mathml-mi"><em>F</em></span>
+            <sup>
+      &#8722; 1
+    </sup>
+   log&#8289;| 
+    <span class="emphasis mathml-mi"><em>X</em></span>(<span class="emphasis mathml-mi"><em>&#969;</em></span>)
+    | = <span class="emphasis mathml-mi"><em>F</em></span>
+            <sup>
+      &#8722; 1
+    </sup>
+   log&#8289;| 
+    <span class="emphasis mathml-mi"><em>G</em></span>(<span class="emphasis mathml-mi"><em>&#969;</em></span>)
+    | + <span class="emphasis mathml-mi"><em>F</em></span>
+            <sup>
+      &#8722; 1
+    </sup>
+   log&#8289;| 
+    <span class="emphasis mathml-mi"><em>H</em></span>(<span class="emphasis mathml-mi"><em>&#969;</em></span>)
+    |
+  
+</span>
+
+      </p><p><span id="m12469.finalStep2"> </span>
+Quefrency is the x-axis of the cepstrum.  Its units are in time.  Typically the areas of intest are from 0ms to around 10ms. See figure 1 below for the full process.
+</p><div class="figure"><span id="m12469.cepstrum_block"> </span><p class="title"><b>Figure&#160;1.&#160;Cepstrum Block Diagram</b></p><div class="figure-contents"><div class="mediaobject"><span id="m12469.id1206108"> </span><img src="media/cepstrum.jpg" alt="Cepstrum Block Diagram (cepstrum.jpg)"/></div><div class="caption">This is the process used to compute the cepstrum</div></div></div><br class="figure-break"/></div><div class="section" title="3.&#160;The Use of the Cepstrum"><div class="titlepage"><div><div><h1 class="title" id="m12469.Application">3.&#160;The Use of the Cepstrum</h1></div></div></div><p><span id="m12469.application1"> </span>
+    We have now seen the process by which we calculate the cepstrum of a signal.    It is now time to dicuss some the uses of the cepstrum.  Often after having calculated the cepstrum, we will want to "lifter" the signal. (Once again the naming scheme has been used.  This time on the word filter)  When we lifter, we are seperating the <em class="glossterm">transfer function</em> (the spectral envelope) and the <em class="glossterm">excitation signal</em>.  The transfer function usually appears as a steep slant at the beginning of the plot.  The excitation appears as <em class="glossterm">periodic peaks</em> occurring after around 5ms.  Below we can see examples of several cepstrum plots.  Note how the female voice has peaks occurring more often then in the male&#8217;s cepstrum.  This is due to the higher pitch of a female voice.
+</p><div class="figure"><span id="m12469.cepstrum_plot"> </span><p class="title"><b>Figure&#160;2.&#160;Cepstrum Samples</b></p><div class="figure-contents"><div class="mediaobject"><span id="m12469.id1206172"> </span><img src="media/cepstrum_plot.jpg" alt="Cepstrum Samples (cepstrum_plot.jpg)"/></div><div class="caption">These are vowel samples of a male and female.  The x-axis is in milliseconds and the y-axis is the magnitude. The sounds "aah" and "eee" for both speakers are shown.</div></div></div><br class="figure-break"/></div>
+
+<!--
+<div class="section" title="4.&#160;Reference">
+	<div class="titlepage">
+		<div>
+			<div>
+				<h1 class="title" id="m12469.Reference">4.&#160;Reference
+				</h1>
+			</div>
+		</div>
+	</div>
+	<p>
+		<span id="m12469.ref1"> </span>
+         	<span class="emphasis cite-title"><em>
+		Furui, Sadaoki. Digital Speech Processing, Synthesis, and Recognition. Marcel Deccer, Inc.: New York.
+		</em></span>
+       </p>
+	<p>
+		<span id="m12469.ref2"> </span>
+         	<span class="emphasis cite-title"><em>
+		Gold, Ben and Nelson Morgan.  Speech and Audio Signal Processing: Processing and Perception of Speech and Music.  John Wiley and Sons, Inc: New York.  2000.
+		</em></span>
+       </p>
+</div>
+-->
+<p>
+Source: Brian Van Osdol, "Cepstrum," Connexions, December 21, 2004, http://cnx.org/content/m12469/1.4/
+</p>
+</div></body></html>
