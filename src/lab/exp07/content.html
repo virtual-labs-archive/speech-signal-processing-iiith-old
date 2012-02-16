@@ -120,9 +120,69 @@ edit -->
         <div id="experiment-article-section-3-content" 
         class="content">
 	    <!-- PUT CONTENT HERE -->
-	<p>
-			<IFRAME src="pr01.html" width=800 height=2400 > </IFRAME>	
-	</p>
+<h3>The Cepstrum</h3>
+<p> 
+The cepstrum is a common transform used to gain information from a person’s speech signal. 
+It can be used to separate the excitation signal (which contains the words and the pitch) 
+and the transfer function (which contains the voice quality). It is similar to a channel 
+vocoder or LPC in its applications, but using the cepstrum as a spectral analyzer is a 
+completely different process. (It is also worth pointing out that cepstrum is “spectrum” 
+with the first syllable flipped… we will encounter several words with this naming 
+convention.) Before describing the details of the cepstrum, a little background in speech 
+models is needed.
+</p>
+
+<h3>Background Information</h3>
+<p>
+Speech is the output of a time-varying vocal-tract system excited by a time-varying modulated
+airflow. Mathematically, this can be described in the time domain as: 
+$$ x(t) = \int\limits_{0}^{t} g(\tau) h(t-\tau) $$
+Since convolution in the time domain is multiplication in the frequency domain, this become: 
+$$X(\omega) = G(\omega)H(\omega) $$
+If we take the log of the magnitude of both sides of this transform, we reach: 
+$$ \log⁡|X(\omega)| = \log⁡|G(\omega)| + \log⁡|H(\omega)| $$
+
+Computing the inverse Fourier Transform of this equation brings us into the realm of "quefrency."
+$$ F − 1 \log⁡| X(\omega) | = F − 1 \log⁡| G(\omega) | + F − 1 \log⁡| H(\omega) | $$
+
+Quefrency is the x-axis of the cepstrum. Its units are in time. Typically the areas of 
+interest are from 0ms to around 10ms. See Figure 1 below for the full process. 
+<table width="500">
+	<tr>
+		<td> <img src="media/cepstrum.jpg" alt="Cepstrum Block Diagram (cepstrum.jpg)" style="height:100%;width:90%"/>
+		</td>
+	</tr>
+	<caption align="bottom"> Figure 1. Cepstrum Block Diagram </caption>
+</table>
+
+
+
+<h3>The Use of the Cepstrum</h3>
+
+<p>We have now seen the process by which we calculate the cepstrum of a signal. 
+It is now time to dicuss some the uses of the cepstrum. Often after having calculated the 
+cepstrum, we will want to "lifter" the signal. (Once again the naming scheme has been used. 
+This time on the word filter) When we lifter, we are seperating the transfer function 
+(the spectral envelope) and the excitation signal. The transfer function usually appears 
+as a steep slant at the beginning of the plot. The excitation appears as periodic peaks 
+occurring after around 5ms. Below we can see examples of several cepstrum plots. Note how 
+the female voice has peaks occurring more often then in the male’s cepstrum. This is due to 
+the higher pitch of a female voice. </p>
+
+
+<table width="900">
+	<tr>
+		<td> <img src="media/cepstrum_plot.jpg" alt="Cepstrum Samples (cepstrum_plot.jpg)" style="height:100%;width:90%"/>
+		</td>
+	</tr>
+	<caption align="bottom"> Figure 2. Cepstrum Samples</caption>
+</table>
+
+<br>
+<br>
+<p>
+<b>Adapted from:</b> "Cepstrum," Brian Van Osdol, Connexions, December 21, 2004, http://cnx.org/content/m12469/1.4/ 
+</p>
 	</div>
 
       </section>
@@ -243,10 +303,13 @@ edit -->
         <div id="experiment-article-section-8-content" 
         class="content">
         <ol>
-        <li>Write an algorithm to extract pitch using cepstral analysis.</li><br>
-
-        <li>Explain how cepstral analysis of speech signals helps in pattern representation for pattern recognition task. </li><br>
-
+        <li>Explain how cepstral analysis of speech signals helps in pattern representation for pattern recognition task. </li>
+			<li>What are the advantages and limitations of cepstral domain processing over spectral-domain processing?</li>
+			<li>What is the dimensions of an unit in the cepstral domain?</li>
+			<li>Explain how cepstral analysis technique can be used to represent the convolutionally combined signals
+				 as additively combined signals</li>
+			<li>Explain the process of separating source and system characteristics using the cepstrum.</li>
+			<li>Explain how pitch information can be extracted from the cepstrum. Write an algorithm to extract pitch using cepstral analysis.</li>
         </ol>
           </div>
 
