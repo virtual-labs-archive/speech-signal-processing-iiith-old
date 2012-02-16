@@ -119,7 +119,7 @@ edit -->
         class="content">
 	    <!-- PUT CONTENT HERE -->
 
-<h1>Discretization of a continuous time signal -sampling and aliasing</h1>
+<h3>Discretization of a continuous time signal -sampling and aliasing</h3>
 
 <p>
 Consider a continous-time signal \(x_c(t)\) whose Fourier transform is \(X_c(\omega)\). Then
@@ -138,20 +138,24 @@ and \(x_d(n)\) can be expressed as
 x_d(n) & = & x_c(t) s(t)\\
 		 & = & x_c(t) \sum\limits_{n=-\infty}^{\infty} \delta(t-nT)\\
 		 & = & x_c(nT).
-\end{eqnarray} 
+\end{eqnarray} </p>
 <br>
-<table  summary="Effect of time-domain sampling in time domain" >
+<table  summary="Effect of time-domain sampling in time domain"  width="900">
 <tr>
-	<td><img src="images/sig.png" width="356" height="272" alt="Signal" longdesc="plot of a damped sinusoid" /></td>
-	<td><img src="images/impulse.png" width="356" height="272" alt="Impulse train" longdesc="impulse train sequence" /></td>
+	<td height="300">
+		<img src="images/sig.png" style="height:100%;width:90%" alt="Signal" longdesc="plot of a damped sinusoid" />
+	</td>
+	<td height="300">
+		<img src="images/impulse.png" style="height:100%;width:90%" alt="Impulse train" longdesc="impulse train sequence" />
+	</td>
 </tr>
 <tr>
 	<td><div style="text-align: center">(a)</div></td>
 	<td><div style="text-align: center">(b)</div></td>
 </tr>
 <tr>
-	<td><img src="images/sampling.png" width="356" height="272" alt="Sampling" longdesc="sampling of a damped sinusoid" /></td>
-	<td><img src="images/sampledsig.png" width="356" height="272" alt="Sampled Signal" longdesc="sampled damped sinusoid" /></td>
+	<td height="300"><img src="images/sampling.png" style="height:100%;width:90%"  alt="Sampling" longdesc="sampling of a damped sinusoid" /></td>
+	<td height="300"><img src="images/sampledsig.png" style="height:100%;width:90%" width="356" height="272" alt="Sampled Signal" longdesc="sampled damped sinusoid" /></td>
 </tr>
 
 <tr>	
@@ -161,6 +165,7 @@ x_d(n) & = & x_c(t) s(t)\\
 <caption align="bottom"><em>Figure. 1: (a) Damped sinusoid, (b) Impulse  train, (c) Illustration of sampling and (d) Sampled signal.</em></caption>
 </table>
 <br>
+<p>
 Figure&nbsp;1 illustrates the process and effect of sampling a continuous-time signal in the time domain.
 In the frequency domain, the corresponding Fourier transform of \(x_d(n)\) can be obtained by 
 convolving the individual Fourier transforms of \(x_c(t)\) and \(s(t)\). This is because multiplication
@@ -194,18 +199,18 @@ This effect is called aliasing and is due to an insufficient sampling rate. If t
  required to discretize a signal without aliasing is equivalent to twice the bandwidth of the signal. This frequency
  is referred to as the Nyquist rate.
 
-<table summary="Effect of time-domain sampling in frequency domain" >
+<table summary="Effect of time-domain sampling in frequency domain" width="900" >
 <tr>
-	<td><img src="images/contspect.png" width="356" height="272" alt="Signal FT" longdesc="FT of a bandlimited signal" /></td>
-	<td><img src="images/impulsetspect.png" width="356" height="272" alt="Impulse train FT" longdesc="FT of impulse train sequence" /></td>
+	<td height="300"><img src="images/contspect.png" style="height:100%;width:90%" alt="Signal FT" longdesc="FT of a bandlimited signal" /></td>
+	<td height="300"><img src="images/impulsetspect.png" style="height:100%;width:90%" alt="Impulse train FT" longdesc="FT of impulse train sequence" /></td>
 </tr>
 <tr>
 	<td><div style="text-align: center">(a)</div></td>
 	<td><div style="text-align: center">(b)</div></td>
 </tr>
 <tr>
-	<td><img src="images/dtspectOs.png" width="356" height="272" alt="Oversampled" longdesc="Spectra of oversampled signal" /></td>
-	<td><img src="images/dtspectUs.png" width="356" height="272" alt="Undersampled" longdesc="Spectra of undersampled signal" /></td>
+	<td height="300"><img src="images/dtspectOs.png" style="height:100%;width:90%" alt="Oversampled" longdesc="Spectra of oversampled signal" /></td>
+	<td height="300"><img src="images/dtspectUs.png" style="height:100%;width:90%" alt="Undersampled" longdesc="Spectra of undersampled signal" /></td>
 </tr>
 
 <tr>	
@@ -215,10 +220,12 @@ This effect is called aliasing and is due to an insufficient sampling rate. If t
 <caption align="bottom"><em>Figure. 2: Fourier transform of (a) Bandlimited signal and (b) Impulse  train. 
 Discrete time Fourier transform of (c) Oversampled signal (\(Fs>2B\)) (d) Undersampled signal (\(Fs<2B\)).</em></caption>
 </table>
-<table summary="DTFT of Nyquist rate sampled signal" >
+<table summary="DTFT of Nyquist rate sampled signal" width="900" >
 <tr>
-<td>
-<img src="images/dtspectNq.png" width="356" height="272" alt="Nyquist" longdesc="Spectra of signal sampled at Nyquist frequency" />
+<td height="300">
+<div style="text-align: center"> 
+<img src="images/dtspectNq.png" style="height:100%;width:45%" alt="Nyquist" longdesc="Spectra of signal sampled at Nyquist frequency" />
+</div>	
 </td>
 </tr>
 <caption align="bottom">
@@ -229,8 +236,9 @@ Discrete time Fourier transform of (c) Oversampled signal (\(Fs>2B\)) (d) Unders
 
 </p>
 
+
+<h3>Digitization of a discrete-time signal - Quantization and quantization error</h3>
 <p>
-<h1>Digitization of a discrete-time signal - Quantization and quantization error</h1>
 A discrete-time signal obtained through sampling is still a continuous amplitude time sequence, where each samples 
 value has an infinite precision.But digital computers are finite precision devices and hence there is a need to discretize 
 and limit the range of sample values. This is achieved by quantization (more accurately scalar quantization). In the
@@ -241,10 +249,12 @@ The number of elements in the the finite
 set is referred as the number of quantization levels. If the difference in values of adjacent elements in the ordered
 set is constant, then the quantizer is referred as an uniform linear quantizer. Figure&nbsp;4 shows the effect of 
 quantizing a line using a 3-bit quantizer.
-<table summary="Quantization of a line" >
+<table summary="Quantization of a line" width="900">
 <tr>
-<td>
-<img src="images/quantizer.png" width="356" height="272" alt="Quantizer" longdesc="Quantization of a line" />
+<td height="300">
+<div style="text-align: center">
+<img src="images/quantizer.png" style="height:100%;width:50%" alt="Quantizer" longdesc="Quantization of a line" />
+</div>
 </td>
 </tr>
 <caption align="bottom">
