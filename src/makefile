@@ -1,6 +1,7 @@
 build-dir=../build
 lib-dir=lib
 build-js-dir=${build-dir}/js
+build-web-dir=/var/www/
 
 theme=blue-icon
 
@@ -11,7 +12,8 @@ help-dir:
 
 	(touch ${build-dir}/theme-${theme}; rsync -avC --exclude ${mathjax}.zip lab/* lib/* help themes/${theme}/* ${build-dir})
 
-
+local-web:
+	(touch ${build-web-dir}/theme-${theme}; rsync -avC --exclude ${mathjax}.zip lab/* lib/* help themes/${theme}/* ${build-web-dir})
 
 
 
