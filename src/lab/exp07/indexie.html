@@ -1,0 +1,395 @@
+<!-- This file needs to be edited by the lab developer to suit
+the requirements of their lab in particular.-->
+
+<!-- Add class="default" to include any element as it is
+specified in default.html. 
+Do not include class="default" to the elements that you want to
+edit -->
+
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<div style="width: 327px; height: 537px;">
+
+<div id="experiment"> <!-- The Experiment Document Container-->
+
+  <!-- The lab Header contains the logo and the name of the lab,
+  usually displayed on the top of the page-->
+
+  <header id="experiment-header" class="default">
+  
+    <div id="experiment-header-logo" class="logo">
+      <!-- Enclose the logo image of your lab or write it in 
+      text
+      <img src="../images/logo.jpg" />
+	-->
+    </div>
+
+    <div id="experiment-header-heading" class="heading">
+      <!-- Write the name of your lab and link it to the home 
+      page of your lab (h1 tag is preferred while writing your 
+      lab name)-->
+      <a href="../index.html">Speech Signal Processing Virtual Lab</a>	
+    </div>
+
+    <!-- Add any additional element you want to add to the lab 
+    header, For example : Help (Enclosing them with suitable 
+    div is recommended)-->
+
+  </header>
+
+
+  <!-- The lab article is the main content area where all the 
+  experiment content sits-->
+  <article id="experiment-article">
+  
+    <!-- The lab article has an header, optional navigational 
+    menu, number of sections, an optional sidebar and a closing 
+    footer-->
+    
+      <header id="experiment-article-heading" class="heading">
+        <!-- You can add a welcome message or title of the 
+        experiment here -->
+        Expt-7: Short-Time Cepstrum Analysis of Speech
+        <!-- Add any additional element if required with proper 
+        enclosing-->
+      </header>
+
+      <!-- Navigation menu is useful to organize the view of 
+      multiple sections inside the article-->
+      <nav id="experiment-article-navigation" class="default">
+        <ul id="experiment-article-navigation-menu">
+          <!-- The menu can be dynamically generated to contain 
+          the headings of your sections or instead write the 
+          menu items of your choice individually enclosedu in 
+          <li> tag as shown below-->
+        </ul>
+      </nav>
+
+      <!-- All the sections of your lab or experiment can be 
+      enclosed together with a div element as shown below-->
+      <div id="experiment-article-sections">
+
+        <!-- First section of the article-->
+        <section id="experiment-article-section-1">
+          
+          <div id="experiment-article-section-1-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab -->
+	    <img src="../images/introduction.jpg" />
+	  </div>	
+          
+          <!-- The heading for the section can be enclosed in a 
+          div tag. -->
+          <div id="experiment-article-section-1-heading" 
+          class="heading">
+            Objective
+          </div>
+
+          <!-- Write the section content inside a paragraph 
+          element, You can also include images with <img> tag -->
+          <div id="experiment-article-section-1-content" 
+          class="content">	
+            <p>
+
+	    <!-- PUT CONTENT HERE -->
+	    The objective of this experiment is to analyse speech signals by computing 
+	    the cepstrum for various voiced and unvoiced sounds, study their characteristics 
+	    using the computed cepstrum and reconstructing the spectrum by retaining various 
+	    components of the cepstrum.
+        </div>
+
+
+      </section>
+
+
+      <section id="experiment-article-section-3">
+        
+        <div id="experiment-article-section-3-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/theory.jpg" />
+	</div>
+     
+        <div id="experiment-article-section-3-heading" 
+        class="heading">
+          Tutorial
+        </div>
+
+        <div id="experiment-article-section-3-content" 
+        class="content">
+	    <!-- PUT CONTENT HERE -->
+<h3>The Cepstrum</h3>
+<p> 
+The cepstrum is a common transform used to gain information from a person’s speech signal. 
+It can be used to separate the excitation signal (which contains the words and the pitch) 
+and the transfer function (which contains the voice quality). It is similar to a channel 
+vocoder or LPC in its applications, but using the cepstrum as a spectral analyzer is a 
+completely different process. (It is also worth pointing out that cepstrum is “spectrum” 
+with the first syllable flipped… we will encounter several words with this naming 
+convention.) Before describing the details of the cepstrum, a little background in speech 
+models is needed.
+</p>
+
+<h3>Background Information</h3>
+<p>
+Speech is the output of a time-varying vocal-tract system excited by a time-varying modulated
+airflow. Mathematically, this can be described in the time domain as: 
+$$ x(t) = \int\limits_{0}^{t} g(\tau) h(t-\tau) $$
+Since convolution in the time domain is multiplication in the frequency domain, this become: 
+$$X(\omega) = G(\omega)H(\omega) $$
+If we take the log of the magnitude of both sides of this transform, we reach: 
+$$ \log⁡|X(\omega)| = \log⁡|G(\omega)| + \log⁡|H(\omega)| $$
+
+Computing the inverse Fourier Transform of this equation brings us into the realm of "quefrency."
+$$ F ^{− 1} \log⁡| X(\omega) | = F ^{− 1} \log⁡| G(\omega) | + F ^{− 1} \log⁡| H(\omega) | $$
+
+Quefrency is the x-axis of the cepstrum. Its units are in time. Typically the areas of 
+interest are from 0ms to around 10ms. See Figure 1 below for the full process. 
+<div style="text-align: center"><table width="500">
+	<tr>
+		<td> <img src="media/cepstrum.jpg" alt="Cepstrum Block Diagram (cepstrum.jpg)" style="height:100%;width:90%"/>
+		</td>
+	</tr>
+	<caption align="bottom"> Figure 1. Cepstrum Block Diagram </caption>
+</table></div>
+
+</p>
+<br>
+<h3>The Use of the Cepstrum</h3>
+
+<p>We have now seen the process by which we calculate the cepstrum of a signal. 
+It is now time to dicuss some the uses of the cepstrum. Often after having calculated the 
+cepstrum, we will want to "lifter" the signal. (Once again the naming scheme has been used. 
+This time on the word filter) When we lifter, we are seperating the transfer function 
+(the spectral envelope) and the excitation signal. The transfer function usually appears 
+as a steep slant at the beginning of the plot. The excitation appears as periodic peaks 
+occurring after around 5ms. Below we can see examples of several cepstrum plots. Note how 
+the female voice has peaks occurring more often then in the male’s cepstrum. This is due to 
+the higher pitch of a female voice. </p>
+
+
+<div style="text-align: center"><table width="900">
+	<tr>
+		<td> <img src="media/cepstrum_plot.jpg" alt="Cepstrum Samples (cepstrum_plot.jpg)" style="height:100%;width:90%"/>
+		</td>
+	</tr>
+	<caption align="bottom"> Figure 2. Cepstrum Samples</caption>
+</table></div>
+
+<br>
+<br>
+<p>
+<b>Adapted from:</b> "Cepstrum," Brian Van Osdol, Connexions, December 21, 2004, http://cnx.org/content/m12469/1.4/ under
+Creative Commons Attribution License (CC-BY 1.0).
+</p>
+	</div>
+
+      </section>
+
+      <!-- Second section of the article-->
+      <section id="experiment-article-section-2">
+        
+        <div id="experiment-article-section-2-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/procedure.jpg" />
+	</div>
+				
+        <!-- The heading for the section can be enclosed in a 
+        div tag. -->
+        <div id="experiment-article-section-2-heading" 
+        class="heading">
+          Procedure
+        </div>
+
+        <!-- Write the section content inside a paragraph 
+        element, we can also include images with <img> tag -->
+        <div id="experiment-article-section-2-content" 
+        class="content">
+	    <!-- PUT CONTENT HERE -->
+	    <ol style="list-style-type: lower-alpha;">
+		<li>Study the cepstrum for different regions (voiced/unvoiced/silence) of the speech signal using the examples provided.</li>
+			<ul>
+			<li>Select one of the example waveforms provided.</li>
+			<li>Select a short segment (30 ms) of voiced speech and observe the spectrum as well as cepstrum.</li>
+			<li>Repeat the experiment for unvoiced (fricative and stop) and silence regions.</li>
+			</ul>
+		<li>Note that the cepstrum shows a peak at around the time lag corresponding to the pitch period for segments of voiced speech.</li>
+			<ul>
+			<li>Measure the pitch period of a voiced segment using the cepstrum. </li>
+			</ul>
+		<li>Cepstral smoothing of short-term spectrum</li>
+			<ul>
+			<li>Select only the first few coefficients of the spectrum for a voiced segment of speech, and observe that the liftered spectrum appears smooth.</li>
+			<li>Select the cepstral coefficients around the peak corresponding to pitch period, and observe that the liftered spectrum has strong harmonics corresponding to the pitch frequencies.</li>
+			</ul>
+	      <li>Record different sounds for your own voice and study the cepstral features. </li>
+											       <li>Write a brief note on the observations. </li>
+	    </ol>
+        </div>
+      </section>
+
+
+
+      <section id="experiment-article-section-4">
+
+        <div id="experiment-article-section-4-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab.-->
+	  <img src="../images/simulation.jpg" />
+	</div>
+
+        <div id="experiment-article-section-4-heading" 
+        class="heading">
+          Experiment
+        </div>
+
+        <div id="experiment-article-section-4-content" 
+        class="content">
+	    <!-- PUT CONTENT HERE -->
+<p>
+	        <applet code=audioTransport/SVLAudioTool.class 
+                      archive="media/cepstrumAnalysisS.jar"
+                      width=950 height=800>
+               <param name=foo value="bar">
+        Please install the latest version of the Java plugin for your browser. <br>
+        </applet>
+
+</p>
+        </div>
+
+      </section>
+
+      <section id="experiment-article-section-5">
+   
+        <div id="experiment-article-section-5-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab.-->
+	  <img src="../images/manual.jpg" />
+	</div>
+
+        <div id="experiment-article-section-5-heading" 
+        class="heading">
+          Observations
+        </div>
+
+        <div id="experiment-article-section-5-content" 
+        class="content">
+	    <!-- PUT CONTENT HERE -->
+	    <ul>
+<li>Cepstrum provides a compact representation of the vocal tract system information.</li><br>
+<li>The vocal tract system information is characterized by the spectral envelope. This slow varying component in the spectrum is characterized by the first few coefficients in the cepstral domain. Note that cepstrum computation can be interpreted as the spectral analysis of a signal which is the log-magnitude spectrum in this case.</li><br>
+<li>Note that the pitch period of a voiced segment of speech can be measured from the cepstrum.</li><br>
+</ul>
+
+          </div>
+
+        </section>
+
+   <section id="experiment-article-section-8">
+
+        <div id="experiment-article-section-8-icon" 
+        class="icon">
+          <!-- Enclose the icon image of your lab.-->
+          <img src="../images/quizzes.jpg" />
+        </div>
+
+        <div id="experiment-article-section-8-heading" 
+        class="heading">
+          Assessment
+        </div>
+
+        <div id="experiment-article-section-8-content" 
+        class="content">
+        <ol>
+        <li>Explain how cepstral analysis of speech signals helps in pattern representation for pattern recognition task. </li>
+			<li>What are the advantages and limitations of cepstral domain processing over spectral-domain processing?</li>
+			<li>What is the dimensions of an unit in the cepstral domain?</li>
+			<li>Explain how cepstral analysis technique can be used to represent the convolutionally combined signals
+				 as additively combined signals</li>
+			<li>Explain the process of separating source and system characteristics using the cepstrum.</li>
+			<li>Explain how pitch information can be extracted from the cepstrum. Write an algorithm to extract pitch using cepstral analysis.</li>
+        </ol>
+          </div>
+
+        </section>
+
+
+
+
+        <section id="experiment-article-section-9">
+   
+          <div id="experiment-article-section-9-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/readings.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-9-heading" 
+          class="heading">
+            References
+          </div>
+
+          <div id="experiment-article-section-9-content" 
+          class="content">
+<ul>
+			<li> <i>Digital Processing of Speech Signals</i>, L.R. Rabiner and L.R. Schafer, Chapter 6</li>
+			<li> <i>Discrete-Time Speech Signal Processing</i>, Thomas F. Quatieri , Chapter 7</li>
+			<li> <i>Digital Speech Processing, Synthesis, and Recognition.<i>, Sadaoki Furui.,  Marcel Deccer, Inc.: New York.
+</ul>     
+     
+          </div>
+
+        </section>
+
+      </div>
+
+
+    <!-- An article can have a sidebar that contain related 
+    links and additional material (however it is kept optional 
+    at this moment) -->
+    <aside id="lab-article-sidebar" class="default">
+      <!-- put the content that you want to appear in the 
+      sidebar -->	
+    </aside>
+
+
+    <!-- Article footer can display related content and 
+    additional links -->						
+    <footer id="lab-article-footer" class="default">
+      <!-- Put the content that you want to appear here -->
+    </footer>
+
+  </article>
+
+
+  <!-- Links to other labs, about us page can be kept the lab 
+  footer-->
+  <footer id="lab-footer" class="default">
+    <!-- Put the content here-->
+  </footer>
+
+
+<footer id="lab-header" class="heading">
+    <!-- Put the content here-->
+    <div id="lab-header-heading" class="heading">
+    <!-- Write the name of your lab and link it to the home page
+    of your lab. -->
+        <center>
+        <table><tr>
+                <td><a href="http://speech.iiit.ac.in/" target=_blank><font size=-3>Developed at the Speech and Vision Lab, IIIT Hyderabad</font></a></td>
+        </tr></table>
+        </center>
+    </div>
+
+
+  </footer>
+
+</div>		
+  <script type="text/javascript" src="../js/MathJax/MathJax.js?config=default">
+  </script>
+
+</body>
+</html>
