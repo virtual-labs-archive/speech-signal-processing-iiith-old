@@ -1,7 +1,7 @@
 build-dir=../build
 lib-dir=lib
 build-js-dir=${build-dir}/js
-build-web-dir=/var/www/
+build-web-dir=/var/www/ssp
 
 theme=blue-icon
 
@@ -13,7 +13,7 @@ help-dir:
 	(touch ${build-dir}/theme-${theme}; rsync -avC --exclude ${mathjax}.zip lab/* lib/* help themes/${theme}/* ${build-dir})
 
 local-web:
-	(touch ${build-web-dir}/theme-${theme}; rsync -avC --exclude ${mathjax}.zip lab/* lib/* help themes/${theme}/* ${build-web-dir})
+	(touch ${build-web-dir}/theme-${theme}; rsync -avC --exclude ${mathjax}.zip lab/* lib/* help themes/${theme}/* ${build-web-dir}; chown -R www-data.www-data ${build-web-dir})
 
 
 
