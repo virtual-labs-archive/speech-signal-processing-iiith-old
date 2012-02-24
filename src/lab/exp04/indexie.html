@@ -19,10 +19,7 @@ edit -->
   <header id="experiment-header" class="default">
   
     <div id="experiment-header-logo" class="logo">
-      <!-- Enclose the logo image of your lab or write it in 
-      text
      <img src="../images/logo.jpg" />
-	-->
     </div>
 
     <div id="experiment-header-heading" class="heading">
@@ -244,7 +241,7 @@ value has an infinite precision.But digital computers are finite precision devic
 and limit the range of sample values. This is achieved by quantization (more accurately scalar quantization). In the
 quantization process, each sampled value of a discrete-time signal is compared against a finite set of amplitude values 
 and assigned a value in the set that is closest to the discrete-time value. The number of elements in the
-finite set is determined by the precision of the digital system. In an 8-bit system, there are \(2^8\ =256) elements in the set. 
+finite set is determined by the precision of the digital system. In an 8-bit system, there are \(2^8 =256\) elements in the set. 
 The number of elements in the the finite 
 set is referred as the number of quantization levels. If the difference in values of adjacent elements in the ordered
 set is constant, then the quantizer is referred as an uniform linear quantizer. Figure&nbsp;4 shows the effect of 
@@ -266,7 +263,7 @@ quantizing a line using a 3-bit quantizer.
 <p>
 Since the digital signal is obtained by quantizing the continuous valued discrete-time signal, there is an error introduced in
 representation of the signal. If the discrete-time signal \(x_d(n)\) has a limited amplitude range 
-i.e., \(|x_d(n)|\leq A_\mbox{max}, n=-N,\ldots,0,\ldots N\), then the quantizer error introduced by a B-bit uniform quantizer is
+i.e., \(|x_d(n)|\leq A_\mbox{max}, n=-N,\ldots,0,\ldots N\)&nbsp;&nbsp;, then the quantizer error introduced by a B-bit uniform quantizer is
 $$Q_e=\frac{A_\mbox{max}}{2^B}$$
 Hence the quantizer error for each sample \(e(n)\)  is defined as 
 $$e(n) = x_d(n)-x_D(n), n=-N,\ldots,0,\ldots N$$,
@@ -486,6 +483,5 @@ where  <font size=-2>\( F_1 \)</font> is the frequency of the resonator,  <font 
 </div>		
   <script type="text/javascript" src="../js/MathJax/MathJax.js?config=default">
   </script>
-
 </body>
 </html>
