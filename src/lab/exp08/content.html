@@ -131,8 +131,8 @@ The vocal tract system is assumed to be stationary within the window and is mode
 The LP analysis works on the principle that a sample value in a correlated, stationary sequence can be predicted as a linear weighted sum of the past few (\( p \)) samples.
 If \( s(n) \) denotes a sequence of speech samples, then the predicted value at the time instant \( n \) is given by,
 $$ \hat{s}(n) = \sum_{k=1}^{p}{a_k~s(n-k)} $$
-where \( \{a_k\},~k=1,2,...,p \) is the set of linear predictor coefficients (LPC) and $p$ is the order of the LP filter. 
-The error at time $n$ and the sum of squared errors \( E \) are given by,
+where \( \{a_k\},~k=1,2,...,p \) is the set of linear predictor coefficients (LPC) and \(p\) is the order of the LP filter. 
+The error at time \(n\) and the sum of squared errors \( E \) are given by,
 $$ r(n)~=~s(n)~-~\hat{s}(n) $$
 $$ E=~\sum_{n}{r^2(n)} $$
 The cost function \( E \) is minimized with respect to \( \{a_i\},~i=1,2,...,p \) over the interval \( {-\infty}~{\leq}~n~{\leq}~{\infty} \) (autocorrelation formulation) as,
@@ -150,117 +150,27 @@ The vocal tract can be considered as a cascade of resonator cavities with differ
 The resonant frequencies of these cavities are referred to as <i>formants</i>.
 The LP residual signal has large error values at regular intervals and can be attributed to the periodic impulses of excitation.
 Hence the LP residual is a good approximation to the excitation source signal and can be used further to extract the excitation source characteristics.
-A segment of voiced speech (windowed), frequency response of the inverse filter and the corresponding LP residual are shown in Fig.1.
+A segment of voiced speech (windowed), frequency response of the inverse filter and the corresponding LP residual are shown in Figure 1.
 </p>
 
 <p>
-<table border=0>
-<tr><td width=800><img src=media/lpinvfilter.png /></td></tr>
-<tr><td><b>Figure 1:</b> Inverse filtering the speech signal for estimating the excitation source (LP residual) signal.</td></tr>
+<img src=media/lpinvfilter.png /><br>
+<b>Figure 1:</b> <i>Inverse filtering the speech signal for estimating the excitation source (LP residual) signal.</i> <br>
+</p>
 
-</table><br>
-</p>
-<p><h1>Collection of voiced (/a/)and unvoiced (/s/) speech segments</h1></p>
+<h2>Short time spectrum, LP spectrum and Inverse spectrum</h2>
 <p>
-<ul>
-<li>Record a vowel /a/ for one second at 10 KHz sampling frequency
-with 16 bit quantization. From this recorded speech file collect 200 ms
-in steady portion of the waveform. </li>
-<li>Record an unvoiced segment /s/ for one second at 10 KHz sampling
-sampling frequency with 16 bit quantization. From this recorded speech
-file collect 200 ms in steady portion of the waveform. </li>
-<li>The short voiced and unvoiced speech segments are shown in
-Figure&nbsp;1. </li>
-</ul>
-</p>
-<p>
-<a name="fig:voiced-unvoiced-waveform"></a><a name="183"></a> <img
-src="media/img2.png"
-alt="\resizebox*{15cm}{8cm}{\includegraphics{figures/figure1.eps}}"
-style="border: 0px solid ; width: 681px; height: 363px;"><br>
-<strong>Figure 1:</strong> <i class="sans">(a) Segment of voiced
-speech /a/ and (b) segment of unvoiced speech /s/<br>
-</i>
-</p>
-<p>
-<h1>Short time spectrum, LP spectrum and Inverse spectrum for voiced
-segment /a/</h1>
-</p>
-<p>
-<br>
-<h2>Short time spectrum</h2>
-The short time spectrum consists of range of frequencies (magnitude and
+The short-time spectrum consists of range of frequencies (magnitude and
 phase components) that are present in a small segment (10-30 ms) of a
-signal. Short time spectrum is computed with the following procedure:
+signal. 
+The LP spectrum can approximate the envelope of the short-time spectrum depending on the choice of LP order.
+The gross envelope is captured at low LP orders such as 1 or 3.
+The short-time spectral envelope is finely matched as the LP order increases.
+One of the main issues in LP analysis is the choice of appropriate LP order.
+Figures 2 and 3 show the short-time spectrum, LP spectrum and the inverse LP spectrum for a segment of voiced (/a/) and unvoiced speech (/s/).
 </p>
 <br>
 <p>
-<ul>
-<li>Take 20 ms of voiced speech segment /a/ after preemphasis <br>
-<span style="font-style: italic;">a=wavread('vowel.wav'); </span><br
-style="font-style: italic;">
-<span style="font-style: italic;">a=diff(a); </span><br
-style="font-style: italic;">
-<span style="font-style: italic;">a200=a(501:700);</span> </li>
-<li>Apply a hamming window over a voiced segment (a200), then compute
-the fast Fourier transform for the voiced segment (a200) and plot the
-magnetite of the spectrum. <br>
-<span style="font-style: italic;">ham=hamming(200); </span><br
-style="font-style: italic;">
-<span style="font-style: italic;">a200ham=a200.*ham; </span><br
-style="font-style: italic;">
-<span style="font-style: italic;">a200hamspec=fft(a200ham,1024); </span><br
-style="font-style: italic;">
-<span style="font-style: italic;">y=abs(a200hamspec.*a200hamspec); </span><br
-style="font-style: italic;">
-<span style="font-style: italic;">logy=10*log10(y); </span><br
-style="font-style: italic;">
-<span style="font-style: italic;">figure;plot([1:512]*5000/512,logy(1:512));grid;</span>
-</li>
-</ul>
-</p>
-<p>
-<br>
-<h2><LP spectrum=""></LP></h2>
-<ul>
-<li>LP spectrum provides smoothed envelope of the short time
-spectrum, where only the formant frequencies (resonances) are observed.
-For realizing this linear prediction coefficients (LPCs) or filter
-parameters need to be computed from speech signal. <br>
-<span style="font-style: italic;">ak=lpc(a200,14); </span><br
-style="font-style: italic;">
-<span style="font-style: italic;">lpspec=freqz(1,ak); </span><br
-style="font-style: italic;">
-<span style="font-style: italic;">y=abs(lpspec.*lpspec); </span><br
-style="font-style: italic;">
-<span style="font-style: italic;">logy=10*log10(y); </span><br
-style="font-style: italic;">
-<span style="font-style: italic;">figure;plot([1:512]*5000/512,logy);grid;
-</span><br>
-</li>
-</ul>
-</p>
-<p>
-<h2> Inverse spectrum </h2>
-<ul>
-<li>Inverse filter is realized by the inverse of LP filter. Therefore
-the spectrum of the inverse filter is computed as follows: <br>
-<span style="font-style: italic;">invspec=freqz(ak,1); </span><br
-style="font-style: italic;">
-<span style="font-style: italic;">y=abs(invspec.*invspec); </span><br
-style="font-style: italic;">
-<span style="font-style: italic;">logy=10*log10(y); </span><br
-style="font-style: italic;">
-<span style="font-style: italic;">figure;plot([1:512]*5000/512,logy);grid;
-</span><br>
-</li>
-</ul>
-</p>
-<p>
-The short time spectrum, LP spectrum and inverse spectrum for a segment
-of voiced speech are shown in Figure&nbsp;2.
-<a name="fig:voiced-spec"></a><a name="185"></a>
-<br>
 <img
 src="media/img3.png"
 alt="\resizebox*{15cm}{10cm}{\includegraphics{figures/fig2.eps}}"
@@ -271,15 +181,8 @@ time spectrum, (c) LP spectrum and (d) inverse spectrum<br>
 </i><br>
 <br>
 </p>
-<h1>Short time spectrum, LP spectrum and Inverse spectrum for unvoiced segment /s/
-</h1>
-<ul>
-<li>For computing the short time spectrum, LP spectrum and inverse
-spectrum for an unvoiced segment /s/ the same procedure is followed as
-that of for voiced speech segment /a/. </li>
-<li>The short time spectrum, LP spectrum and inverse spectrum for a
-segment of unvoiced speech (/s/) are shown in Figure&nbsp;3. </li>
-</ul>
+
+<p>
 <img
 src="media/img5.png"
 alt="\resizebox*{15cm}{10cm}{\includegraphics{figures/fig3.eps}}"
@@ -289,34 +192,29 @@ style="border: 0px solid ; width: 680px; height: 454px;">
 <strong>Figure 3:</strong>
 <i class="sans">(a) Segment of unvoiced speech /s/ and its (b) short
 time spectrum, (c) LP spectrum and (d) inverse spectrum.<br>
-<br>
 </i>
-<h1>LP residual for voiced and unvoiced segments </h1>
-<ul>
-<li>LP residual signal is obtained by passing the speech signal
+</p>
+
+<h2>LP residual for voiced and unvoiced segments </h2>
+
+<p>LP residual signal is obtained by passing the speech signal
 through inverse filter designed with LP coefficients (LPCs). The block
-diagram of the inverse filter is shown in Figure&nbsp;4.<br>
+diagram of the inverse filter is shown in Figure 4.<br>
+</p>
+<p>
 <img
 src="media/img6.png"
 alt="\resizebox*{12cm}{3cm}{\includegraphics{figures/inversefilter.eps}}"
 style="border: 0px solid ; width: 543px; height: 135px;"><br>
-</li>
-</ul>
 <strong>Figure 4:</strong> <i class="sans">Inverse filter to obtain LP
-residual signal from </i><strong></strong><i class="sans">
-speech signal</i>
-<ul>
-<li>LP residual is computed for voiced and unvoiced speech segments
-using the following matlab commands:&nbsp;</li>
-<ul style="font-style: italic;">
-<li>res=filter(ak,1,a200);&nbsp;</li>
-<li>figure;plot(real(res));grid; <br>
-</li>
-</ul>
-<li>Voiced and unvoiced speech segments and their LP residual signals
-are shown in Figure&nbsp;5. </li>
-</ul>
-&nbsp;
+residual signal from speech signal</i>
+</p>
+
+<p>
+Voiced and unvoiced speech segments and their LP residual signals
+are shown in Figure 5.
+</p>
+<p>
 <img
 src="media/img7.png"
 alt="\resizebox*{15cm}{10cm}{\includegraphics{figures/figure8.eps}}"
@@ -325,24 +223,19 @@ style="border: 0px solid ; width: 680px; height: 454px;"><br>
 <i class="sans">(a) Segment of voiced speech /a/ and its (b) LP
 residual signal, (c) segment of unvoiced speech /s/ and its (d) LP
 residual signal.</i><br>
+</p>
 <br>
 <br>
-<h1>Autocorrelation function for
-voiced/unvoiced speech segments and their LP residuals
-</h1>
+
+<h2>Autocorrelation function for voiced/unvoiced speech segments and their LP residuals
+</h2>
 <br>
 <ul>
-<li>Autocorrelation function of the signal x(t) is computed using the
-following formulation: <br>
-<span class="MATH"><img
-src="media/img8.png"
-alt="$ R(\tau) = \sum_{t=0}^\infty{x(t)x(t+\tau)}$" align="middle"
-style="border: 0px solid ; width: 209px; height: 39px;"><br>
-</span> </li>
-<li>The above formulation is implemented in matlab using the command
-xcorr(x(t)). Autocorrelation function for voiced and unvoiced segments
-and their LP residuals is computed. <br>
-a200corr=xcorr(a200); </li>
+<li>Autocorrelation function of the signal \(x[n]\) is computed as <br>
+$$
+R[\tau]=\sum\limits_{n=-\infty}^{+\infty}x[n]x[n+\tau]
+$$
+</li>
 <li>The autocorrelation function for the voiced speech segment and
 its LP residual signal is shown in Figure&nbsp;6.</li>
 <br>
@@ -371,16 +264,12 @@ segment and its (d) autocorrelation function.<br>
 <br>
 </i>
 </ul>
-<h1>Glottal pulse shape in voiced portion of a speech signal
-</h1>
+
+<h2>Glottal pulse shape in voiced portion of a speech signal
+</h2>
 <ul>
 <li>By integrating the LP residual we can obtain the glottal pulse
 shape, it is also known as glottal volume velocity. </li>
-<li>The integration function is implemented in matlab with a function
-<i>cumsum</i>.&nbsp;<span style="font-style: italic;"></span></li>
-<ul>
-<li><span style="font-style: italic;">gp=cumsum(res);</span> </li>
-</ul>
 <li>A segment of voiced speech its LP residual and glottal pulse
 (glottal volume velocity) waveforms are shown in Figure&nbsp;8. </li>
 <img
@@ -395,9 +284,9 @@ speech /a/, its (b) LP residual and (c) glottal pulse waveform. </i>
 <br>
 <br>
 </ul>
-<h1>LP spectrum for different LP
+<h2>LP spectrum for different LP
 orders
-</h1>
+</h2>
 <ul>
 <li>Compute LPCs for different LP orders (14, 10, 6, 3 and 1), and
 compute LP spectrum for each set of LPCs. </li>
@@ -413,44 +302,24 @@ speech /a/, its LP spectrum for the LP order (b) 14, (c) 10, (d) 6, (e)
 </ul>
 <ul>
 <br>
-<h1>Normalized error for different LP orders for voiced/unvoiced speech
+<h2>Normalized error for different LP orders for voiced/unvoiced speech
 segments
-</h1>
+</h2>
 <ul>
 <li>Normalized error is obtained by normalizing the LP residual
-energy with respect to speech signal energy. </li>
-<li>Normalized error is computed for both voiced and unvoiced
-segments of speech with different LP orders. <br>
-<!-- MATH
-$\eta = \frac{residual energy}{signal energy}$
---><span
-class="MATH"><img
-src="media/img15.png"
-alt="$\eta = \frac{residual energy}{signal energy}$" style="border: 0px solid ; width: 135px; height: 43px;"></span> <br>
-for i=1:15 <br>
-ak=lpc(a200,i); <br>
-res=filter(ak,1,a200); <br>
-<!-- MATH
-$\eta(i)=\frac{sum(res.*res)}{sum(a200.*a200)}$
---><span
-class="MATH"><img
-src="media/img16.png"
-alt="$\eta(i)=\frac{sum(res.*res)}{sum(a200.*a200)}$" style="border: 0px solid ; width: 167px; height: 47px;"></span>; <br>
-end <br>
-figure;plot(<span class="MATH"><img
-src="media/img17.png"
-alt="$\eta$" style="border: 0px solid ; width: 15px; height: 35px;"> </span>);grid;
+energy with respect to speech signal energy. 
+$$\eta = \frac{E_r}{E_s}, $$
+where \(E_r=\sum_{n=0}^{N-1}e^2[n]\) and \(E_s=\sum_{n=0}^{N-1}s^2[n]\) denote the residual and signal energies, respectively.
 </li>
-<li>Normalized error for voiced and unvoiced segments of speech for
-different LP orders is shown in Figure&nbsp;10</li>
+<li>Normalized error plots for voiced and unvoiced segments of speech for
+different LP orders are shown in Figure 10</li>
 </ul>
 <img
 src="media/img19.png"
 alt="\resizebox*{15cm}{10cm}{\includegraphics{figures/figure4.eps}}"
 &gt;="" style="border: 0px solid ; width: 681px; height: 454px;"><br>
 <strong>Figure 10:</strong> <i class="sans">Normalized error for
-voiced and unvoiced speech
-segments for different LP orders. </i>
+voiced and unvoiced speech segments for different LP orders. </i>
 <br>
 <br>
 </ul>
@@ -477,26 +346,23 @@ segments for different LP orders. </i>
 
         <!-- Write the section content inside a paragraph 
         element, we can also include images with <img> tag -->
-        <div id="experiment-article-section-3-content" 
+        <div id="experiment-article-section-3-content"
         class="content">
 
 	    <!-- PUT CONTENT HERE -->
 	    <ol style="list-style-type: lower-alpha;">
-	      <li>Take a segment (200 msec) of voiced speech /a/ and a segment (200 msec) of unvoiced speech /s/. </li>
-	      <li>Compute short-time (20 msec) spectrum, inverse spectrum and 14<sup>th</sup>
-		order LP spectrum for a voiced segment (/a/). </li>
-	      <li>Compute short-time (20 msec) spectrum, inverse spectrum and 14<sup>th</sup>
-		order LP spectrum for unvoiced segment (/s/). </li>
-	      <li>Examine the LP residual for voiced and unvoiced segments. </li>
-	      <li>Compute autocorrelation function of signal and its LP residual
-		for voiced and unvoiced segments. </li>
-	      <li>Obtain LP residual for the entire 200 msec of vowel and integrate
-		to examine the glottal pulse shape </li>
-	      <li>Obtain LP spectrum for a voiced segment for different orders of
-		LP p=14,10,6,3,1 </li>
-	      <li>Obtain normalized error for different orders for a voiced and
-		unvoiced segment </li>
-	      <li>Write a brief note on the observations </li>
+<li>Select one of the provided speech utterances and click on the load button.</li><br>
+<li>Select a short segment (20-50 ms) of voiced speech (say a vowel), and compute the short-time and LP spectrum by clicking on the spectrum button.</li><br>
+<li>The windowed signal, the log spectrum and the LP log spectrum are displayed.</li><br>
+<li>Increase the LP order from the default value 1, to values provided in the drop down box. Click on the spectrum button to recompute the spectra.</li><br>
+<li>Observe that the LP log spectrum approximates the short-time spectral envelope (i.e., the formants) better with increases LP order. </li><br>
+<li>As the LP order is increased to a very large value, say 40, the LP spectrum tries to approximate the short-time spectral envelope more closely thereby approximating peaks due to pitch harmonics. </li><br>
+<li>Study the effect of preemphasis flag on the LP spectrum.</li><br>
+<li>Compute the LP residual signal for different LP orders by clicking on the residual button.</li><br>
+<li>The correlations in the input segment of speech can be seen to be gradually removed in the LP residual signal as the LP order is increased.</li><br>
+<li>The LP residual signal for an LP order of 10 or above removes most of the correlations in the input signal, and the resulting signal looks like a train of impulses.</li><br>
+<li>Repeat the experiment by selecting an unvoiced segment of speech, say a fricative /s/.</li><br>
+<li>Write a brief note on the observations. </li><br>
 	    </ol>
 
         </div>
@@ -677,10 +543,9 @@ speech signal won't depend on the LP order.</li>
 			<li> Explain the differences between autocorrelation and autcovariance formulations of LP analysis? Which is better and why?</li>
 			<li> Suggest an algorithm for voiced/non-voiced region separation using:
 				<ol>
-					<li>a) LP residual energy</li>
-					<li>b) peridicty information in the LP residual<li>
+					<li> LP residual energy</li>
+					<li> peridicty information in the LP residual</li>
 				</ol>
-			</li>
 			<li> Write an Octave/Scilab program that implements 3a and 3b</li>
 			</ol>
          </div>
@@ -765,6 +630,7 @@ speech signal won't depend on the LP order.</li>
 
 
 </div>		
+<script type=text/javascript src=../js/MathJax/MathJax.js?config=default></script>
 
 </body>
 </html>
