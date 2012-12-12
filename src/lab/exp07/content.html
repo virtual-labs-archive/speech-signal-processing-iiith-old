@@ -1,4 +1,4 @@
-<!-- This file needs to be edited by the lab developer to suit
+<F5><!-- This file needs to be edited by the lab developer to suit
 the requirements of their lab in particular.-->
 
 <!-- Add class="default" to include any element as it is
@@ -93,10 +93,13 @@ edit -->
             <p>
 
 	    <!-- PUT CONTENT HERE -->
-	    The objective of this experiment is to analyse speech signals by computing 
-	    the cepstrum for various voiced and unvoiced sounds, study their characteristics 
-	    using the computed cepstrum and reconstructing the spectrum by retaining various 
-	    components of the cepstrum.
+	    <ul>
+	    <li><p> To analyse speech signals by computing the cepstrum for various voiced and unvoiced sounds</p></li>
+	    <li><p> To study the characteristics of speech signals using the computed cepstrum</p></li>
+	    <li><p> To reconstruct the spectrum of various components (source, system) using the cepstrum</p></li>
+	   
+
+	    </ul>
         </div>
 
 
@@ -145,7 +148,8 @@ duration of the analysis window is more than a pitch period.
 
 <p>
 Homomorphic signal processing provides us with techniques that can separate the source and filter to 
-some extent. It does so by processing the signal in the cepstral domain.The word cepstral is derived
+some extent. It does so by processing the signal in the cepstral domain, which uses the logarithmic operator to get additivity among multiplicative components. 
+The word 'cepstral' is derived
 from cepstrum which in turn is derived  by reversing the order of the first four letters of the term
 spectrum. In the cepstral domain, the signal components are additive, easily allowing for the use of
 linear filtering techniques 
@@ -155,32 +159,62 @@ linear filtering techniques
 To illustrate the process of computing the cepstrum, consider a speech signal \(s(n)\) produced by
 exciting a filter \(h(n)\) be \(e(n)\), i.e., 
 $$
-s(n)=h(n)*e(n).
+s(n)=h(n)*e(n). \qquad (1)
 $$
 
 Let \(S(\omega)\), \(H(\omega)\) and \(E(\omega)\) be the Fourier transforms corresponding to 
 \(s(n)\), \(h(n)\) and \(e(n)\) respectively. Then
 $$
-S(\omega)=H(\omega)E(\omega).
+S(\omega)=H(\omega)E(\omega). \qquad(2)
 $$
+
+
+<p>
+Since \(S(\omega)\) is complex, it can be represented as
+$$
+S(\omega)=|S(\omega)|e^{j \theta (\omega)}.  \qquad (3)
+$$
+Application of the logarithmic operator yields
+$$
+\log S(\omega)=\log |S(\omega)|+j\theta (\omega). \qquad (4)
+$$
+The cepstrum can also be computed from the real part of \(\log S(\omega)\) in which case the cepstrum is 
+referred to as the real cepstrum. Considering only the real part,
+\begin{eqnarray}
+\mbox{real} \{\log S(\omega)\} & = & \log |S(\omega)| \qquad(5)
+		\end{eqnarray}
+		<p>
+		From Eq. 2 and Eq. 5, we get
+		</p>
+		\begin{eqnarray}
+								 log|S(\omega)| & = & \log |H(\omega) E(\omega)| \qquad(6) \\
+								 		& = & \log |H(\omega)| + \log|E(\omega)|. \qquad(7)
+\end{eqnarray}
+</p>
+<!--
 By applying the logarithmic operator, the multiplication operation can represented in terms
 of addition,
 $$
 \log S(\omega) = \log H(\omega) + \log E(\omega)
 $$
-
+-->
+<p>
 Applying the Fourier transform (or the inverse Fourier transform), we obtain
 $$
-c_S(n)=c_H(n)*c_E(n)
+c_S(n)=c_H(n) + c_E(n) \qquad(8)
 $$
 where \(c_S(n)\), \(c_H(n)\) and \(c_E(n)\) are the Fourier transforms (or the inverse Fourier transforms)
-of \(\log S(\omega)\), \(\log H(\omega)\) and \(\log E(\omega)\) respectively and are the corresponding
+of \(\log |S(\omega)|\), \(\log |H(\omega)|\) and \(\log |E(\omega)|\) respectively and are the corresponding
 cepstral sequences. The dimension in the cepstrum domain is of time and is referred to as 'quefrency'.
 Linear filtering techniques can now be applied in the cepstrum domain and the inverse Fourier transform 
 (or the Fourier transform) can be applied to obtain the corresponding spectrum. 
 </p>
+
+<!--
 <p>
-Since \(\log S(\omega)\) is complex, the computed cepstrum is referred to as the complex cepstrum.  Since
+Since \(\log S(\omega)\) is complex, the computed cepstrum is referred to as the complex cepstrum.  
+
+Since
 \(S(\omega)\) is complex, it can be represented as
 $$
 S(\omega)=|S(\omega)|e^{j \theta (\omega)}.
@@ -197,6 +231,9 @@ referred to as the real cepstrum. Considering only the real part,
 								 & = & \log |H(\omega)| + \log|E(\omega)|.
 \end{eqnarray}
 </p>
+-->
+
+
 <center>
 <table width="400px">
 <tr>
@@ -207,16 +244,35 @@ referred to as the real cepstrum. Considering only the real part,
 </center>
 <br>
 
-<h3>Application of the Cepstrum to Speech Analysis</h3>
+<!--<h3>Application of the Cepstrum to Speech Analysis</h3> -->
+<h3>Obtaining source and filter components using cepstral analysis</h3>
+<p>
+For a speech segment of duration 25 ms shown in Figure 2, the magnitude response and the corresponding real cepstrum are shown in 
+Figure 3 (a) and 3 (b) respectively. The local peaks which correspond to harmonics (due to quasi periodic vocal folds vibrations) in Figure 3 (a)
+represent the high quefrency regions in the cepstrum shown in Figure 3 (b). 
+The global peaks of the envelope of the magnitude spectrum (resonances of the vocal tract system) represent the low quefrency 
+regions in the cepstrum. Note that the cepstrum shows a peak at around the time lag corresponding to the pitch period for segments of voiced speech.
+</p>
+<p>
+As the cepstrum has the additive property, the resonances corresponding to the vocal tract system are obtained by liftering and applying Fourier transform 
+on initial few samples of cepstrum. The low quefrency region of the cepstrum and its liftered spectrum are shown in Figure 4 (a) and 4 (b) respectively.
+It can be seen that the spectral characteristics corresponding to the filter (vocal-tract system) can be clearly observed.
+Similarly, Figure 5 shows the
+high quefrency liftered cepstrum with the corresponding spectrum. The spectrum shows the periodic structure that 
+normally overrides the speech spectrum. </p>
+</p>
+<!--
 <p>Figure 2 shows a segment of voiced speech of duration of 25 ms. Its magnitude log spectrum computed using
 a 1024-point FFT and the corresponding real cepstrum are shown in Figure 3. The low quefrency regions in the 
 cepstrum is dominated
 by the filter and the higher quefrency regions are dominated by the excitation source. This can be easily
 verified by liftering the spectrum (filtering operation in the cepstrum domain). Figure 4 shows the 
 low-quefrency liftered cepstrum and the corresponding spectrum. It can be seen that the spectral characteristics
-corresponding to the filter (vocal-tract system) can be clearly observed. Similarily Figure 5 shows the
+corresponding to the filter (vocal-tract system) can be clearly observed. 
+Similarily Figure 5 shows the
 high quefrency liftered cepstrum with the corresponding spectrum. The spectrum shows the periodic structure that 
 normally overrides the speech spectrum. </p>
+-->
 <center>
 <table width="840px">
 <tr>
@@ -282,25 +338,34 @@ normally overrides the speech spectrum. </p>
         <div id="experiment-article-section-2-content" 
         class="content">
 	    <!-- PUT CONTENT HERE -->
-	    <ol style="list-style-type: lower-alpha;">
-		<li>Study the cepstrum for different regions (voiced/unvoiced/silence) of the speech signal using the examples provided.</li>
+<!--	    <ol style="list-style-type: lower-alpha;">-->
+<ul>
+		<li><p>Study the cepstrum for different regions (voiced/unvoiced/silence) of the speech signal using the examples provided.</p></li>
 			<ul>
-			<li>Select one of the example waveforms provided.</li>
-			<li>Select a short segment (30 ms) of voiced speech and observe the spectrum as well as cepstrum.</li>
-			<li>Repeat the experiment for unvoiced (fricative and stop) and silence regions.</li>
+			<li><p>Select one of the example waveforms provided and click on the 'Load' button.</p>	</li>
+			<li><p>Select a short segment (30 ms) of voiced speech using 'Zoom to selection' button and 
+			observe the spectrum as well as cepstrum by clicking on corresponding buttons.</p></li>
+			<li><p>Perform the experiment for unvoiced (fricatives and stops) and silence regions.</p></li>
 			</ul>
-		<li>Note that the cepstrum shows a peak at around the time lag corresponding to the pitch period for segments of voiced speech.</li>
+			<li><p>The cepstrum shows a peak at around the time lag corresponding to the pitch period for segments of voiced speech.</p></li>
 			<ul>
-			<li>Measure the pitch period of a voiced segment using the cepstrum. </li>
+			<li><p>Measure the pitch period of a voiced segment using the cepstrum.</p> </li>
 			</ul>
-		<li>Cepstral smoothing of short-term spectrum</li>
+			<li><p>Deriving source and filter components from cepstrum</p></li>
 			<ul>
-			<li>Select only the first few coefficients of the spectrum for a voiced segment of speech, and observe that the liftered spectrum appears smooth.</li>
-			<li>Select the cepstral coefficients around the peak corresponding to pitch period, and observe that the liftered spectrum has strong harmonics corresponding to the pitch frequencies.</li>
+			<li><p> Select only the first few samples of the cepstrum using 'Zoom to selection' button of the cepstrum section.</p></li>
+			<li><p> Click the 'Liftered Spectrum' button to obtain the resonances of the system component.</p></li>
+			<li><p> In the cepstrum, select the samples around the peak corresponding to the pitch period and 
+			click the 'Liftered Spectrum' button to obtain the harmonics corresponding to the source component.</p></li>
 			</ul>
-	      <li>Record different sounds for your own voice and study the cepstral features. </li>
-											       <li>Write a brief note on the observations. </li>
-	    </ol>
+<!--			<li>Cepstral smoothing of short-term spectrum</li>
+			<ul>
+			<li>Select only the first few coefficients of the cepstrum for a voiced segment of speech, and observe that the liftered spectrum appears smooth.</li>
+			<li>Select the cepstral coefficients around the peak corresponding to pitch period, and observe that the liftered spectrum has strong harmonics corresponding to the pitch frequencies.</li>-->
+		
+	      <li><p>Record different sounds for your own voice and study the cepstral features. </p></li>
+	       <li><p>Write a brief note on the observations.</p> </li>
+	    </ul>
         </div>
       </section>
 
@@ -322,6 +387,9 @@ normally overrides the speech spectrum. </p>
         <div id="experiment-article-section-4-content" 
         class="content">
 	    <!-- PUT CONTENT HERE -->
+	    <p>
+<em>	    Note: All the speech signals are sampled at 8 KHz (\(F_s = 8000 Hz\)). </em>
+	    </p>
 <p>
 	        <applet code=audioTransport/SVLAudioTool.class 
                       archive="media/cepstrumAnalysisS.jar"
@@ -352,9 +420,9 @@ normally overrides the speech spectrum. </p>
         class="content">
 	    <!-- PUT CONTENT HERE -->
 	    <ul>
-<li>Cepstrum provides a compact representation of the vocal tract system information.</li><br>
-<li>The vocal tract system information is characterized by the spectral envelope. This slow varying component in the spectrum is characterized by the first few coefficients in the cepstral domain. Note that cepstrum computation can be interpreted as the spectral analysis of a signal which is the log-magnitude spectrum in this case.</li><br>
-<li>Note that the pitch period of a voiced segment of speech can be measured from the cepstrum.</li><br>
+<li><p>Cepstrum provides a compact representation of the vocal tract system information.</p></li><br>
+<li><p>The vocal tract system information is characterized by the spectral envelope. This slow varying component in the spectrum is characterized by the first few coefficients in the cepstral domain. Note that cepstrum computation can be interpreted as the spectral analysis of a signal which is the log-magnitude spectrum in this case.</p></li><br>
+<li><p>Note that the pitch period of a voiced segment of speech can be measured from the cepstrum.</p></li><br>
 </ul>
 
           </div>
@@ -377,13 +445,12 @@ normally overrides the speech spectrum. </p>
         <div id="experiment-article-section-8-content" 
         class="content">
         <ol>
-        <li>Explain how cepstral analysis of speech signals helps in pattern representation for pattern recognition task. </li>
-			<li>What are the advantages and limitations of cepstral domain processing over spectral-domain processing?</li>
-			<li>What is the dimensions of an unit in the cepstral domain?</li>
-			<li>Explain how cepstral analysis technique can be used to represent the convolutionally combined signals
-				 as additively combined signals</li>
-			<li>Explain the process of separating source and system characteristics using the cepstrum.</li>
-			<li>Explain how pitch information can be extracted from the cepstrum. Write an algorithm to extract pitch using cepstral analysis.</li>
+        <li><p>Explain how cepstral analysis of speech signals helps in pattern representation for pattern recognition task. </p></li>
+	<li><p>What are the advantages and limitations of cepstral domain processing over spectral-domain processing?</p></li>
+	<li><p>What are the dimensions of an unit in the cepstral domain?</p></li>
+	<li><p>Explain how cepstral analysis technique can be used to represent the convolutionally combined signals as additively combined signals.</p></li>
+	<li><p>Explain the process of separating source and system characteristics using the cepstrum.</p></li>
+	<li><p>Explain how pitch information can be extracted from the cepstrum. Write an algorithm to extract pitch using cepstral analysis.</p></li>
         </ol>
           </div>
 
@@ -408,9 +475,9 @@ normally overrides the speech spectrum. </p>
           <div id="experiment-article-section-9-content" 
           class="content">
 <ul>
-			<li> <i>Digital Processing of Speech Signals</i>, L.R. Rabiner and L.R. Schafer, Chapter 6</li>
-			<li> <i>Discrete-Time Speech Signal Processing</i>, Thomas F. Quatieri , Chapter 7</li>
-			<li> <i>Digital Speech Processing, Synthesis, and Recognition.<i>, Sadaoki Furui.,  Marcel Deccer, Inc.: New York.
+			<li><p> <i>Digital Processing of Speech Signals</i>, L.R. Rabiner and L.R. Schafer, Chapter 6</p></li>
+			<li><p> <i>Discrete-Time Speech Signal Processing</i>, Thomas F. Quatieri , Chapter 7</p></li>
+			<li><p> <i>Digital Speech Processing, Synthesis, and Recognition.<i>, Sadaoki Furui.,  Marcel Deccer, Inc.: New York.</i></p> </li>
 </ul>     
      
           </div>

@@ -121,59 +121,62 @@ edit -->
         class="content">
 	    <!-- PUT CONTENT HERE -->
 
-<p>Spectrographic analysis of speech is one of the most widely used techniques for studying the acoustic-phonetic characteristics of different phonemes in a language.
+<p>Spectrographic analysis of speech is one of the most widely used techniques for studying the acoustic-phonetic characteristics of different sound units in a language.
 It is an extension of the short-term spectral analysis, and primarily involves representation of the 3-D spectral information obtained by computing the magnitude spectrum over short overlapped window segments, i.e., 2-D spectral content varying with respect to time.
-The 3-D spectral information is represented on a 2-D plane with the X-axis representing time, Y-axis representing frequency, and the third dimension denoting the log-magnitude of the sinusoidal frequency components is converted to a proportional intensity or gray value.
+The 3-D spectral information is represented on a 2-D plane with the X-axis representing time, Y-axis representing frequency, 
+    and the third dimension denoting the log-magnitude of the sinusoidal frequency components is converted to a proportional intensity of gray value.
 The resulting representation is referred to as a <i>spectrogram</i>.</p>
 
 <p>Two popular spectrographic representations used for analysis are <i>wideband spectrogram</i> and <i>narrowband spectrogram</i>, depending on the spectral and temporal resolution preserved in the final representation in the frequency domain.
 In wideband (WB) spectrograms, the spectral information is averaged over frequency windows of bandwidths 100 to 200 Hz.
-The corresponding time window chosen is 10 to 5 ms, respectively, so as to maintain unit time-bandwidth product.
-An example of a wideband spectrogram computed with a time domain window size of 5 ms and a shift of 2.5 ms is shown in Fig.1(b).</p>
+The corresponding time window chosen is 5 to 10 ms, so as to maintain unit time-bandwidth product.
+An example of a wideband spectrogram computed with a time domain window size of 5 ms and a shift of 2.5 ms is shown in Figure 1(b).</p>
 
 <img src=media/wbnb.png width=600 /><br>
 <p>
-<b>Fig. 1:</b> Spectrographic analysis of speech for an utterance "toast as usual". (a) Speech waveform. (b) Wideband spectrogram. (c) Narrowband spectrogram.
+<b>Figure 1:</b> Spectrographic analysis of speech for an utterance "toast as usual". (a) Speech waveform. (b) Wideband spectrogram. (c) Narrowband spectrogram.
 </p>
 
 <p>Similarly, a narrowband (NB) spectrogram is computed using narrow filter function in the frequency domain, which in turn corresponds to a longer segment length in the time domain.
-Fig.1(c) shows a typical narrowband spectrogram computed for time domain window size of 50 ms, which correspond to a frequency domain bandwidth of about 20 Hz.
+Figure 1(c) shows a typical narrowband spectrogram computed for time domain window size of 50 ms, which correspond to a frequency domain bandwidth of about 20 Hz.
 Wideband spectrogram provides better temporal resolution, while narrowband spectrogram provides better resolution in the frequency domain.
-The periodicity in the speech signal due to vibration of the vocal folds is reflected as vertical striations in the WB spectrogram, while it manifests as horizontal striations in the NB spectrogram, as can be seen from Figs.1(b) and (c), respectively.</p>
+The periodicity in the speech signal due to vibration of the vocal folds is reflected as vertical striations in the WB spectrogram.
+Horizontal striations in the NB spectrogram are due to the window size being shorter than pitch period, as can be seen from Figs.1(b) and (c), respectively.</p>
+<!--
 
 <p>The spectrogram is used to represent the frequency components
 present in the speech signal. It is a three dimensional representation.
 X-axis represents the timing information, Y-axis shows the frequency
 components present in the speech signal and the darkness indicates the
-energy present in speech signal at that frequency. The dark bands in
-the spectrogram represents the resonances of a vocal tract system for
+energy present in speech signal at that frequency.  -->
+<p>The dark bands in the spectrogram represents the resonances of a vocal tract system for
 the given sound unit. These resonances are also called as formant
 frequencies which represents the high energy portions in the frequency
 spectrum of a speech signal. The shape of the dark bands indicates, how
 the vocal tract shape changes from one sound unit to the other.</p>
 
-<h3>1 Identifying the Voiced/Unvoiced/Plosive/Silence regions using spectrogram:</h3>
+<h3>1. Identifying the Voiced/Unvoiced/Plosive/Silence regions using spectrogram:</h3>
 </p>
 <ol>
-<li>Voiced: In the case of vowels a regular formant structure (3 to 4
+<li><p>Voiced: In the case of vowels a regular formant structure (3 to 4
 formant frequencies) and pitch harmonics (vertical striations in the
 case of wideband spectrogram) are used for identifying the voiced
 regions, where as nasals and voiced stops low frequency regions and
-pitch harmonics are used as clues.</li>
-<li>Unvoiced: Energy at high frequency regions and no regular formant
-structure</li>
-<li>Plosive: A silence bar followed by energy at high frequency
-regions.</li>
-<li>Silence: no frequency components (white region)</li>
+pitch harmonics are used as clues.</p></li>
+<li><p>Unvoiced: Energy at high frequency regions and no regular formant
+structure</p></li>
+<li><p>Plosive: A silence bar followed by energy at high frequency
+regions.</p></li>
+<li><p>Silence: No frequency components (white region)</p></li>
 </ol>
 
-<h3>2 Observing the time varying system and excitation characteristics
+<h3>2. Observing the time varying system and excitation characteristics
 using spectrogram</h3>
 <p>So far we described the sound units interms of acoustic phonetics,
 time varying excitation and time varying system characteristics. Here
-we demonstrate the time varying excitation and system characteristics
+we demonstrate the time varying excitation and system characteristics (given in Table 1 and Table 2 respectively)
 using the spectrogram of a speech signal. The speech waveform, its
-transcription and spectrogram are shown in Figure 3. Table 5 presents
+transcription and NB spectrogram are shown in Figure 2. Table 3 presents
 the spectral details of different sound units using spectrogram.</p>
 <br>
 <p><br>
@@ -187,7 +190,7 @@ style="width: 90%; height: 100%;" alt="Kitab Spectrogram and Signal"
 src="media/kitab-signalspectrogram.png"></td>
 </tr>
 <tr style="font-style: italic;" align="center">
-<td style="vertical-align: top;"><b>Fig. 2:</b> Speech waveform and
+<td style="vertical-align: top;"><b>Figure 2:</b> Speech waveform and
 its wideband spectrogram for the utterance ”kitAb mEj par hai”</td>
 </tr>
 </tbody>
@@ -201,7 +204,7 @@ cellspacing="2">
 <tbody>
 <tr>
 <td colspan="3" rowspan="1"
-style="vertical-align: top; width: 1535px;"><strong>Time varying
+style="vertical-align: top; width: 1535px;"><strong>Table 1: Time varying
 excitation characteristics from spectrogram</strong></td>
 </tr>
 <tr>
@@ -211,7 +214,7 @@ style="font-weight: bold;">/k/</span><br>
 <td style="vertical-align: top; width: 19px;">:<br>
 </td>
 <td style="vertical-align: top; width: 1535px;">Silence bar
-before the burst is observed as no frequency components</td>
+before the burst is observed as no frequency components.</td>
 </tr>
 <tr>
 <td style="vertical-align: top; width: 26px;"><span
@@ -229,7 +232,7 @@ style="font-weight: bold;">/t/</span> </td>
 <td style="vertical-align: top; width: 19px;">:<br>
 </td>
 <td style="vertical-align: top; width: 1535px;">Silence bar
-before the burst is observed as no frequency components</td>
+before the burst is observed as no frequency components.</td>
 </tr>
 <tr>
 <td style="vertical-align: top; width: 26px;"><span
@@ -282,7 +285,7 @@ style="font-weight: bold;">/p/</span></td>
 <td style="vertical-align: top; width: 19px;">:<br>
 </td>
 <td style="vertical-align: top; width: 1535px;">Silence bar
-before the burst is observed as no frequency components</td>
+before the burst is observed as no frequency components.</td>
 </tr>
 <tr>
 <td style="vertical-align: top; width: 26px;"><span
@@ -320,7 +323,7 @@ striations) in spectrogram.</td>
 cellspacing="2">
 <tbody>
 <tr>
-<td colspan="3" rowspan="1" style="vertical-align: top;"><strong>Time
+<td colspan="3" rowspan="1" style="vertical-align: top;"><strong>Table 2: Time
 varying system characteristics from spectrogram</strong></td>
 </tr>
 <tr>
@@ -340,7 +343,7 @@ followed by energy at high frequency components (1700-4000 Hz).</td>
 <td style="vertical-align: top;">Tongue hump at front position of
 the vocal tract system and narrow opening of oral cavity is observed in
 spectrogram as regular formant structure and the formant frequencies
-observed to be f1=320 Hz,f2=1960 Hz and f3=2530 Hz.</td>
+observed to be \(F_1\)=320 Hz,\(F_2\)=1960 Hz and \(F_3\)=2530 Hz.</td>
 </tr>
 <tr>
 <td style="vertical-align: top; font-weight: bold;">/t/ </td>
@@ -360,7 +363,7 @@ compared to /k/.</td>
 <td style="vertical-align: top;">Tongue hump at central position
 of the vocal tract system and wide opening of oral cavity is observed
 in spectrogram as regular formant structure and the formant frequencies
-observed to be f1=640 Hz,f2=1400 Hz and f3=2610 Hz.</td>
+observed to be \(F_1\)=640 Hz,\(F_2\)=1400 Hz and \(F_3\)=2610 Hz.</td>
 </tr>
 <tr>
 <td style="vertical-align: top; font-weight: bold;">/b/</td>
@@ -388,7 +391,7 @@ vowel (/E/).</td>
 <td style="vertical-align: top;">Tongue hump at front position of
 the vocal tract system and moderate opening of oral cavity is observed
 in spectrogram as regular formant structure and the formant frequencies
-observed to be f1=520 Hz,f2=1880 Hz and f3=2440 Hz.</td>
+observed to be \(F_1\)=520 Hz,\(F_2\)=1880 Hz and \(F_3\)=2440 Hz.</td>
 </tr>
 <tr>
 <td style="vertical-align: top; font-weight: bold;">/j/</td>
@@ -415,7 +418,7 @@ observed.</td>
 <td style="vertical-align: top;">Tongue hump at central position
 of the vocal tract system and wide opening of oral cavity is observed
 in spectrogram as regular formant structure and the formant frequencies
-observed to be f1=680 Hz,f2=1320 Hz and f3=2280 Hz.</td>
+observed to be \(F_1\)=680 Hz,\(F_2\)=1320 Hz and \(F_3\)=2280 Hz.</td>
 </tr>
 <tr>
 <td style="vertical-align: top; font-weight: bold;">/r/</td>
@@ -423,7 +426,7 @@ observed to be f1=680 Hz,f2=1320 Hz and f3=2280 Hz.</td>
 </td>
 <td style="vertical-align: top;">Narrow opening at alveolar ridge
 is the system characteristics, in spectrogram only two formants are
-observed f1=520 Hz and f2=1400 Hz. Intensity of these formants are less
+observed \(F_1\)=520 Hz and \(F_2\)=1400 Hz. Intensity of these formants are less
 (about 30 db lower than the normal formants intensity).</td>
 </tr>
 <tr>
@@ -448,8 +451,8 @@ initially wide opened and gradually reaches to narrow opening at the
 end of the sound unit. In spectrogram regular formant structure is
 observed. As the sound unit is diphthong, a clear transition of the
 formant structure of vowel /a/ to vowel /i/ is observed. The formants
-at the initial region are found to be f1=680, f2=1720 and f3=2400, and
-at the final region f1=280, f2=2040 and f3=2520. </td>
+at the initial region are found to be \(F_1\)=680 Hz, \(F_2\)=1720 Hz and \(F_3\)=2400 Hz, and
+at the final region \(F_1\)=280 Hz, \(F_2\)=2040 Hz and \(F_3\)=2520 Hz. </td>
 </tr>
 </tbody>
 </table>
@@ -460,8 +463,7 @@ at the final region f1=280, f2=2040 and f3=2520. </td>
 cellspacing="2">
 <tbody>
 <tr style="font-weight: bold;" align="center">
-<td colspan="2" rowspan="1" style="vertical-align: top;"><em>Table
-: Spectral details for different sound units</em></td>
+<td colspan="2" rowspan="1" style="vertical-align: top;">Table 3: Spectral details for different sound units </td>
 </tr>
 <tr>
 <td style="vertical-align: top; font-weight: bold;">Sound unit</td>
@@ -471,69 +473,70 @@ details</td>
 <tr>
 <td style="vertical-align: top;">a</td>
 <td style="vertical-align: top;">Regular formant structure
-(730,1090,2440), pitch harmonics</td>
+(730, 1090, 2440), pitch harmonics.</td>
 </tr>
 <tr>
 <td style="vertical-align: top;">A</td>
 <td style="vertical-align: top;">Regular formant structure
-(520,1190,2390), pitch harmonics</td>
+(520, 1190, 2390), pitch harmonics.</td>
 </tr>
 <tr>
 <td style="vertical-align: top;">i</td>
 <td style="vertical-align: top;">Regular formant structure
-(270,2290,3010), pitch harmonics</td>
+(270, 2290, 3010), pitch harmonics.</td>
 </tr>
 <tr>
 <td style="vertical-align: top;">I<br>
 </td>
 <td style="vertical-align: top;"> Regular formant structure
-(390,1990,2550), pitch harmonics</td>
+(390, 1990, 2550), pitch harmonics.</td>
 </tr>
 <tr>
 <td style="vertical-align: top;">u</td>
 <td style="vertical-align: top;">Regular formant structure
-(300,870,2240), pitch harmonics</td>
+(300, 870, 2240), pitch harmonics.</td>
 </tr>
 <tr>
 <td style="vertical-align: top;">U</td>
 <td style="vertical-align: top;">Regular formant structure
-(440,1020,2240), pitch harmonics</td>
+(440, 1020, 2240), pitch harmonics.</td>
    </tr>
 <tr>
 <td style="vertical-align: top;">e</td>
 <td style="vertical-align: top;">Regular formant structure
-(530,1840,2480), pitch harmonics</td>
+(530, 1840, 2480), pitch harmonics.</td>
 </tr>
 <tr>
 <td style="vertical-align: top;">E</td>
 <td style="vertical-align: top;">Regular formant structure
-(660,1720,2410), pitch harmonics</td>
+(660, 1720, 2410), pitch harmonics.</td>
 </tr>
 <tr>
 <td style="vertical-align: top;">o</td>
 <td style="vertical-align: top;">Regular formant structure
-(570,840,2410), pitch harmonics</td>
+(570, 840, 2410), pitch harmonics.</td>
 </tr>
 <tr>
 <td style="vertical-align: top;">m,n</td>
 <td style="vertical-align: top;">Concentration of energy in low
 frequencies and midrange frequencies (nasals) with no prominent peaks,
-and with pitch harmonics</td>
+and with pitch harmonics.</td>
 </tr>
 <tr>
 <td style="vertical-align: top;">s,sh</td>
 <td style="vertical-align: top;">Concentration of high frequency
-energies</td>
+energies.</td>
 </tr>
 <tr>
 <td style="vertical-align: top;">k,ch,T,t,p</td>
 <td style="vertical-align: top;">Concentration of high frequency
-energy</td>
+energy.</td>
 </tr>
 <tr>
 <td style="vertical-align: top;">g,j,D,d,b</td>
 <td style="vertical-align: top;">Concentration of low frequency
-energy</td>
+energy.
+</td>
 </tr>
 </tbody>
 </table>
@@ -563,13 +566,30 @@ energy</td>
         <div id="experiment-article-section-2-content" 
         class="content">
 	    <!-- PUT CONTENT HERE -->
-	    <ol style="list-style-type: lower-alpha;"> 
-	      <li>Record speech signal for a short sentence/phrase and display the waveform as well as the spectrogram.</li> 
-		<li>Study the difference between wideband and narrowband spectrograms.</li>
-	      <li>Identify/locate voiced/unvoiced/plosive/silence regions from the spectrogram.</li>
-	      <li>Observe the time-varying excitation and system characteristics from the spectrogram.</li> 
-	      <li>Writing a brief note on the observations.</li> 
-	    </ol>
+
+	<h3> Part 1:</h3>
+<!--	    <ul style="list-style-type: lower-alpha;">  -->
+<ul>
+<li><p> Choose an example from one of the languages provided</p></li>
+<li><p> Study the difference between wideband and narrowband spectrograms for different window sizes.</p> </li>
+<li><p> Verify the segmentation boundaries for various subword units (words, syllables and phonemes).</p></li>
+<li><p> Verify that transitions between adjacent sound units from the formant contours observed from the spectrogram. </p></li>
+		
+<!--	      <li>Record speech signal for a short sentence/phrase and display the waveform as well as the spectrogram.</li> 
+		<li>Study the difference between wideband and narrowband spectrograms.</li> -->
+	      <li><p>Identify/locate voiced/unvoiced/plosive/silence regions from the spectrogram.</p></li>
+	      <li><p>Observe the time varying excitation and system characteristics from the spectrogram.</p></li> 
+	      <li><p>Write a brief note on the observations.</p></li> 
+	    </ul>
+	    <h3>Part 2: </h3>
+	    <ul>
+	    <li><p> Choose an example from one of the languages provided.</p></li>
+	    <li><p> Mark the boundaries of subword units (words, syllables and phonemes).</p> </li>
+	    <li><p> Incorrect boundaries shall be notified. </p></li>
+	    <li><p> Write a brief note on the observations.</p></li>
+	    </ul>
+
+
 	</div>
       </section>
 
@@ -622,12 +642,13 @@ energy</td>
         class="content">
 	    <!-- PUT CONTENT HERE -->
 	    <ul>
-<li>Wideband spectrogram provides higher temporal resolution at the cost of spectral resolution.</li><br>
-<li>Narrowband spectrogram provides higher spectral resolution at the cost of spectral resolution.</li><br>
-<li>Wideband spectrogram uses a short window size (typically 5 ms) for analysis, which results in a broader main lobe of the spectrum of the window signal.
-This smears or smoothens the spectral features of the speech segment thereby reducing the spectral resolution.</li><br>
-<li>Pitch or periodicity information of voiced sounds is reflected as vertical striations in WB spectrogram, while the pitch harmonics manifest as horizontal striations in NB spectrogram.</li><br>
-<li>Spectrogram reading (i.e., to decipher the message from the spectrogram alone) is possible, but requires a lot of training.</li><br>
+<li><p>Wideband spectrogram provides higher temporal resolution at the cost of spectral resolution.</p></li><br>
+<li><p>Narrowband spectrogram provides higher spectral resolution at the cost of spectral resolution.</p></li><br>
+<li><p>Wideband spectrogram uses a short window size (typically 5 ms) for analysis, which results in a broader main lobe of the spectrum of the window signal.
+This smears or smoothens the spectral features of the speech segment thereby reducing the spectral resolution.</p></li><br>
+<li><p>Periodicity information of voiced sounds is reflected as vertical striations in WB spectrogram, while the pitch harmonics manifest as horizontal striations in NB spectrogram.</p></li><br>
+<li><p>Spectrogram reading (i.e., to decipher the message from the spectrogram alone) is possible, but requires a lot of training.</p></li><br>
+<li><p>There are transitions among sound units, which can be used for marking boundaries between the units. </p></li>
 </ul>
 
           </div>
@@ -650,11 +671,11 @@ This smears or smoothens the spectral features of the speech segment thereby red
           class="content">
           
           <ol>
-	<li>What should be the number of NFFT points relative to derive narrow and wideband spectrograms?</li>
-	<li>Explain how one can measure the fundamental frequency and fundamental period from the spectrogram.</li>
-	<li>Why cannot fundamental period be estimated from wideband spectrogram.</li>
-	<li>Explain the spectrogram characteristics of the fricative /s/</li>
-	<li>Record the VCV utterances /ata/ and /ada/. What can you say about the spectrographic characteristics</li>
+	<li><p>What should be the number of NFFT points relative to derive narrow and wideband spectrograms?</p></li>
+	<li><p>Explain how one can measure the fundamental frequency and fundamental period from the spectrogram.</p></li>
+	<li><p>Why cannot fundamental period be estimated from wideband spectrogram.</p></li>
+	<li><p>Explain the spectrogram characteristics of the fricative /s/.</p></li>
+	<li><p>Record the VCV utterances /ata/ and /ada/. What can you say about the spectrographic characteristics.</p></li>
 </ol>
 
 	  </div>
@@ -680,8 +701,8 @@ This smears or smoothens the spectral features of the speech segment thereby red
           <div id="experiment-article-section-9-content" 
           class="content">
 <ul>
-			<li> <i>Digital Processing of Speech Signals</i>, L.R. Rabiner and L.R. Schafer, Chapter 6</li>
-			<li> <i>Discrete-Time Speech Signal Processing</i>, Thomas F. Quatieri , Chapter 7</li>
+			<li><p> <i>Digital Processing of Speech Signals</i>, L.R. Rabiner and L.R. Schafer, Chapter 6</p></li>
+			<li><p> <i>Discrete-Time Speech Signal Processing</i>, Thomas F. Quatieri , Chapter 7</p></li>
 </ul>     
      
           </div>

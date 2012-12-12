@@ -94,7 +94,7 @@ edit -->
 	    <!-- PUT CONTENT HERE -->
 The objective of this analysis-by-synthesis experiment is to break down the speech signal into different components such as the excitation source information (pitch and gain) and vocal tract system information (formants).
 The various components derived by analysis of the speech signal is used to resynthesise the speech signal.
-The use of analysis-by-synthesis framework is illustrated for prosody (pitch and duration) modification.
+<!--The use of analysis-by-synthesis framework is illustrated for prosody (pitch and duration) modification. -->
 
         </div>
 
@@ -146,20 +146,20 @@ is sufficient.
 The primary reason for using the all-pole model is the distinct computational
 advantage in calculating the filter coefficients, as will be discussed
 shortly.Recall that the transfer function of an all-pole filter has the form
-          $$V(z)=\frac{1}{1−\sum_{k=1}^{P} a_k z^−k}$$,
+          $$V(z)=\frac{1}{1−\sum_{k=1}^{P} a_k z^−k} \qquad(1)$$,
 where \(P\) is the order of the filter.
 
 This is an IIR filter that may be implemented with a recursive difference equation.
 With the input \(G x(n)\), the speech signal \(s(n)\) may be written as
 			
-          $$ s(n)=\sum\limits_{k=1}^{P} a_k s(n−k)+G x(n)$$</p>
+          $$ s(n)=\sum\limits_{k=1}^{P} a_k s(n−k)+G x(n) \qquad (2)$$</p>
  <table width="600">
  <tr>
  	<td height="200">
  			<img src="images/lpmodel.png" alt="Speech production model"  style="height:100%;width:90%">
  	</td>
  </tr>
-<caption align="bottom"> <em> <b>Figure 1. </b>Impulse+noise model of speech production</em> </caption> 
+<caption align="bottom"><b>Figure 1. </b><em>Impulse+noise model of speech production</em> </caption> 
  </table> 
  <br>        
  <p> Keep in mind that the filter coefficients will change continuously as
@@ -229,13 +229,19 @@ and determine whether the segment is voiced or unvoiced.	</p>
         <div id="experiment-article-section-2-content" 
         class="content">
 	    <!-- PUT CONTENT HERE -->
-	    <ol>
-		<li>Study the characteristics of LP residual signal.</li><br>
-		<li>Study the characteristics of the resynthesised speech by using different excitation types, namely, LP residual, impulse excitation and random noise excitation.</li><br>
-		<li>Study the effect of using the vocal tract system derived using different LP orders for resynthesis.</li><br>
-		<li>Repeat the experiment for sentences recorded with your own voice.</li><br>
+	    <ul>
+		<LI><p>Choose any of the pre-recorded speech signals and load them.  </P> </li>
+		<li><P>Study the characteristics of generated LP residual signal. This residual is generated using a 
+			LP order of 11 and will be used to synthesize the speech signal in futher stages of experiment. </P></li>
+		<li><P>Choose from the dropdown menu, type of excitation signal that would be used to synthesize the 
+			speech signal. Also choose the order of LP coefficients to be used to synthesize the speech. </P> </li>
+		<li><p>Click on the 'Synthesize' button to synthesize speech signal according to the parameters chosen. 
+		    Study the characteristics of the resynthesised speech by using different excitation types, namely, 
+			LP residual, impulse excitation and random noise excitation.</p></li>
+		<li><p>Study the effect of using the vocal tract system derived using different LP orders for resynthesis. Zoom into the waveform to study different regions of synthesized waveform.</p></li>
+		<li><p>Repeat the experiment for sentences recorded with your own voice.</p></li>
 
-	</ol>
+	</ul>
 
         </div>
       </section>
@@ -282,17 +288,17 @@ and determine whether the segment is voiced or unvoiced.	</p>
         <div id="experiment-article-section-5-content" 
         class="content">
 	    <!-- PUT CONTENT HERE -->
-<ol>
-<li>The LP residual signal within voiced regions of speech has large error values at regular intervals. These are the instants of glottal closure at which the vocal tract system is excited. Hence the LP residual signal can be approximated to the excitation source signal.</li><br>
+<ul>
+<li><P>The LP residual signal used as excitation, there are large error values at regular intervals within voiced regions of speech. These are the instants of glottal closure at which the vocal tract system is excited. Hence the LP residual signal can be approximated to the excitation source signal.</li><br></P>
 
-<li>Resynthesis of the speech signal using the LP residual (excitation source) and the LPCs (vocal tract system) gives back the original speech signal.</li><br>
+<li><P>Resynthesis of the speech signal using the LP residual (excitation source) and the LPCs (vocal tract system) gives back the original speech signal. But the synthesized waveform doesn't exactly corresponds to original speech signal waveform. This is because of the different orders of LP analysis used to generate residual signal and synthesize speech signal.</li><br></P>
 
-<li>The excitation source signal can be approximated by a train of impulses, but the quality of speech is poor though the message can be inferred easily.</li><br>
+<li><P>The excitation source signal can be approximated by a train of impulses, but the quality of synthesized speech is poor though the message can be inferred easily.</li><br></P>
 
-<li>The resynthesised speech signal sounds like a whispered speech when a random noise signal is used as the excitation source.</li><br>
+<li><P>The resynthesised speech signal sounds like a whispered speech when a random noise signal is used as the excitation source.</li><br></P>
 
-<li>It can be seen that an LP order of as low as 3 can capture significant information on the message front even when an impulse train or random noise is used as the excitation. The quality of speech improves with the increase in the LP order. But using the original LP residual signal gives very good synthesis even for the 3rd order LP coefficients.</li><br>
-</ol>
+<li><P>It can be seen that an LP order of as low as 3 can capture significant information on the message front even when an impulse train or random noise is used as the excitation. The quality of speech improves with the increase in the LP order. But using the original LP residual signal gives very good synthesis even for the 3rd order LP coefficients.</P></li><br>
+</ul>
           </div>
 
         </section>
@@ -333,15 +339,15 @@ and determine whether the segment is voiced or unvoiced.	</p>
           class="content">
             	    <!-- PUT CONTENT HERE -->
 		    <ol>
-	<li>Write a program (C/Matlab/Octave/Scilab) to separate the source and system of a given speech signal of 1 to 2 seconds using short-time LP analysis. Use a window size of 20 ms, a window shift of 10 ms, an LP order of 10. Plot the original signal and the LP residual signal.</li><br>
+	<li><P>Write a program (C/Matlab/Octave/Scilab) to separate the source and system of a given speech signal of 1 to 2 seconds using short-time LP analysis. Use a window size of 20 ms, a window shift of 10 ms, an LP order of 10. Plot the original signal and the LP residual signal.</li><br></P>
 
-	<li>Write a program (C/Matlab/Octave/Scilab) to resynthesize the speech signal given the sequence of LPCs and the following excitation signals:
+	<li><P>Write a program (C/Matlab/Octave/Scilab) to resynthesize the speech signal given the sequence of LPCs and the following excitation signals:
 	<ul>
 	<li>LP residual derived by using a specified LP order</li>
 	<li>Train of unit impulses with a constant pitch of 10 ms.</li>
 	<li>Train of impulses with the gain varying proportional to the LP residual signal</li>
 	<li>White Gaussian random noise sequence with and without the gain of the LP residual signal imposed.</li>
-	</ul>
+	</ul></P>
 	</li><br>
 
 </ol>
@@ -366,8 +372,8 @@ and determine whether the segment is voiced or unvoiced.	</p>
           <div id="experiment-article-section-8-content" 
           class="content">
     <ul>
-                        <li> <i>Digital Processing of Speech Signals</i>, L.R. Rabiner and L.R. Schafer, Chapter 8</li>
-                        <li> <i>Discrete-Time Speech Signal Processing</i>, Thomas F. Quatieri , Chapter 5</li>
+                        <li> <p><i>Digital Processing of Speech Signals</i>, L.R. Rabiner and L.R. Schafer, Chapter 8</p></li>
+                        <li> <p><i>Discrete-Time Speech Signal Processing</i>, Thomas F. Quatieri , Chapter 5</p></li>
 </ul>
  
           </div>

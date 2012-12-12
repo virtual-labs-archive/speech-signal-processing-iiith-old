@@ -191,15 +191,15 @@ generated.
 This can be implemented using a simple difference equation that can be derived from Eq. (1).
 </p>
 
-<p><b>Illustration of Synthesizing Vowel </b><i><b>/a/</b></i><b>:</b></p>
+<p><b>Illustration of synthesizing vowel </b><i><b>/a/</b></i><b>:</b></p>
 <ul>
 <li>
 <p>
 Given,
 <ul>
-<li>formant frequencies F<sub>1</sub> = 560 Hz, F<sub>2</sub>= 1180 Hz, and F<sub>3</sub>= 2480 Hz </li>
-<li>pitch period, T<sub>0 </sub>= 7.5msec </li>
-<li>sampling frequency, F<sub>s</sub>=10000Hz</li>
+<li>Formant frequencies F<sub>1</sub> = 560 Hz, F<sub>2</sub>= 1180 Hz, and F<sub>3</sub>= 2480 Hz </li>
+<li>Pitch period, T<sub>0 </sub>= 7.5msec </li>
+<li>Sampling frequency, F<sub>s</sub>=10000Hz</li>
 </ul>
 </p>
 </li>
@@ -274,7 +274,7 @@ period case. </p>
 <li>
 <p>Figures 3, 4, and 5 show the synthesized signals for the sound unit /a/ and
 the corresponding spectrograms for excitations with a period of half the
-pitch, the given pitch period, and twice the pitch, respectively. </p>
+pitch period, the given pitch period, and twice the pitch period, respectively. </p>
 </li>
 </ul>
 <p style="margin-bottom: 0in;" align="center"><img
@@ -292,16 +292,14 @@ alt="Figure 3: Waveform of the the synthesized vowel /a/ and its spectrogram for
 src="media/hp_spec.png"><br>
 </p>
 <p style="margin-bottom: 0in;" align="center"><strong>Figure 3: </strong>
-<i>Waveform of the the synthesized vowel /a/ and its spectrogram for
-excitation at half the pitch period.</i></p>
+<i>Waveform of the the synthesized vowel /a/ and its spectrogram obtained with an impulse sequence excitation of pitch period 3.75 ms.</i></p>
 <p style="margin-bottom: 0in;" align="center"><img
 style="width: 463px; height: 342px;"
 alt="Figure 4: Waveform of the the synthesized vowel /a/ and its spectrogram for excitation at the pitch period."
 src="media/p_spec.png"><br>
 </p>
 <p style="margin-bottom: 0in;" align="center"><strong>Figure 4: </strong>
-<i>Waveform of the the synthesized vowel /a/ and its spectrogram for
-excitation at the pitch period.</i></p>
+<i>Waveform of the the synthesized vowel /a/ and its spectrogram obtained with an impulse sequence excitation of pitch period 7.5 ms. </i></p>
 <p style="margin-bottom: 0in;" align="center"><br>
 </p>
 <p style="margin-bottom: 0in;" align="center"><i><img
@@ -310,9 +308,8 @@ alt="Figure 5: Waveform of the the synthesized vowel /a/ and its spectrogram for
 src="media/tp_spec.png"><br>
 </i></p>
 <p style="margin-bottom: 0in;" align="center"><strong>Figure 5: </strong>
-<i>Waveform of the the synthesized vowel /a/ and its spectrogram for
-excitation at twice the pitch period.</i></p>
-<p>&nbsp;<br>
+<i>Waveform of the the synthesized vowel /a/ and its spectrogram obtained with an impulse sequence excitation of pitch period 15 ms.</i></p>
+<p><br>
 <br>
 </p>
 <p style="margin-bottom: 0in;"><br>
@@ -345,20 +342,20 @@ excitation at twice the pitch period.</i></p>
 <p>
 The experiment section has three vertical bars on the left pane for choosing the formant frequencies.
 The center pane has a vowel chart shown on the <font size=-1>\(F_1-F_2\)</font> plane with the IPA symbols of the vowels shown.
-The right pane has a vertical bar for choosing the fundamental frequency <font size=-1>F_0</font>.
+The right pane has a vertical bar for choosing the fundamental frequency <font size=-1>\(F_0 = \frac{1}{T_0}\)</font>.
 The bottom pane displays the waveform of the vowel synthesized using the above chosen parameters using an all-pole source-system model.
 
 </p>
 <p>
-	<ol >
-	<li>Click on the vowel of your choice in the vowel chart in the central pane.</li>
-	<li>Listen to the vowel sound several times by clicking on the play button. Note down the formant frequencies of the vowel. Let <font size=-1>\(F_0\)</font> be at 120 Hz (default value).</li>
-	<li>Observe the relationship between the vowel sound perceived and the formant frequencies.</li>
-	<li>Observe the changes in waveform of different vowels.</li>
-	<li>Note that the formant space for vowels is a continuum, and not discrete. A new vowel can be synthesized by clicking in between any two known vowels.</li>
-	<li>Synthesize a new vowel by choosing formants frequencies of your choice. Observe how the formant frequencies affect perception.</li>
-	<li>Synthesize vowels for different fundamental frequencies <font size=-1>\(F_0\)</font>. Observe how the fundamental frequency affects perception.</li>
-	    </ol>
+	<ul >
+	<li><p>Click on the vowel of your choice in the vowel chart in the central pane.</p></li>
+	<li><p>Listen to the vowel sound several times by clicking on the play button. Note down the formant frequencies of the vowel. Let <font size=-1>\(F_0\)</font> be at 120 Hz (default value).</p></li>
+	<li><p>Observe the relationship between the vowel sound perceived and the formant frequencies.</p></li>
+	<li><p>Observe the changes in waveform of different vowels.</p></li>
+	<li><p>Note that the formant space for vowels is a continuum, and not discrete. A new vowel can be synthesized by clicking in between any two known vowels.</p></li>
+	<li><p>Synthesize a new vowel by choosing formants frequencies of your choice. Observe how the formant frequencies affect perception.</p></li>
+	<li><p>Synthesize vowels for different fundamental frequencies <font size=-1>\(F_0\)</font>. Observe how the fundamental frequency affects perception.</p></li>
+	    </ul>
 </p>
         </div>
       </section>
@@ -408,11 +405,11 @@ The bottom pane displays the waveform of the vowel synthesized using the above c
         class="content">
 	    <!-- PUT CONTENT HERE -->
 <ul>
-<li>There is a direct correspondence between a set of formant frequencies and a vowel.</li>
-<li>The synthesized vowel gives a perception of the expected vowel, except for the loss of naturalness.</li>
-<li>The loss of naturalness is mainly due to the approximation of the speech production mechanism by a source-system model.</li>
-<li>The system is approximated as an all-pole system which is reasonable for vowel sounds which do not have significant anti-resonances.</li>
-<li>The excitation source represented by a train of impulses is not a good approximation and better models of excitation are required to gain naturalness.</li>
+<li><p>There is a direct correspondence between a set of formant frequencies and a vowel.</p></li>
+<li><p>The synthesized vowel gives a perception of the expected vowel, except for the loss of naturalness.</p></li>
+<li><p>The loss of naturalness is mainly due to the approximation of the speech production mechanism by a source-system model.</p></li>
+<li><p>The system is approximated as an all-pole system which is reasonable for vowel sounds which do not have significant anti-resonances.</p></li>
+<li><p>The excitation source represented by a train of impulses is not a good approximation and better models of excitation are required to gain naturalness.</p></li>
 </ul>
           </div>
 
@@ -432,7 +429,7 @@ The bottom pane displays the waveform of the vowel synthesized using the above c
 
           <div id="experiment-article-section-6-content" 
           class="content">
-          <ul>
+          <ol>
           		<li> 
           			<p>
 							Draw the output (impulse response) of a second order resonator given by
@@ -456,7 +453,7 @@ The bottom pane displays the waveform of the vowel synthesized using the above c
 						</p>          		
           		</li>
           
-          </ul>
+          </ol>
 
 
 
@@ -484,8 +481,8 @@ The bottom pane displays the waveform of the vowel synthesized using the above c
           <div id="experiment-article-section-9-content" 
           class="content">
 <ul>
-			<li> <i>Digital Processing of Speech Signals</i>, L.R. Rabiner and L.R. Schafer, Chapter 3</li>
-			<li> <i>Discrete-Time Speech Signal Processing</i>, Thomas F. Quatieri , Chapter 4</li>
+			<li><p> <i>Digital Processing of Speech Signals</i>, L.R. Rabiner and L.R. Schafer, Chapter 3</p></li>
+			<li><p> <i>Discrete-Time Speech Signal Processing</i>, Thomas F. Quatieri , Chapter 4</p></li>
 </ul>     
      
           </div>

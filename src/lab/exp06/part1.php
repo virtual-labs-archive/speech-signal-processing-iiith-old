@@ -152,6 +152,7 @@ if($changeflag == 1){
  echo "<li>Note that clicking on the symbol within the first column of the table automatically zooms to fit the presegmented label.</li>";
  echo "<li>Repeat the experiment by choosing word and phoneme as the subword unit.</li>";
  echo "</ol>";
+ echo "Note: All the speech segments are sampled at 8 KHz.";
  echo "</font>";
  echo "<table border=1><tr>";
  echo "<td width=620 valign=top>";
