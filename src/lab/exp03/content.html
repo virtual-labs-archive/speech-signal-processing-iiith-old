@@ -93,10 +93,12 @@ edit -->
             <p>
 
 	    <!-- PUT CONTENT HERE -->
-	    To study the time-varying nature of the speech signal in the time domain as well as frequency domain.
-To observe the time-varying nature of the excitation source and the vocal tract system for different sounds uttered by the same speaker.
-To study the variability of excitation and vocal tract system characteristics across speakers.
-        </div>
+	    <UL>
+<LI><p> To study the time-varying nature of the speech signal in the time domain as well as frequency domain. </p>
+<LI> <p>To observe the time-varying nature of the excitation source and the vocal tract system for different sounds uttered by the same speaker. </p>
+<LI> <p>To study the variability of excitation and vocal tract system characteristics across speakers. </p>
+</UL>
+</div>
 
 
       </section>
@@ -119,23 +121,22 @@ To study the variability of excitation and vocal tract system characteristics ac
         class="content">
 	    <!-- PUT CONTENT HERE -->
 <ol>
-<li><b>Recording Speech Signal</b> </li>
+<li>Obtaining speech signal </li>
 <ul>
-<li>Record/load speech signals for heed, head, hod using the provided utility.</li>
+<li><p>Record/load speech signals for heed, head, hod using the provided utility.</p></li>
 </ul>
-<li>To obtain Average Pitch <br>
+<li>To obtain average pitch period<br>
 </li>
 <ul>
-<li>
-<p>Display the recorded speech waveform using the provided utility. <br>
+<li><p>Display the recorded speech waveform. </p><br>
 <img style="border: 0px solid ; width: 740px; height: 188px;"
 src="media/img11.png"
 alt="$/i/$" align="middle"><i> <br>
 <b>Figure 1:</b> Speech waveform for the utterance "heed-head-hod"</i></p>
 <br>
 </li>
-<li>Zoom the vowel segment. A segment of the vowel <span class="MATH">/i/</span> is
-shown in the Figure 2.
+<li><p>Select the vowel segment. A segment of the vowel <span class="MATH">/i/</span> is
+shown in the Figure 2.</p>
 <p><img style="border: 0px solid ; width: 738px; height: 188px;"
 src="media/img12.png"
 alt="$/i/$" align="middle"><br>
@@ -144,35 +145,32 @@ of 'hod'</i></p>
 </li>
 </ul>
 <ul>
-<li> As shown in the Figure 3, pitch is measured as the interval
-between any two peaks.</li>
-<li>Note the time in msec of the period for three or four
-cycles
+<li><p> The quasi-periodic nature of prominent peaks shown in Figure 2 is due to the regular vibration of the vocal folds. </p></li>
+<li><p> Pitch period (\(T_{0}\)) is measured as the interval between any two successive prominent peaks.</p></li>
+<li> <p> The speech signal between two successive prominent peaks corresponds to one pitch cycle.</p></li>
+<li><p>Note the time (in msec) of the pitch period for three or four pitch cycles
 (say) and measure the average pitch period, preferably in the steady
-portion as illustrated in the Figure 2.</li>
+portion of the speech signal as illustrated in Figure 2.</p></li>
 </ul>
 <ul>
-<li>As pitch period is not constant over the entire vowel
-segment, make four or five pitch period measurements. </li>
-<li>Mean of these values gives average pitch.</li>
+<li><p>As pitch period is not constant over the entire vowel
+segment, make four or five pitch period measurements. </p></li>
+<li><p>Mean of these values gives average pitch period (\(T_{0}\)) and hence fundamental frequency (\(F_{0} = \frac{1}{T_{0}}\)).</p></li>
 </ul>
 <ul>
-<li>
-Compute autocorrelation sequence for coressponding segments. 
-Measure the distance between the peak at zero and along the peak in either
-the positive or negative delays.  
-</li>
+<li><p>Average pitch period can also be obtained from the autocorrelation sequence of corresponding speech segments.
+Measure the distance between the peak at zero and the next prominent peak in either
+the positive or negative delays of the obtained autocorrelation sequence. </p> </li>
 </ul>
 <br>
-<li>To obtain Average Formant Frequencies
+<li>To obtain formant frequencies
 <ul>
-<li>Display voiced segment of the recorded speech segment
-/hod/ using the provided utility. </li>
-<li>Select the spectrum section in the menu popped up by
-right
+<li><p>Select voiced segment of the recorded speech segment using the provided utility.</p> </li>
+<li> <p>Figure 3 shows the LP spectrum obtained using Linear prediction analysis of voiced region of speech segment /hod/ with LP order set to 10.</p> </li>
+<!--<li>Select the spectrum section in the menu popped up by right
 click of the mouse. Choose LPC section and set order to 10 and
 preemphasis to 1.0.This will display LPC spectrum as shown in the
-Figure 3. </li>
+Figure 3. </li> -->
 <p><img style="border: 0px solid ; width: 491px; height: 427px;"
 src="media/img14.png"
 alt="$/i/$" align="middle"><br>
@@ -182,18 +180,17 @@ in the utterance
 of 'hod'. The spectrum is obtained using 10<sup>th</sup> order LP
 analysis. As shown in the figure, the peaks of the LP spectrum
 represent the formant frequencies. </i></p>
-<li>The mean of each formants is calculated to obtain
+<!-- <li>The mean of each formants is calculated to obtain
 corresponding average values. </li>
 <li>Repeat the previous step for two or three short segments
 of
-the voiced region. </li>
-<li>Repeat the above step for recorded speech of /heed/ and
-/head/. </li>
-<li>Repeat the above procedure for recorded speech of
-different
-speakers.</li>
+the voiced region. </li> -->
+<li> <p>The peaks of the LP spectrum shown in Figure 3 represent the resonant frequencies (also called Formants) of the vocal tract.</p></li>
+<li><p>Repeat the above steps for recorded speech of all vowels. </p></li>
+<li><p>Repeat the above procedure for recorded speech of different speakers.</p></li>
 </ul>
 </li>
+<!--
 <li>Observations
 <ul>
 <li>The pitch for the same speaker varies with respect to
@@ -207,6 +204,7 @@ illustrates the variability of the speech in frequency domain for the
 same speaker. </li>
 </ul>
 </li>
+-->
 <ol>
 <ul>
 <ul>
@@ -240,24 +238,16 @@ same speaker. </li>
         <div id="experiment-article-section-2-content" 
         class="content">
 	    <!-- PUT CONTENT HERE -->
-	    <ol style="list-style-type: lower-alpha;">
-	      <li>Record speech for three vowels in the context of 
-		heed (for vowel /i/, head (for vowel /e/) and hod 
-		(for vowel /a/).</li>
-	      <li>Note the average fundamental frequency (F<sub>0</sub>) 
-		using time domain representation.</li>
-	      <li>Note average formant frequencies 
-		(F<sub>1</sub>,&nbsp;F<sub>2</sub> and F<sub>3</sub>) 
-		from 10<sup>th</sup> order LPC spectrum.</li>
-	      <li>Repeat for one more set of vowels.</li>
-	      <li>Compare the readings from the two sets (variability 
-		within a given speaker).</li>
-	      <li>Compare the average fundamental frequency 
-		(F<sub>0</sub>) and formant frequency values of one 
-		speaker with values from other speakers (variability 
-		among speakers).</li>
-	      <li>Write a brief note on the observations. </li>
-	    </ol>
+	    <ul>
+	      <li><p>Record/Load speech for three vowels in the context of heed (for vowel /i/), head (for vowel /e/) and hod (for vowel /a/).</p></li>
+	      <li><p>Select a speech segment using the toggle button 'Zoom to Selection' and click on the spectrum button to view its autocorrelation sequence and LP log spectrum.</p></li>
+	      <li><p>Note the average fundamental frequency (F<sub>0</sub>) using time domain representation.</p></li>
+	      <li><p>Note the formant frequencies (F<sub>1</sub>,&nbsp;F<sub>2</sub> and F<sub>3</sub>) from the obtained LP spectrum.</p></li>
+	      <li><p>Repeat for one more set of vowels.</p></li>
+	      <li><p>Compare the readings from the two sets (variability within a given speaker).</p></li>
+	      <li><p>Compare the average fundamental frequency (F<sub>0</sub>) and formant frequency values of one speaker with values from other speakers (variability among speakers).</p></li>
+	      <li><p>Write a brief note on the observations. </p></li>
+	    </ul>
         </div>
       </section>
 
@@ -306,11 +296,10 @@ same speaker. </li>
         class="content">
 	    <!-- PUT CONTENT HERE -->
 <ul>
-<li>The pitch for the same speaker varies with respect to time as well as varies across speakers. This clearly illustrates the variability of speech signal. </li><br>
-<li>For a given sound-unit, the formant frequency values varies
-slightly for the same speaker. This illustrates the variability of the vocal tract system characteristics within the same speaker. </li><br>
-<li>For a given sound-unit, the formant frequency values varies
-slightly across different speakers. This illustrates the differences in the vocal tract system characteristics across speakers, inspite of their articulation and perception as the same sound. This observation is useful to discriminate speakers. But the formant frequencies of a given sound unit are more similar across different speakers, than across sound units within the same speaker. This observation is useful for speech recognition studies.
+<li><p>The pitch period for the same speaker varies with respect to time as well as varies across speakers. This clearly illustrates the variability of speech signal. </p></li><br>
+<li><p>For a given sound-unit, the formant frequency values vary slightly for the same speaker. 
+This illustrates the variability of the vocal tract system characteristics within the same speaker. </p></li><br>
+<li><p>For a given sound-unit, the formant frequency values vary slightly across different speakers. This illustrates the differences in the vocal tract system characteristics across speakers, inspite of their articulation and perception as the same sound. This observation is useful to discriminate speakers. But the formant frequencies of a given sound unit are more similar across different speakers, than across sound units within the same speaker. This observation is useful for speech recognition studies.</p></li>
 </ul>
           </div>
 
@@ -332,12 +321,13 @@ slightly across different speakers. This illustrates the differences in the voca
         <div id="experiment-article-section-8-content" 
         class="content">
         <ol>
-        <li>Record the vowels /e/ and /o/, and measure the pitch and formant frequencies. Compare the formant frequencies with that of the vowels /a/, /i/ and /u/. Plot the coordinates of all the five vowels in \( (F_1,F_2) \) space (i.e., \( F_1 \) <i>vs</i> \( F_2 \)). </li><br>
-
-	<li>Repeat assignment-1 for two more speakers and plot the \( (F_1,F_2) \) coordinates of on the same graph. Write down your observations.</li><br>
-
-        <li>Record the vowel /a/ in the context of different unvoiced stop consonants (i.e., /ka/, /cha/, /Ta/, /ta/ and /pa/). Measure the pitch and formant frequencies over the first few cycles of the vowel beginning. Compare them with the measurements made from the center of the vowel. Write down your observations.</li><br>
-	<li>Record diphthongs /ai/ and /au/. Measure the pitch and formant frequencies towards the beginning, central and ending regions of the recordings. Write down your observations.</li><br>
+        <li><p>Record the vowels /e/ and /o/, and measure the average pitch period and formant frequencies. Compare the formant frequencies with that of the vowels /a/, /i/ and /u/. Plot the coordinates of all the five vowels in \( (F_1,F_2) \) space (i.e., \( F_1 \) <i>vs</i> \( F_2 \)). </p></li><br>
+	<li><p>Repeat the previous task for two more speakers and plot the \( (F_1,F_2) \) coordinates of on the same graph. Write down your observations.</p></li><br>
+        <li><p>Record the vowel /a/ in the context of different unvoiced stop consonants (i.e., /ka/, /cha/, /Ta/, /ta/ and /pa/). 
+	Measure the average pitch period and formant frequencies over the first few pitch cycles of the vowel beginning. 
+	Compare them with the measurements made from the center of the vowel. Write down your observations.</p></li><br>
+	<li><p>Record diphthongs /ai/ and /au/. Measure the average pitch period and formant frequencies towards the beginning, central and ending regions of the recordings. 
+	Write down your observations.</p></li><br>
         </ol>
           </div>
 
@@ -360,8 +350,8 @@ slightly across different speakers. This illustrates the differences in the voca
           <div id="experiment-article-section-9-content" 
           class="content">
 		<ul>
-			<li>L.R. Rabiner and R.W. Schafer, <i>Digital Processing of Speech Signals</i>, Chapter 4,  New Delhi, India : Pearson Education Inc., 1993. </li><br>
-			<li>L.R. Rabiner, Biing-Hwang Juang and B. Yegnanarayana, <i>Fundamentals of Speech Recognition</i>,  Chapters 2 and 3, New Delhi, India (Indian Subcontinent Adaptation) : Pearson Education Inc., 2009. </li><br>
+			<li><p>L.R. Rabiner and R.W. Schafer, <i>Digital Processing of Speech Signals</i>, Chapter 4,  New Delhi, India : Pearson Education Inc., 1993. </p></li><br>
+			<li><p>L.R. Rabiner, Biing-Hwang Juang and B. Yegnanarayana, <i>Fundamentals of Speech Recognition</i>,  Chapters 2 and 3, New Delhi, India (Indian Subcontinent Adaptation) : Pearson Education Inc., 2009.</p> </li><br>
      		</ul>
           </div>
 

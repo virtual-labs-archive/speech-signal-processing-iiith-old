@@ -114,8 +114,8 @@ function jsverifylab(ele,ref){
 <?php
 if($changeflag == 1){
 
- echo "<br><font size=-1>1. Measure the pitch frequency from the autocorrelation sequence.</font><br>";
- echo "<font size=-1>2. Measure the first three formant frequencies from the frequency spectrum.</font><br>";
+ echo "<br><font size=-1>1. Measure the average fundamental frequency (\(F_0\)) from the autocorrelation sequence of selected speech segment.</font><br>";
+ echo "<font size=-1>2. Measure the first three formant frequencies (\(F_1, F_2, F_3\)) from the LP log spectrum.</font><br>";
  echo "<font size=-1>3. Repeat the experiment for different sounds and different speaker category.</font><br>";
  echo "<font size=-1>4. Repeat the experiment for vowels recorded in your own voice.</font><br>";
 }
