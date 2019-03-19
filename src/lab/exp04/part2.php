@@ -1,6 +1,9 @@
 <html>
 
 <script type="text/javascript" src="../js/MathJax/MathJax.js?config=default"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
 
 <table><tr>
 <td width=600><h3>Part-2: Filter design</h3></td>
