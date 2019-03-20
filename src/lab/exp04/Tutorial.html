@@ -120,12 +120,12 @@ x_d(n) &amp; = &amp; x_c(t) s(t) \qquad(4)  \\
 		 &amp; = &amp; \sum\limits_{n=-\infty}^{\infty} x_c(nT) \delta(t-nT). \qquad(6)
 \end{eqnarray} </p>
 <br>
-<table summary="Effect of time-domain sampling in time domain" width="900">
+<table summary="Effect of time-domain sampling in time domain" style="max-width:80vw">
 <tr>
-<td height="300">
+<td >
 <img alt="Signal" longdesc="plot of a damped sinusoid" src="images/sig.png" style="height:100%;width:90%"/>
 </td>
-<td height="300">
+<td >
 <img alt="Impulse train" longdesc="impulse train sequence" src="images/impulse.png" style="height:100%;width:90%"/>
 </td>
 </tr>
@@ -134,8 +134,8 @@ x_d(n) &amp; = &amp; x_c(t) s(t) \qquad(4)  \\
 <td><div style="text-align: center">(b)</div></td>
 </tr>
 <tr>
-<td height="300"><img alt="Sampling" longdesc="sampling of a damped sinusoid" src="images/sampling.png" style="height:100%;width:90%"/></td>
-<td height="300"><img alt="Sampled Signal" height="272" longdesc="sampled damped sinusoid" src="images/sampledsig.png" style="height:100%;width:90%" width="356"/></td>
+<td ><img alt="Sampling" longdesc="sampling of a damped sinusoid" src="images/sampling.png" style="height:100%;width:90%"/></td>
+<td ><img alt="Sampled Signal" height="272" longdesc="sampled damped sinusoid" src="images/sampledsig.png" style="height:100%;width:90%" width="356"/></td>
 </tr>
 <tr>
 <td><div style="text-align: center">(c)</div></td>
@@ -178,18 +178,18 @@ This effect is called aliasing and is due to an insufficient sampling rate. If t
  required to discretize a signal without aliasing is equivalent to twice the bandwidth of the signal. This frequency
  is referred to as the Nyquist rate.
 
-<table summary="Effect of time-domain sampling in frequency domain" width="900">
+<table summary="Effect of time-domain sampling in frequency domain" style="max-width:80vw">
 <tr>
-<td height="300"><img alt="Signal FT" longdesc="FT of a bandlimited signal" src="images/contspect.png" style="height:100%;width:90%"/></td>
-<td height="300"><img alt="Impulse train FT" longdesc="FT of impulse train sequence" src="images/impulsetspect.png" style="height:100%;width:90%"/></td>
+<td ><img alt="Signal FT" longdesc="FT of a bandlimited signal" src="images/contspect.png" style="height:100%;width:90%"/></td>
+<td ><img alt="Impulse train FT" longdesc="FT of impulse train sequence" src="images/impulsetspect.png" style="height:100%;width:90%"/></td>
 </tr>
 <tr>
 <td><div style="text-align: center">(a)</div></td>
 <td><div style="text-align: center">(b)</div></td>
 </tr>
 <tr>
-<td height="300"><img alt="Oversampled" longdesc="Spectra of oversampled signal" src="images/dtspectOs.png" style="height:100%;width:90%"/></td>
-<td height="300"><img alt="Undersampled" longdesc="Spectra of undersampled signal" src="images/dtspectUs.png" style="height:100%;width:90%"/></td>
+<td ><img alt="Oversampled" longdesc="Spectra of oversampled signal" src="images/dtspectOs.png" style="height:100%;width:90%"/></td>
+<td ><img alt="Undersampled" longdesc="Spectra of undersampled signal" src="images/dtspectUs.png" style="height:100%;width:90%"/></td>
 </tr>
 <tr>
 <td><div style="text-align: center">(c)</div></td>
@@ -198,9 +198,9 @@ This effect is called aliasing and is due to an insufficient sampling rate. If t
 <caption align="bottom"><b>Figure 2: </b><em> Fourier transform of (a) Bandlimited signal and (b) Impulse  train. 
 Discrete time Fourier transform of (c) Oversampled signal (\(Fs&gt;2B\)) (d) Undersampled signal (\(Fs \lt 2B\)).</em></caption>
 </table>
-<table summary="DTFT of Nyquist rate sampled signal" width="900">
+<table summary="DTFT of Nyquist rate sampled signal" style="max-width:80vw">
 <tr>
-<td height="300">
+<td >
 <div style="text-align: center">
 <img alt="Nyquist" longdesc="Spectra of signal sampled at Nyquist frequency" src="images/dtspectNq.png" style="height:100%;width:45%"/>
 </div>
@@ -223,9 +223,9 @@ The number of elements in the the finite
 set is referred as the number of quantization levels. If the difference in values of adjacent elements in the ordered
 set is constant, then the quantizer is referred as an uniform linear quantizer. Figure 4 shows the effect of 
 quantizing a line using a 3-bit quantizer.
-<table summary="Quantization of a line" width="900">
+<table summary="Quantization of a line" style="max-width:80vw">
 <tr>
-<td height="300">
+<td >
 <div style="text-align: center">
 <img alt="Quantizer" longdesc="Quantization of a line" src="images/quantizer.png" style="height:100%;width:50%"/>
 </div>
@@ -284,9 +284,9 @@ By using Eq. 18 and Eq. 19, Eq. 17 can be derived as
 For example, the magnitude response of an all-pole system \(H(z)\) with resonant frequency \(F_i\) = 1000 Hz,\(B_i\) = 100 Hz and \(F_s\)  = 8000 Hz
 is shown in Figure 5. The impulse response is a samped sinusoidal signal. The damping depends on the bandwidth of the pole of the system.
 </p>
-<table summary="Impulse response" width="900">
+<table summary="Impulse response" style="max-width:80vw">
 <tr>
-<td height="300">
+<td >
 <div style="text-align: center">
 <img alt="Quantizer" longdesc="Quantization of a line" src="images/Fig1.png" style="height:100%;width:95%"/>
 </div>
@@ -301,9 +301,9 @@ Consider a train of impulse sequence, \(I(nT_0)\), with each impulse located at 
 The output resonance of the system \(O(nT)\) is shown in Figure 7. The output signal is periodic with fundamental period (\(T_0\)) (from which the fundamental frequency is obtained as 
 \(F_0 = \frac{1}{T_0}\)) is shown in Figure 7. 
 </p>
-<table summary="Impulse response" width="900">
+<table summary="Impulse response" style="max-width:80vw">
 <tr>
-<td height="300">
+<td >
 <div style="text-align: center">
 <img alt="Quantizer" longdesc="Quantization of a line" src="images/Fig2.png" style="height:100%;width:95%"/>
 </div>
@@ -313,9 +313,9 @@ The output resonance of the system \(O(nT)\) is shown in Figure 7. The output si
 <b>Figure 6: </b><em> Train of impulse sequence.</em>
 </caption>
 </table>
-<table summary="Impulse response" width="900">
+<table summary="Impulse response" style="max-width:80vw">
 <tr>
-<td height="300">
+<td >
 <div style="text-align: center">
 <img alt="Quantizer" longdesc="Quantization of a line" src="images/Fig3.png" style="height:100%;width:95%"/>
 </div>
