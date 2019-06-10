@@ -14,7 +14,7 @@ function preload(){
     fft = new p5.FFT();
     textSize(10);
   fill(255, 255, 255);
-  text('amplitude values along the time domain for unvoiced sound sample' , 10, 12);
+  text('amplitude values along the time domain for unvoiced sound – Letter “p” in the word “please”' , 10, 12);
   }
    
   
