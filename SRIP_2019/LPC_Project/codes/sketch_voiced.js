@@ -14,7 +14,7 @@ function preload(){
     fft = new p5.FFT();
   textSize(10);
   fill(255, 255, 255);
-  text('amplitude values along the time domain for voiced sound sample', 10, 12);
+  text('amplitude values along the time domain for Voiced sound – Letter “b” in the word “book”', 10, 12);
   
     
   }
