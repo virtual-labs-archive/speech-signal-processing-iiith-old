@@ -1,6 +1,7 @@
 var button;
 var cnv;
 var waveform;
+var i;
 
 function preload(){
     sound = loadSound('/media/voiced.wav');
@@ -26,23 +27,28 @@ function preload(){
     noFill();
     stroke(255,0,0); // waveform is red
     strokeWeight(1);
-    
+
     for (var i = 0; i< waveform.length; i++){
-      var x = map(i, 0, waveform.length, 0, width);
-       var y = map( waveform[i], -1, 1, 0, height);
+         var x = map(i, 0, waveform.length, 0, width);
+         var y = map( waveform[i], -1, 1, 0, height);
     
-      vertex(x,y);
-      //console.log(waveform)
+         vertex(x,y);
+      //console.log(i);
+      //console.log(i)
 
     }
-    //console.log(waveform)
+    
+
+
+    
     
     endShape();
     
     
-  } 
+  }
+
   
-  //fill('white');}
+  fill('white');
       
  
 
