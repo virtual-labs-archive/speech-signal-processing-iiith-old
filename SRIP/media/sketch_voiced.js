@@ -60,9 +60,9 @@ function drawresidueplot() {
 
   for (var i = 0; i< wave.length; i++){
     var x = map(i, 0, wave.length, 410, 800);
-    var new_signal = wave[i-1]
-    var new_signal2 = new_signal + wave[i];
-    var y = map(new_signal2, 1, -1, 0, height);
+    var new_signal = wave[i] + wave[i-1]
+    //console.log(new_signal)
+    var y = map(new_signal, 1, -1, 0, height);
   
     vertex(x,y);
     

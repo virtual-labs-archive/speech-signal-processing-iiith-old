@@ -72,11 +72,6 @@ function drawresidueplot() {
   endShape();
   
 }
-
-
-
- 
-
 //====================================================================
   function togglePlay() {
     if (sound.isPlaying()) {
