@@ -74,10 +74,10 @@ function drawresidueplot() {
 }
 //====================================================================
   function togglePlay() {
-    if (sound1.isPlaying()) {
-      sound1.pause();
+    if (sound.isPlaying()) {
+      sound.pause();
     } else {
-      sound1.play();
+      sound.play();
       
     
     }
