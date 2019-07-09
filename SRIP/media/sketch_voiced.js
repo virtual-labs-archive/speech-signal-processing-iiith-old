@@ -13,7 +13,7 @@ function preload(){
   button.mouseClicked(togglePlay)
   textSize(9);
   fill(255,0,0);
-  text('amplitude values along the time domain for Voiced sound – Letter “b” in the word “book”', 10, 12);
+  text('amplitude values along the time domain for voiced sound – Letter “b” in the word “book”', 10, 12);
   fill(0,0,0);
   text('residual signal of the voiced sound', 500, 12);
   spectrum = new p5.FFT(0,512);

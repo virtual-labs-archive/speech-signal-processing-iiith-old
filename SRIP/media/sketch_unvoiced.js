@@ -13,7 +13,7 @@ function preload(){
   button.mouseClicked(togglePlay)
   textSize(10);
   fill(255,0,0);
-  text('amplitude values along the time domain for Voiced sound – Letter “p” in the word “please”', 10, 12);
+  text('amplitude values along the time domain for unvoiced sound – Letter “p” in the word “please”', 10, 12);
   fill(0,0,0);
   text('residual signal of the unvoiced sound', 500, 12);
   spectrum = new p5.FFT(0,512);
@@ -74,10 +74,10 @@ function drawresidueplot() {
 }
 //====================================================================
   function togglePlay() {
-    if (sound.isPlaying()) {
-      sound.pause();
+    if (sound1.isPlaying()) {
+      sound1.pause();
     } else {
-      sound.play();
+      sound1.play();
       
     
     }
