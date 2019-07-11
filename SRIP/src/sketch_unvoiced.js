@@ -3,7 +3,7 @@ var rawplot;
 var residueplot;
 
 function preload(){
-    sound = loadSound("/media/unvoiced.wav");
+    sound = loadSound("media/unvoiced.wav");
   }
 
   

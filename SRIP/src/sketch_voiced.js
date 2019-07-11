@@ -2,9 +2,9 @@ var button;
 var rawplot;
 var residueplot;
 
-function preload(){
-    sound = loadSound("/media/voiced.wav");
-  }
+ function preload(){
+     sound = loadSound('media/voiced.wav');
+   }
 
   
   function setup(){
