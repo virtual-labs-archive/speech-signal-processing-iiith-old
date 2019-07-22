@@ -40,7 +40,7 @@ function draw() {
 function rawplot(){
     beginShape();
     noFill();
-    stroke(0,0,0); // waveform is red
+    stroke(0,0,0);
     strokeWeight(1);
     waveform = fft.waveform();
 
@@ -56,13 +56,9 @@ function rawplot(){
 
 function residueplot(){
     stroke(255,0,0);
-    //background(255);
     beginShape()
     noFill();
-    //stroke(255,0,0);
     
-
-  // array of values from -1 to 1
   var timeDomain = fft.waveform(2048, 'float32');
   var corrBuff = autoCorrelate(timeDomain);
 
@@ -70,7 +66,6 @@ function residueplot(){
   for (var j = 0; j < corrBuff.length; j++) {
     var w = map(j, 0, corrBuff.length, 450, width);
     var h = map(corrBuff[j], -1, 1, height, 0);
-    //curveVertex(w, h);
     vertex(w,h);
   }
   endShape();
@@ -106,7 +101,6 @@ function autoCorrelate(buffer) {
       }
     }
 
-    // average to a value between -1 and 1
     newBuffer[lag] = sum/nSamples;
   }
 
