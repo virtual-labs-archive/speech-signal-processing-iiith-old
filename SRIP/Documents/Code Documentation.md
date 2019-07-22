@@ -10,11 +10,11 @@ File	Name	:	sketch_voiced.js and sketch_unvoiced.js
 
 File Description : These files plot the time amplitude spectrum and extracts the residual signal from voiced and unvoiced sound features respectively. 
 
-Functions	:	drawrawplot()
-                drawresidueplot()
+Functions	:	rawplot()
+                residueplot()
 
 
-Function	Description	: drawrawplot()
+Function	Description	: rawplot()
 This function plots the time-amplitude spectrum of the voiced and unvoiced sound samples respectively. The spectrum object is created from p5.FFT class. The waveform() function returns an array of amplitude values (between -1.0 and +1.0) that represent a snapshot of amplitude readings. This amplitude is plotted against time using map function. 
 
 Function Description: drawresidueplot()
@@ -33,6 +33,6 @@ This function extracts the residue values from the amplitude array. The residue 
 4.	There is one P5.js loop function draw() which is running to draw the each vertex value of amplitude using the map() against x and y coordinates of the canvas. The length of the sound sample (set at 512 values in P5.FFT() ) is mapped with the x coordinate of the canvas and the amplitude values are mapped with the y coordiante of the canvas. 
 
 
-6. The current sample in the residue plot is estimated by the sum of previous samples. new_wave = wave[i]+wave[i-1]	
+6. The current sample in the residue plot is estimated by the sum of previous samples. 	
 
 7.	Now	the	final wave is mapped with the canvas using map function. The amplitude is mapped with the y coordinate and the length of the spectrum is plotted against x coordinate of the canvas. 
