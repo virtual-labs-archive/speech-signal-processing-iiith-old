@@ -12,9 +12,9 @@ function setup() {
   noFill();
   button = createButton('generate')
   button.mouseClicked(togglePlay)
-  fill(255,0,0);
-  text('amplitude values along the time domain for voiced sound', 0, 12);
   fill(0,0,0);
+  text('amplitude values along the time domain for voiced sound', 0, 12);
+  fill(255,0,0);
   text('generated autocorrelation signal of the voiced sound', 600, 12);
 
   fft = new p5.FFT();
