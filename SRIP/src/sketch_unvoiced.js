@@ -53,7 +53,7 @@ function rawplot(){
   }
   endShape();
 }
-
+//extracting autocorrelation samples
 function residueplot(){
     stroke(255,0,0);
     beginShape()
