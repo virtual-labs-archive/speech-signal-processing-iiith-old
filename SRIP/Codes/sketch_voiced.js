@@ -3,19 +3,25 @@ var bNormalize = true;
 var centerClip = false;
 var sound;
 
+
 function preload(){
-    sound = loadSound("voiced.wav");
+    sound = loadSound("voiced_sample.wav");
   }
 
 function setup() {
-  createCanvas(1000, 250);
+  createCanvas(1300, 250);
   noFill();
   button = createButton('generate')
   button.mouseClicked(togglePlay)
   fill(0,0,0);
-  text('amplitude values along the time domain for voiced sound', 0, 12);
+  text('Drag and select the window waveform, click on window to play',500, 10)
+  fill(0,0,0);
+  text('Windowed Waveform', 50, 240);
   fill(255,0,0);
-  text('generated autocorrelation signal of the voiced sound', 600, 12);
+  text('Autocorrelation signal for voiced sound sample', 500, 240);
+  fill(0,0,0)
+  text('Log Spectrum', 1000,50)
+ 
 
   fft = new p5.FFT();
   fft.setInput(sound);
@@ -31,9 +37,12 @@ function togglePlay() {
     }
   }
 
+ 
 function draw() {
     rawplot();
     residueplot();
+    residueplot2()
+    
 }
 
 
@@ -45,7 +54,7 @@ function rawplot(){
     waveform = fft.waveform();
 
   for (var i = 0; i< waveform.length; i++){
-    var x = map(i, 0, waveform.length, 0, 400);
+    var x = map(i, 0, waveform.length, 0, 320);
     var y = map( waveform[i], 1, -1, 0, height);
   
     vertex(x,y);
@@ -53,6 +62,10 @@ function rawplot(){
   }
   endShape();
 }
+
+
+
+
 
 function residueplot(){
     stroke(255,0,0);
@@ -64,12 +77,30 @@ function residueplot(){
 
   
   for (var j = 0; j < corrBuff.length; j++) {
-    var w = map(j, 0, corrBuff.length, 450, width);
+    var w = map(j, 0, corrBuff.length, 350, 850);
     var h = map(corrBuff[j], -1, 1, height, 0);
     vertex(w,h);
   }
   endShape();
 
+}
+
+
+function residueplot2(){
+  //beginShape();
+  noFill();
+  stroke(0,0,0);
+  strokeWeight(1);
+
+  let spectrum = fft.analyze();
+
+    for (var i = 0; i< spectrum.length; i++){
+      var x = map(i, 0, spectrum.length, 855, 1300);
+      var y = map( spectrum[i], 250, 0, 0, height);
+    
+      vertex(x,y);
+  }
+  endShape();
 }
 
 
@@ -118,4 +149,6 @@ function autoCorrelate(buffer) {
 
   return newBuffer;
 }
+
+  
 
