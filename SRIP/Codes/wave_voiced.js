@@ -8,23 +8,17 @@ var Spectrum = WaveSurfer.create({
 });
 buttons.play.addEventListener("click", function(){
   Spectrum.play();
-
-
-  buttons.play.disabled = true;
+buttons.play.disabled = true;
 }, false);
 Spectrum.on('ready', function () {
   buttons.play.disabled = false;
 });
 window.addEventListener("resize", function(){
 var currentProgress = Spectrum.getCurrentTime() / Spectrum.getDuration();
-
-
-  Spectrum.empty();
+Spectrum.empty();
   Spectrum.drawBuffer();
   
   Spectrum.seekTo(currentProgress);
-
-
   buttons.pause.disabled = true;
   buttons.play.disabled = false;
   buttons.stop.disabled = false;
