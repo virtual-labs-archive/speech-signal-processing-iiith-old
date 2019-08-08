@@ -18,9 +18,7 @@ var currentProgress = Spectrum.getCurrentTime() / Spectrum.getDuration();
         Spectrum.empty();
         Spectrum.drawBuffer();
         Spectrum.seekTo(currentProgress);
-        buttons.pause.disabled = true;
         buttons.play.disabled = false;
-        buttons.stop.disabled = false;
     }, false);
 
 Spectrum.on('ready', function () {
