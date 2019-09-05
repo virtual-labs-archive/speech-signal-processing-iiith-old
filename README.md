@@ -19,9 +19,9 @@ This	document	captures	the	instructions	to	run	the	experiment.
 
 4. Click on the generate button to generate the LPC waveforms.
 
-5. The Windowed Waveform, Autocorrelation signal, LP log Spectrum, Lp Wi signal for the sound sample will be displayed on the right.
+5. The Windowed Waveform, Autocorrelation signal, LP log Spectrum, Log Spectrum for the sound sample will be generated.
 
 
-6. select the desired sound sample from drop-down button to observe the residual signal.
+6. Select the desired sound sample from drop-down button to observe the different signals.
  
    ![](SRIP/media/images/sound.png)
