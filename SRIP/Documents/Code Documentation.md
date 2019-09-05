@@ -11,7 +11,9 @@ File	Name	:	sketch_voiced.js and sketch_unvoiced.js
 File Description : These files plot the time amplitude spectrum and extracts the residual signal from voiced and unvoiced sound features respectively. 
 
 Functions	:	rawplot()
+                rawplot1()
                 residueplot()
+                residueplot2()
 
 
 Function	Description	: rawplot()
