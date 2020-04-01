@@ -1,28 +1,27 @@
 <!-- This file needs to be edited by the lab developer to suit
-the requirements of their lab in particular.-->
-
-<!-- Add class="default" to include any element as it is
+the requirements of their lab in particular.--><!-- Add class="default" to include any element as it is
 specified in default.html. 
 Do not include class="default" to the elements that you want to
-edit -->
-
-<!DOCTYPE html>
-<html>
-<head></head>
-<body>
+edit --><!DOCTYPE html>
+<html><head><!--Google Tag Manager--><script class="gtm">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W59SWTR');</script><!--End Google Tag Manager--></head>
+<body><!--Google Tag Manager (noscript)--><noscript class="gtm"><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-W59SWTR" style="display:none;visibility:hidden" width="0"></iframe></noscript><!--End Google Tag Manager (noscript)-->
 
 <div id="experiment"> <!-- The Experiment Document Container-->
 
   <!-- The lab Header contains the logo and the name of the lab,
   usually displayed on the top of the page-->
 
-  <header id="experiment-header" class="default">
+  <header class="default" id="experiment-header">
   
-    <div id="experiment-header-logo" class="logo">
-     <img src="../images/logo.jpg" />
+    <div class="logo" id="experiment-header-logo">
+     <img src="../images/logo.jpg"/>
     </div>
 
-    <div id="experiment-header-heading" class="heading">
+    <div class="heading" id="experiment-header-heading">
       <!-- Write the name of your lab and link it to the home 
       page of your lab (h1 tag is preferred while writing your 
       lab name)-->
@@ -44,7 +43,7 @@ edit -->
     menu, number of sections, an optional sidebar and a closing 
     footer-->
     
-      <header id="experiment-article-heading" class="heading">
+      <header class="heading" id="experiment-article-heading">
         <!-- You can add a welcome message or title of the 
         experiment here -->
 	Expt-4: Basics of DSP
@@ -54,7 +53,7 @@ edit -->
 
       <!-- Navigation menu is useful to organize the view of 
       multiple sections inside the article-->
-      <nav id="experiment-article-navigation" class="default">
+      <nav class="default" id="experiment-article-navigation">
         <ul id="experiment-article-navigation-menu">
           <!-- The menu can be dynamically generated to contain 
           the headings of your sections or instead write the 
@@ -70,23 +69,20 @@ edit -->
         <!-- First section of the article-->
         <section id="experiment-article-section-1">
           
-          <div id="experiment-article-section-1-icon" 
-          class="icon">
+          <div class="icon" id="experiment-article-section-1-icon">
 	    <!-- Enclose the icon image of your lab -->
-	    <img src="../images/introduction.jpg" />
+	    <img src="../images/introduction.jpg"/>
 	  </div>	
           
           <!-- The heading for the section can be enclosed in a 
           div tag. -->
-          <div id="experiment-article-section-1-heading" 
-          class="heading">
+          <div class="heading" id="experiment-article-section-1-heading">
             Objective
           </div>
 
           <!-- Write the section content inside a paragraph 
           element, You can also include images with <img> tag -->
-          <div id="experiment-article-section-1-content" 
-          class="content">	
+          <div class="content" id="experiment-article-section-1-content">	
 	    <!-- PUT CONTENT HERE -->
 	<p>
 	    To study the effects of sampling, aliasing and quantization 
@@ -101,19 +97,16 @@ edit -->
 
       <section id="experiment-article-section-3">
         
-        <div id="experiment-article-section-3-icon" 
-        class="icon">
+        <div class="icon" id="experiment-article-section-3-icon">
 	  <!-- Enclose the icon image of your lab. -->
-	  <img src="../images/theory.jpg" />
+	  <img src="../images/theory.jpg"/>
 	</div>
      
-        <div id="experiment-article-section-3-heading" 
-        class="heading">
+        <div class="heading" id="experiment-article-section-3-heading">
           Tutorial
         </div>
 
-        <div id="experiment-article-section-3-content" 
-        class="content">
+        <div class="content" id="experiment-article-section-3-content">
 	    <!-- PUT CONTENT HERE -->
 
 <h3>Discretization of a continuous time signal -sampling and aliasing</h3>
@@ -132,18 +125,18 @@ $$ s(t) = \sum\limits_{n=-\infty}^{\infty} \delta(t-nT), $$
 and \(x_d(n)\) can be expressed as 
 
 \begin{eqnarray}
-x_d(n) & = & x_c(t) s(t)\\
-		 & = & x_c(t) \sum\limits_{n=-\infty}^{\infty} \delta(t-nT)\\
-		 & = & x_c(nT).
+x_d(n) &amp; = &amp; x_c(t) s(t)\\
+		 &amp; = &amp; x_c(t) \sum\limits_{n=-\infty}^{\infty} \delta(t-nT)\\
+		 &amp; = &amp; x_c(nT).
 \end{eqnarray} </p>
-<br>
-<table  summary="Effect of time-domain sampling in time domain"  width="900">
-<tr>
+<br/>
+<table summary="Effect of time-domain sampling in time domain" width="900">
+<tbody><tr>
 	<td height="300">
-		<img src="images/sig.png" style="height:100%;width:90%" alt="Signal" longdesc="plot of a damped sinusoid" />
+		<img alt="Signal" longdesc="plot of a damped sinusoid" src="images/sig.png" style="height:100%;width:90%"/>
 	</td>
 	<td height="300">
-		<img src="images/impulse.png" style="height:100%;width:90%" alt="Impulse train" longdesc="impulse train sequence" />
+		<img alt="Impulse train" longdesc="impulse train sequence" src="images/impulse.png" style="height:100%;width:90%"/>
 	</td>
 </tr>
 <tr>
@@ -151,19 +144,19 @@ x_d(n) & = & x_c(t) s(t)\\
 	<td><div style="text-align: center">(b)</div></td>
 </tr>
 <tr>
-	<td height="300"><img src="images/sampling.png" style="height:100%;width:90%"  alt="Sampling" longdesc="sampling of a damped sinusoid" /></td>
-	<td height="300"><img src="images/sampledsig.png" style="height:100%;width:90%" width="356" height="272" alt="Sampled Signal" longdesc="sampled damped sinusoid" /></td>
+	<td height="300"><img alt="Sampling" longdesc="sampling of a damped sinusoid" src="images/sampling.png" style="height:100%;width:90%"/></td>
+	<td height="300"><img alt="Sampled Signal" height="272" longdesc="sampled damped sinusoid" src="images/sampledsig.png" style="height:100%;width:90%" width="356"/></td>
 </tr>
 
 <tr>	
 	<td><div style="text-align: center">(c)</div></td>
 	<td><div style="text-align: center">(d)</div></td>
 </tr>
-<caption align="bottom"><em>Figure. 1: (a) Damped sinusoid, (b) Impulse  train, (c) Illustration of sampling and (d) Sampled signal.</em></caption>
+</tbody><caption align="bottom"><em>Figure. 1: (a) Damped sinusoid, (b) Impulse  train, (c) Illustration of sampling and (d) Sampled signal.</em></caption>
 </table>
-<br>
+<br/>
 <p>
-Figure&nbsp;1 illustrates the process and effect of sampling a continuous-time signal in the time domain.
+FigureÃ‚Â 1 illustrates the process and effect of sampling a continuous-time signal in the time domain.
 In the frequency domain, the corresponding Fourier transform of \(x_d(n)\) can be obtained by 
 convolving the individual Fourier transforms of \(x_c(t)\) and \(s(t)\). This is because multiplication
 of two sequences in the time domain is equivalent to convolution in the Fourier domain. Similarly 
@@ -178,60 +171,60 @@ $$
 $$ 
 Since \(s(t)\) is periodic with period T
 \begin{eqnarray}
-S(\Omega) & = & \frac{1}{T} \int\limits_{-\infty}^{\infty}  \sum\limits_{k=-\infty}^{\infty} \delta(t-kT) e^{-j \Omega t} dt\\
-		    & = & \sum\limits_{k=-\infty}^{\infty} e^{-j \Omega kTt}\\
-		    & = & \frac{2\pi}{T}  \sum\limits_{k=-\infty}^{\infty} \delta(\Omega - k \Omega_d), 
+S(\Omega) &amp; = &amp; \frac{1}{T} \int\limits_{-\infty}^{\infty}  \sum\limits_{k=-\infty}^{\infty} \delta(t-kT) e^{-j \Omega t} dt\\
+		    &amp; = &amp; \sum\limits_{k=-\infty}^{\infty} e^{-j \Omega kTt}\\
+		    &amp; = &amp; \frac{2\pi}{T}  \sum\limits_{k=-\infty}^{\infty} \delta(\Omega - k \Omega_d), 
 \end{eqnarray} 
 where \(\Omega_d=\frac{2\pi}{T}\).
 </p>
 <p>
 Thus the Fourier transform of an impulse train with period \(T\) is another impulse train with period \(\frac{2\pi}{T}\).
 To illustrate the effect of sampling in the frequency domain, consider some arbitrary Fouirer 
-transform of a signal with bandwidth \(B\) shown in Figure&nbsp;2(a). The Fourier transform of the impulse train sequence
-with period \(T\) is shown in Figure&nbsp;2(b) where \(F_s=\frac{1}{T}\) denotes the sampling frequency. The corresponding discrete-time
-Fourier transform of of the sampled signal is shown in Figure&nbsp;2(c); If the sampling frequency is reduced (\(F_s < 2B\)) ,
-the resultant discrete-time Fourier transform (shown in Figure&nbsp;2(d)) clearly indicates the overlapping of spectral components.
+transform of a signal with bandwidth \(B\) shown in FigureÃ‚Â 2(a). The Fourier transform of the impulse train sequence
+with period \(T\) is shown in FigureÃ‚Â 2(b) where \(F_s=\frac{1}{T}\) denotes the sampling frequency. The corresponding discrete-time
+Fourier transform of of the sampled signal is shown in FigureÃ‚Â 2(c); If the sampling frequency is reduced (\(F_s &lt; 2B\)) ,
+the resultant discrete-time Fourier transform (shown in FigureÃ‚Â 2(d)) clearly indicates the overlapping of spectral components.
 This effect is called aliasing and is due to an insufficient sampling rate. If the signal is sampled at a sampling frequency of 
- \(F_s = 2B\), then no spectral distortion occurs as can be seen from (shown in Figure&nbsp;3). Hence the minimum sampling frequency 
+ \(F_s = 2B\), then no spectral distortion occurs as can be seen from (shown in FigureÃ‚Â 3). Hence the minimum sampling frequency 
  required to discretize a signal without aliasing is equivalent to twice the bandwidth of the signal. This frequency
  is referred to as the Nyquist rate.
 
-<table summary="Effect of time-domain sampling in frequency domain" width="900" >
-<tr>
-	<td height="300"><img src="images/contspect.png" style="height:100%;width:90%" alt="Signal FT" longdesc="FT of a bandlimited signal" /></td>
-	<td height="300"><img src="images/impulsetspect.png" style="height:100%;width:90%" alt="Impulse train FT" longdesc="FT of impulse train sequence" /></td>
+</p><table summary="Effect of time-domain sampling in frequency domain" width="900">
+<tbody><tr>
+	<td height="300"><img alt="Signal FT" longdesc="FT of a bandlimited signal" src="images/contspect.png" style="height:100%;width:90%"/></td>
+	<td height="300"><img alt="Impulse train FT" longdesc="FT of impulse train sequence" src="images/impulsetspect.png" style="height:100%;width:90%"/></td>
 </tr>
 <tr>
 	<td><div style="text-align: center">(a)</div></td>
 	<td><div style="text-align: center">(b)</div></td>
 </tr>
 <tr>
-	<td height="300"><img src="images/dtspectOs.png" style="height:100%;width:90%" alt="Oversampled" longdesc="Spectra of oversampled signal" /></td>
-	<td height="300"><img src="images/dtspectUs.png" style="height:100%;width:90%" alt="Undersampled" longdesc="Spectra of undersampled signal" /></td>
+	<td height="300"><img alt="Oversampled" longdesc="Spectra of oversampled signal" src="images/dtspectOs.png" style="height:100%;width:90%"/></td>
+	<td height="300"><img alt="Undersampled" longdesc="Spectra of undersampled signal" src="images/dtspectUs.png" style="height:100%;width:90%"/></td>
 </tr>
 
 <tr>	
 	<td><div style="text-align: center">(c)</div></td>
 	<td><div style="text-align: center">(d)</div></td>
 </tr>
-<caption align="bottom"><em>Figure. 2: Fourier transform of (a) Bandlimited signal and (b) Impulse  train. 
-Discrete time Fourier transform of (c) Oversampled signal (\(Fs>2B\)) (d) Undersampled signal (\(Fs<2B\)).</em></caption>
+</tbody><caption align="bottom"><em>Figure. 2: Fourier transform of (a) Bandlimited signal and (b) Impulse  train. 
+Discrete time Fourier transform of (c) Oversampled signal (\(Fs&gt;2B\)) (d) Undersampled signal (\(Fs&lt;2B\)).</em></caption>
 </table>
-<table summary="DTFT of Nyquist rate sampled signal" width="900" >
-<tr>
+<table summary="DTFT of Nyquist rate sampled signal" width="900">
+<tbody><tr>
 <td height="300">
 <div style="text-align: center"> 
-<img src="images/dtspectNq.png" style="height:100%;width:45%" alt="Nyquist" longdesc="Spectra of signal sampled at Nyquist frequency" />
+<img alt="Nyquist" longdesc="Spectra of signal sampled at Nyquist frequency" src="images/dtspectNq.png" style="height:100%;width:45%"/>
 </div>	
 </td>
 </tr>
-<caption align="bottom">
+</tbody><caption align="bottom">
 <em>Figure. 3: Discrete time Fourier transform of signal sampled at Nyquist frequency (\(Fs=2B\)).</em> 
 </caption>
 </table>
 
 
-</p>
+<p></p>
 
 
 <h3>Digitization of a discrete-time signal - Quantization and quantization error</h3>
@@ -244,26 +237,26 @@ and assigned a value in the set that is closest to the discrete-time value. The 
 finite set is determined by the precision of the digital system. In an 8-bit system, there are \(2^8 =256\) elements in the set. 
 The number of elements in the the finite 
 set is referred as the number of quantization levels. If the difference in values of adjacent elements in the ordered
-set is constant, then the quantizer is referred as an uniform linear quantizer. Figure&nbsp;4 shows the effect of 
+set is constant, then the quantizer is referred as an uniform linear quantizer. FigureÃ‚Â 4 shows the effect of 
 quantizing a line using a 3-bit quantizer.
-<table summary="Quantization of a line" width="900">
-<tr>
+</p><table summary="Quantization of a line" width="900">
+<tbody><tr>
 <td height="300">
 <div style="text-align: center">
-<img src="images/quantizer.png" style="height:100%;width:50%" alt="Quantizer" longdesc="Quantization of a line" />
+<img alt="Quantizer" longdesc="Quantization of a line" src="images/quantizer.png" style="height:100%;width:50%"/>
 </div>
 </td>
 </tr>
-<caption align="bottom">
+</tbody><caption align="bottom">
 <em>Figure. 4: Quantization of a linear segment of an analog signal.</em> 
 </caption>
 </table>
-</p>
+<p></p>
 
 <p>
 Since the digital signal is obtained by quantizing the continuous valued discrete-time signal, there is an error introduced in
 representation of the signal. If the discrete-time signal \(x_d(n)\) has a limited amplitude range 
-i.e., \(|x_d(n)|\leq A_\mbox{max}, n=-N,\ldots,0,\ldots N\)&nbsp;&nbsp;, then the quantizer error introduced by a B-bit uniform quantizer is
+i.e., \(|x_d(n)|\leq A_\mbox{max}, n=-N,\ldots,0,\ldots N\)Ã‚Â Ã‚Â , then the quantizer error introduced by a B-bit uniform quantizer is
 $$Q_e=\frac{A_\mbox{max}}{2^B}$$
 Hence the quantizer error for each sample \(e(n)\)  is defined as 
 $$e(n) = x_d(n)-x_D(n), n=-N,\ldots,0,\ldots N$$,
@@ -277,33 +270,30 @@ where \(-\frac{Q_e}{2} \leq e(n) \leq \frac{Q_e}{2}\).
       <!-- Second section of the article-->
       <section id="experiment-article-section-2">
         
-        <div id="experiment-article-section-2-icon" 
-        class="icon">
+        <div class="icon" id="experiment-article-section-2-icon">
 	  <!-- Enclose the icon image of your lab. -->
-	  <img src="../images/procedure.jpg" />
+	  <img src="../images/procedure.jpg"/>
 	</div>
 				
         <!-- The heading for the section can be enclosed in a 
         div tag. -->
-        <div id="experiment-article-section-2-heading" 
-        class="heading">
+        <div class="heading" id="experiment-article-section-2-heading">
           Procedure
         </div>
 
         <!-- Write the section content inside a paragraph 
         element, we can also include images with <img> tag -->
-        <div id="experiment-article-section-2-content" 
-        class="content">
+        <div class="content" id="experiment-article-section-2-content">
 	    <!-- PUT CONTENT HERE -->
 	    <ol style="list-style-type: lower-alpha;">
 	      <li>Record a short utterance of speech for 2 to 3 sec (16 kHz, 16
-		bits).</li><br>
+		bits).</li><br/>
 	      <li>Listen to speech at different bit rates (16 bits/sample, 8
-		bits/sample and 1 bit/sample).</li><br>
+		bits/sample and 1 bit/sample).</li><br/>
 	      <li>Listen to speech at different sampling rates (16 kHz, 8 kHz, 4 kHz
-		and 2 kHz) with and without aliasing.</li><br>
+		and 2 kHz) with and without aliasing.</li><br/>
 	      <li>Design a second order resonator, i.e., an all-pole filter with complex conjugate pole-pair, given the resonance frequency and the bandwidth.</li>
-	      <li>Write a brief note on the observations.</li><br>
+	      <li>Write a brief note on the observations.</li><br/>
 	    </ol>
         </div>
       </section>
@@ -311,22 +301,19 @@ where \(-\frac{Q_e}{2} \leq e(n) \leq \frac{Q_e}{2}\).
 
       <section id="experiment-article-section-4">
 
-        <div id="experiment-article-section-4-icon" 
-        class="icon">
+        <div class="icon" id="experiment-article-section-4-icon">
 	  <!-- Enclose the icon image of your lab.-->
-	  <img src="../images/simulation.jpg" />
+	  <img src="../images/simulation.jpg"/>
 	</div>
 
-        <div id="experiment-article-section-4-heading" 
-        class="heading">
+        <div class="heading" id="experiment-article-section-4-heading">
           Experiment
         </div>
 
-        <div id="experiment-article-section-4-content" 
-        class="content">
+        <div class="content" id="experiment-article-section-4-content">
 	    <!-- PUT CONTENT HERE -->
 	<p>
-	<IFRAME src="part1.php" width="900" height="800" > </IFRAME>
+	<iframe height="800" src="part1.php" width="900"> </iframe>
 	</p>
 <!--
 	    <applet code=dspBasics/DSPBasicsApplet.class 
@@ -341,38 +328,35 @@ where \(-\frac{Q_e}{2} \leq e(n) \leq \frac{Q_e}{2}\).
 
       <section id="experiment-article-section-5">
    
-        <div id="experiment-article-section-5-icon" 
-        class="icon">
+        <div class="icon" id="experiment-article-section-5-icon">
 	  <!-- Enclose the icon image of your lab.-->
-	  <img src="../images/manual.jpg" />
+	  <img src="../images/manual.jpg"/>
 	</div>
 
-        <div id="experiment-article-section-5-heading" 
-        class="heading">
+        <div class="heading" id="experiment-article-section-5-heading">
           Observations
         </div>
 
-        <div id="experiment-article-section-5-content" 
-        class="content">
+        <div class="content" id="experiment-article-section-5-content">
 	    <!-- PUT CONTENT HERE -->
 <ul>
 <li>The quality of speech is directly proportional to the number of
 quantization levels ( that is, number of bits used for
 quantization).Though quantization results in loss of information the
 human perception mechanism can still get the information present in the
-speech signal. <br>
-</li><br>
+speech signal. <br/>
+</li><br/>
 </ul>
 <ul>
 <li>It is interesting to note that even with 1 bit/sample, most of
 the speech is intelligible. Hence we can conclude that information lies
-in the sequence and not in the set of numbers. <br>
-</li><br>
+in the sequence and not in the set of numbers. <br/>
+</li><br/>
 </ul>
 <ul>
 <li>The aliasing effect is perceived as distortions in the output
 signal. This is due to the effect of overlapping of frequency
-components.</li><br>
+components.</li><br/>
 </ul>
           </div>
 
@@ -381,33 +365,30 @@ components.</li><br>
 
    <section id="experiment-article-section-8">
 
-        <div id="experiment-article-section-8-icon" 
-        class="icon">
+        <div class="icon" id="experiment-article-section-8-icon">
           <!-- Enclose the icon image of your lab.-->
-          <img src="../images/quizzes.jpg" />
+          <img src="../images/quizzes.jpg"/>
         </div>
 
-        <div id="experiment-article-section-8-heading" 
-        class="heading">
+        <div class="heading" id="experiment-article-section-8-heading">
           Assessment
         </div>
 
-        <div id="experiment-article-section-8-content" 
-        class="content">
+        <div class="content" id="experiment-article-section-8-content">
         <ul>
-	<li>Explain why one can make out the message even with one bit quantization?</li><br>
+	<li>Explain why one can make out the message even with one bit quantization?</li><br/>
         <li>Write an algorithm for reducing the number of bits per sample (quantization levels) from a 16 bits to any given value say 8, 4, 2 or 1.
-(<font size=-1>HINT: Assume that an "int floor(double)" function exists which takes in a float or double number and returns a integer part of the number.</font>)
-        </li><br>
+(<font size="-1">HINT: Assume that an "int floor(double)" function exists which takes in a float or double number and returns a integer part of the number.</font>)
+        </li><br/>
 
-        <li>Show that the radius <font size=-1>\( r \)</font> of a pole in the <font size=-1>\( z \)</font>-plane is related to the bandwidth <font size=-2>\( B \)</font> by the expression
-<font size=-1> $$ r = e^{-\pi B T}, $$</font> 
-where <font size=-2>\( T \)</font> is the sampling interval.</li><br>
+        <li>Show that the radius <font size="-1">\( r \)</font> of a pole in the <font size="-1">\( z \)</font>-plane is related to the bandwidth <font size="-2">\( B \)</font> by the expression
+<font size="-1"> $$ r = e^{-\pi B T}, $$</font> 
+where <font size="-2">\( T \)</font> is the sampling interval.</li><br/>
 
-	<li>Using the result <font size=-1> \( r = e^{-\pi B T} \)</font>, show that the transfer function of a resonator with a pair of complex conjugate poles is given by
-<font size=-1>$$ H(z) = \frac{1}{1-2e^{-\pi B_1 T}\cos{(2\pi F_1 T)} z^{-1} + e^{-2\pi B_1 T} z^{-2} },$$</font> 
-where  <font size=-2>\( F_1 \)</font> is the frequency of the resonator,  <font size=-2>\( B_1 \)</font> is the bandwidth of the resonator, <font size=-1>\( r \)</font> is the radius of the pole in the <font size=-1>\( z \)</font>-plane, and <font size=-2>\( T \)</font> is the sampling interval.
-</li><br>
+	<li>Using the result <font size="-1"> \( r = e^{-\pi B T} \)</font>, show that the transfer function of a resonator with a pair of complex conjugate poles is given by
+<font size="-1">$$ H(z) = \frac{1}{1-2e^{-\pi B_1 T}\cos{(2\pi F_1 T)} z^{-1} + e^{-2\pi B_1 T} z^{-2} },$$</font> 
+where  <font size="-2">\( F_1 \)</font> is the frequency of the resonator,  <font size="-2">\( B_1 \)</font> is the bandwidth of the resonator, <font size="-1">\( r \)</font> is the radius of the pole in the <font size="-1">\( z \)</font>-plane, and <font size="-2">\( T \)</font> is the sampling interval.
+</li><br/>
         </ul>
           </div>
 
@@ -417,19 +398,16 @@ where  <font size=-2>\( F_1 \)</font> is the frequency of the resonator,  <font 
 
         <section id="experiment-article-section-9">
    
-          <div id="experiment-article-section-9-icon" 
-          class="icon">
+          <div class="icon" id="experiment-article-section-9-icon">
 	    <!-- Enclose the icon image of your lab.-->
-	    <img src="../images/readings.jpg" />
+	    <img src="../images/readings.jpg"/>
 	  </div>
 
-          <div id="experiment-article-section-9-heading" 
-          class="heading">
+          <div class="heading" id="experiment-article-section-9-heading">
             References
           </div>
 
-          <div id="experiment-article-section-9-content" 
-          class="content">
+          <div class="content" id="experiment-article-section-9-content">
     		<ul>
 			<li> <i>Digital Processing of Speech Signals</i>, L.R. Rabiner and R.W. Schafer, Chapter 2</li>
 			<li> <i>Digital Processing of Speech Signals</i>, L.R. Rabiner and R.W. Schafer, Chapter 5</li>
@@ -444,7 +422,7 @@ where  <font size=-2>\( F_1 \)</font> is the frequency of the resonator,  <font 
     <!-- An article can have a sidebar that contain related 
     links and additional material (however it is kept optional 
     at this moment) -->
-    <aside id="lab-article-sidebar" class="default">
+    <aside class="default" id="lab-article-sidebar">
       <!-- put the content that you want to appear in the 
       sidebar -->	
     </aside>
@@ -452,28 +430,66 @@ where  <font size=-2>\( F_1 \)</font> is the frequency of the resonator,  <font 
 
     <!-- Article footer can display related content and 
     additional links -->						
-    <footer id="lab-article-footer" class="default">
-      <!-- Put the content that you want to appear here -->
-    </footer>
+    <footer class="default" id="footer"><div class="footer-top" id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6">
+        <h4>Community Links</h4>
+        <p>
+	  <a href="http://www.sakshat.ac.in/">Sakshat Portal</a>
+	</p>
+        <p>
+	  <a href="http://outreach.vlabs.ac.in/">Outreach Portal</a>
+	</p>
+        <p>
+	  <a href="http://vlab.co.in/faq">FAQ : Virtual Labs</a>
+	</p>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <h4>Contact Us</h4>
+	<p> <strong>Phone:</strong> General Information : 011-26582050 </p>
+	<p> <strong>Email:</strong> support@vlab.co.in </p>
+      </div>
+      <div class="col-lg-4 col-md-6">
+	<h4>Follow Us</h4>
+	<div class="social-links">
+	  <a class="twitter" href="https://twitter.com/TheVirtualLabs" style="background: #55acee;">
+	    <i class="fa fa-twitter"></i>
+	  </a>
+	  <a class="facebook" href="https://www.facebook.com/Virtual-Labs-IIT-Delhi-301510159983871/" style="background: #3b5998;">
+	    <i class="fa fa-facebook"></i>
+	  </a>
+	  <a class="google-plus" href="https://www.youtube.com/watch?v=asxRaOgk6a0" style="background: #e52d27;">
+	    <i class="fa fa-youtube"></i>
+	  </a>
+	  <a class="linkedin" href="https://in.linkedin.com/in/virtual-labs-008ba9136" style="background: #2867B2;">
+	    <i class="fa fa-linkedin"></i>
+	  </a>
+	</div>
+      </div>
+    </div>
+  </div>
+</div>
+</footer>
 
   </article>
 
 
   <!-- Links to other labs, about us page can be kept the lab 
   footer-->
-  <footer id="lab-footer" class="default">
+  <footer class="default" id="lab-footer">
     <!-- Put the content here-->
   </footer>
 
-<footer id="lab-header" class="heading">
+<footer class="heading" id="lab-header">
     <!-- Put the content here-->
-    <div id="lab-header-heading" class="heading">
+    <div class="heading" id="lab-header-heading">
     <!-- Write the name of your lab and link it to the home page
     of your lab. -->
         <center>
-        <table><tr>
-                <td><a href="http://speech.iiit.ac.in/" target=_blank><font size=-3>Developed at the Speech and Vision Lab, IIIT Hyderabad</font></a></td>
-        </tr></table>
+        <table><tbody><tr>
+                <td><a href="http://speech.iiit.ac.in/" target="_blank"><font size="-3">Developed at the Speech and Vision Lab, IIIT Hyderabad</font></a></td>
+        </tr></tbody></table>
         </center>
     </div>
 
@@ -481,7 +497,8 @@ where  <font size=-2>\( F_1 \)</font> is the frequency of the resonator,  <font 
   </footer>
 
 </div>		
-  <script type="text/javascript" src="../js/MathJax/MathJax.js?config=default">
+  <script src="../js/MathJax/MathJax.js?config=default" type="text/javascript">
   </script>
-</body>
-</html>
+
+
+</body></html>

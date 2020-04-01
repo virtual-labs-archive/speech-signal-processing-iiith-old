@@ -1,28 +1,27 @@
 <!-- This file needs to be edited by the lab developer to suit
-the requirements of their lab in particular.-->
-
-<!-- Add class="default" to include any element as it is
+the requirements of their lab in particular.--><!-- Add class="default" to include any element as it is
 specified in default.html. 
 Do not include class="default" to the elements that you want to
-edit -->
-
-<!DOCTYPE html>
-<html>
-<head></head>
-<body>
+edit --><!DOCTYPE html>
+<html><head><!--Google Tag Manager--><script class="gtm">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W59SWTR');</script><!--End Google Tag Manager--></head>
+<body><!--Google Tag Manager (noscript)--><noscript class="gtm"><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-W59SWTR" style="display:none;visibility:hidden" width="0"></iframe></noscript><!--End Google Tag Manager (noscript)-->
 
 <div id="experiment"> <!-- The Experiment Document Container-->
 
   <!-- The lab Header contains the logo and the name of the lab,
   usually displayed on the top of the page-->
 
-  <header id="experiment-header" class="default">
+  <header class="default" id="experiment-header">
   
-    <div id="experiment-header-logo" class="logo">
-      <img src="../images/logo.jpg" />
+    <div class="logo" id="experiment-header-logo">
+      <img src="../images/logo.jpg"/>
     </div>
 
-    <div id="experiment-header-heading" class="heading">
+    <div class="heading" id="experiment-header-heading">
       <!-- Write the name of your lab and link it to the home 
       page of your lab (h1 tag is preferred while writing your 
       lab name)-->
@@ -44,7 +43,7 @@ edit -->
     menu, number of sections, an optional sidebar and a closing 
     footer-->
     
-      <header id="experiment-article-heading" class="heading">
+      <header class="heading" id="experiment-article-heading">
         <!-- You can add a welcome message or title of the 
         experiment here -->
         Expt-7: Short-Time Cepstrum Analysis of Speech
@@ -54,7 +53,7 @@ edit -->
 
       <!-- Navigation menu is useful to organize the view of 
       multiple sections inside the article-->
-      <nav id="experiment-article-navigation" class="default">
+      <nav class="default" id="experiment-article-navigation">
         <ul id="experiment-article-navigation-menu">
           <!-- The menu can be dynamically generated to contain 
           the headings of your sections or instead write the 
@@ -70,23 +69,20 @@ edit -->
         <!-- First section of the article-->
         <section id="experiment-article-section-1">
           
-          <div id="experiment-article-section-1-icon" 
-          class="icon">
+          <div class="icon" id="experiment-article-section-1-icon">
 	    <!-- Enclose the icon image of your lab -->
-	    <img src="../images/introduction.jpg" />
+	    <img src="../images/introduction.jpg"/>
 	  </div>	
           
           <!-- The heading for the section can be enclosed in a 
           div tag. -->
-          <div id="experiment-article-section-1-heading" 
-          class="heading">
+          <div class="heading" id="experiment-article-section-1-heading">
             Objective
           </div>
 
           <!-- Write the section content inside a paragraph 
           element, You can also include images with <img> tag -->
-          <div id="experiment-article-section-1-content" 
-          class="content">	
+          <div class="content" id="experiment-article-section-1-content">	
             <p>
 
 	    <!-- PUT CONTENT HERE -->
@@ -94,7 +90,7 @@ edit -->
 	    the cepstrum for various voiced and unvoiced sounds, study their characteristics 
 	    using the computed cepstrum and reconstructing the spectrum by retaining various 
 	    components of the cepstrum.
-        </div>
+        </p></div>
 
 
       </section>
@@ -102,19 +98,16 @@ edit -->
 
       <section id="experiment-article-section-3">
         
-        <div id="experiment-article-section-3-icon" 
-        class="icon">
+        <div class="icon" id="experiment-article-section-3-icon">
 	  <!-- Enclose the icon image of your lab. -->
-	  <img src="../images/theory.jpg" />
+	  <img src="../images/theory.jpg"/>
 	</div>
      
-        <div id="experiment-article-section-3-heading" 
-        class="heading">
+        <div class="heading" id="experiment-article-section-3-heading">
           Tutorial
         </div>
 
-        <div id="experiment-article-section-3-content" 
-        class="content">
+        <div class="content" id="experiment-article-section-3-content">
 	    <!-- PUT CONTENT HERE -->
 	    
 	    <h3>The Short-time Cepstrum</h3>
@@ -124,13 +117,13 @@ voiced sounds) or noise-like (in the case of unvoiced sounds). Thus the speech s
 by convolving the excitation signal by the response of the filter.</p>
 <center>
 <table width="500px">
-<tr>
-	<td height="100px"><img src="media/Source-filter.png" style="height:100%;width:90%" alt="" /></td>
+<tbody><tr>
+	<td height="100px"><img alt="" src="media/Source-filter.png" style="height:100%;width:90%"/></td>
 </tr>
-<caption align="bottom">Figure 1: Source-filter model of speech production.</caption>
+</tbody><caption align="bottom">Figure 1: Source-filter model of speech production.</caption>
 </table>
 </center>
-<br>
+<br/>
 <p>
 We know that convolution of two signals in the time domain is equivalent to multiplication in the 
 spectral domain. Since in the speech signal, the source and filter are convolutionally combined, they
@@ -189,20 +182,20 @@ $$
 The cepstrum can also be computed from the real part of \(\log S(\omega)\) in which case the cepstrum is 
 referred to as the real cepstrum. Considering only the real part,
 \begin{eqnarray}
-\mbox{real} \{\log S(\omega)\} & = & \log |S(\omega)|,\\
-								 & = & \log |H(\omega) E(\omega)| \\
-								 & = & \log |H(\omega)| + \log|E(\omega)|.
+\mbox{real} \{\log S(\omega)\} &amp; = &amp; \log |S(\omega)|,\\
+								 &amp; = &amp; \log |H(\omega) E(\omega)| \\
+								 &amp; = &amp; \log |H(\omega)| + \log|E(\omega)|.
 \end{eqnarray}
 </p>
 <center>
 <table width="400px">
-<tr>
-	<td height="300px"><img src="media/sigseg.png" style="height:100%;width:90%" alt="" /></td>
+<tbody><tr>
+	<td height="300px"><img alt="" src="media/sigseg.png" style="height:100%;width:90%"/></td>
 </tr>
-<caption align="bottom">Figure 2: Section of a speech signal for vowel /a/.</caption>
+</tbody><caption align="bottom">Figure 2: Section of a speech signal for vowel /a/.</caption>
 </table>
 </center>
-<br>
+<br/>
 
 <h3>Application of the Cepstrum to Speech Analysis</h3>
 <p>Figure 2 shows a segment of voiced speech of duration of 25 ms. Its magnitude log spectrum computed using
@@ -216,44 +209,44 @@ high quefrency liftered cepstrum with the corresponding spectrum. The spectrum s
 normally overrides the speech spectrum. </p>
 <center>
 <table width="840px">
-<tr>
-	<td height="300px"><img src="media/spectrum.png" style="height:100%;width:90%" alt="" /></td>
-	<td height="300px"><img src="media/cepstrum.png" style="height:100%;width:90%" alt="" /></td>
+<tbody><tr>
+	<td height="300px"><img alt="" src="media/spectrum.png" style="height:100%;width:90%"/></td>
+	<td height="300px"><img alt="" src="media/cepstrum.png" style="height:100%;width:90%"/></td>
 </tr>
 <tr>
 	<td><div style="text-align: center">(a)</div></td>
 	<td><div style="text-align: center">(b)</div></td>
 </tr>
-<caption align="bottom">Figure 3: (a) Log spectrum, and corresponding (b) cepstrum of the segment shown in Figure 2.</caption>
+</tbody><caption align="bottom">Figure 3: (a) Log spectrum, and corresponding (b) cepstrum of the segment shown in Figure 2.</caption>
 </table>
 </center>
-<br>
+<br/>
 <center>
 <table width="840px">
-<tr>
-	<td height="300px"><img src="media/cepstrumlq.png" style="height:100%;width:90%" alt="" /></td>
-	<td height="300px"><img src="media/spectrumlq.png" style="height:100%;width:90%" alt="" /></td>
+<tbody><tr>
+	<td height="300px"><img alt="" src="media/cepstrumlq.png" style="height:100%;width:90%"/></td>
+	<td height="300px"><img alt="" src="media/spectrumlq.png" style="height:100%;width:90%"/></td>
 </tr>
 <tr>
 	<td><div style="text-align: center">(a)</div></td>
 	<td><div style="text-align: center">(b)</div></td>
 </tr>
-<caption align="bottom">Figure 4: (a) Low quefrency liftering of the cepstrum and the corresponding (b) liftered Log spectrum</caption>
+</tbody><caption align="bottom">Figure 4: (a) Low quefrency liftering of the cepstrum and the corresponding (b) liftered Log spectrum</caption>
 </table>
-<br>
+<br/>
 <table width="840px">
-<tr>
-	<td height="300px"><img src="media/cepstrumhq.png" style="height:100%;width:90%" alt="" /></td>
-	<td height="300px"><img src="media/spectrumhq.png" style="height:100%;width:90%" alt="" /></td>
+<tbody><tr>
+	<td height="300px"><img alt="" src="media/cepstrumhq.png" style="height:100%;width:90%"/></td>
+	<td height="300px"><img alt="" src="media/spectrumhq.png" style="height:100%;width:90%"/></td>
 </tr>
 <tr>
 	<td><div style="text-align: center">(a)</div></td>
 	<td><div style="text-align: center">(b)</div></td>
 </tr>
-<caption align="bottom">Figure 5: (a) High quefrency liftering of the cepstrum and the corresponding (b) liftered Log spectrum</caption>
+</tbody><caption align="bottom">Figure 5: (a) High quefrency liftering of the cepstrum and the corresponding (b) liftered Log spectrum</caption>
 </table>
 </center>
-<br>
+<br/>
 	</div>
 
       </section>
@@ -261,23 +254,20 @@ normally overrides the speech spectrum. </p>
       <!-- Second section of the article-->
       <section id="experiment-article-section-2">
         
-        <div id="experiment-article-section-2-icon" 
-        class="icon">
+        <div class="icon" id="experiment-article-section-2-icon">
 	  <!-- Enclose the icon image of your lab. -->
-	  <img src="../images/procedure.jpg" />
+	  <img src="../images/procedure.jpg"/>
 	</div>
 				
         <!-- The heading for the section can be enclosed in a 
         div tag. -->
-        <div id="experiment-article-section-2-heading" 
-        class="heading">
+        <div class="heading" id="experiment-article-section-2-heading">
           Procedure
         </div>
 
         <!-- Write the section content inside a paragraph 
         element, we can also include images with <img> tag -->
-        <div id="experiment-article-section-2-content" 
-        class="content">
+        <div class="content" id="experiment-article-section-2-content">
 	    <!-- PUT CONTENT HERE -->
 	    <ol style="list-style-type: lower-alpha;">
 		<li>Study the cepstrum for different regions (voiced/unvoiced/silence) of the speech signal using the examples provided.</li>
@@ -305,26 +295,21 @@ normally overrides the speech spectrum. </p>
 
       <section id="experiment-article-section-4">
 
-        <div id="experiment-article-section-4-icon" 
-        class="icon">
+        <div class="icon" id="experiment-article-section-4-icon">
 	  <!-- Enclose the icon image of your lab.-->
-	  <img src="../images/simulation.jpg" />
+	  <img src="../images/simulation.jpg"/>
 	</div>
 
-        <div id="experiment-article-section-4-heading" 
-        class="heading">
+        <div class="heading" id="experiment-article-section-4-heading">
           Experiment
         </div>
 
-        <div id="experiment-article-section-4-content" 
-        class="content">
+        <div class="content" id="experiment-article-section-4-content">
 	    <!-- PUT CONTENT HERE -->
 <p>
-	        <applet code=audioTransport/SVLAudioTool.class 
-                      archive="media/cepstrumAnalysisS.jar"
-                      width=950 height=800>
-               <param name=foo value="bar">
-        Please install the latest version of the Java plugin for your browser. <br>
+	        <applet archive="media/cepstrumAnalysisS.jar" code="audioTransport/SVLAudioTool.class" height="800" width="950">
+               <param name="foo" value="bar"></param>
+        Please install the latest version of the Java plugin for your browser. <br/>
         </applet>
 
 </p>
@@ -334,24 +319,21 @@ normally overrides the speech spectrum. </p>
 
       <section id="experiment-article-section-5">
    
-        <div id="experiment-article-section-5-icon" 
-        class="icon">
+        <div class="icon" id="experiment-article-section-5-icon">
 	  <!-- Enclose the icon image of your lab.-->
-	  <img src="../images/manual.jpg" />
+	  <img src="../images/manual.jpg"/>
 	</div>
 
-        <div id="experiment-article-section-5-heading" 
-        class="heading">
+        <div class="heading" id="experiment-article-section-5-heading">
           Observations
         </div>
 
-        <div id="experiment-article-section-5-content" 
-        class="content">
+        <div class="content" id="experiment-article-section-5-content">
 	    <!-- PUT CONTENT HERE -->
 	    <ul>
-<li>Cepstrum provides a compact representation of the vocal tract system information.</li><br>
-<li>The vocal tract system information is characterized by the spectral envelope. This slow varying component in the spectrum is characterized by the first few coefficients in the cepstral domain. Note that cepstrum computation can be interpreted as the spectral analysis of a signal which is the log-magnitude spectrum in this case.</li><br>
-<li>Note that the pitch period of a voiced segment of speech can be measured from the cepstrum.</li><br>
+<li>Cepstrum provides a compact representation of the vocal tract system information.</li><br/>
+<li>The vocal tract system information is characterized by the spectral envelope. This slow varying component in the spectrum is characterized by the first few coefficients in the cepstral domain. Note that cepstrum computation can be interpreted as the spectral analysis of a signal which is the log-magnitude spectrum in this case.</li><br/>
+<li>Note that the pitch period of a voiced segment of speech can be measured from the cepstrum.</li><br/>
 </ul>
 
           </div>
@@ -360,19 +342,16 @@ normally overrides the speech spectrum. </p>
 
    <section id="experiment-article-section-8">
 
-        <div id="experiment-article-section-8-icon" 
-        class="icon">
+        <div class="icon" id="experiment-article-section-8-icon">
           <!-- Enclose the icon image of your lab.-->
-          <img src="../images/quizzes.jpg" />
+          <img src="../images/quizzes.jpg"/>
         </div>
 
-        <div id="experiment-article-section-8-heading" 
-        class="heading">
+        <div class="heading" id="experiment-article-section-8-heading">
           Assessment
         </div>
 
-        <div id="experiment-article-section-8-content" 
-        class="content">
+        <div class="content" id="experiment-article-section-8-content">
         <ol>
         <li>Explain how cepstral analysis of speech signals helps in pattern representation for pattern recognition task. </li>
 			<li>What are the advantages and limitations of cepstral domain processing over spectral-domain processing?</li>
@@ -391,36 +370,33 @@ normally overrides the speech spectrum. </p>
 
         <section id="experiment-article-section-9">
    
-          <div id="experiment-article-section-9-icon" 
-          class="icon">
+          <div class="icon" id="experiment-article-section-9-icon">
 	    <!-- Enclose the icon image of your lab.-->
-	    <img src="../images/readings.jpg" />
+	    <img src="../images/readings.jpg"/>
 	  </div>
 
-          <div id="experiment-article-section-9-heading" 
-          class="heading">
+          <div class="heading" id="experiment-article-section-9-heading">
             References
           </div>
 
-          <div id="experiment-article-section-9-content" 
-          class="content">
+          <div class="content" id="experiment-article-section-9-content">
 <ul>
 			<li> <i>Digital Processing of Speech Signals</i>, L.R. Rabiner and L.R. Schafer, Chapter 6</li>
 			<li> <i>Discrete-Time Speech Signal Processing</i>, Thomas F. Quatieri , Chapter 7</li>
 			<li> <i>Digital Speech Processing, Synthesis, and Recognition.<i>, Sadaoki Furui.,  Marcel Deccer, Inc.: New York.
-</ul>     
+</i></i></li></ul><i><i>     
      
-          </div>
+          </i></i></div><i><i>
 
-        </section>
+        </i></i></section><i><i>
 
-      </div>
+      </i></i></div><i><i>
 
 
     <!-- An article can have a sidebar that contain related 
     links and additional material (however it is kept optional 
     at this moment) -->
-    <aside id="lab-article-sidebar" class="default">
+    <aside class="default" id="lab-article-sidebar">
       <!-- put the content that you want to appear in the 
       sidebar -->	
     </aside>
@@ -428,37 +404,76 @@ normally overrides the speech spectrum. </p>
 
     <!-- Article footer can display related content and 
     additional links -->						
-    <footer id="lab-article-footer" class="default">
-      <!-- Put the content that you want to appear here -->
-    </footer>
+    <footer class="default" id="footer"><div class="footer-top" id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6">
+        <h4>Community Links</h4>
+        <p>
+	  <a href="http://www.sakshat.ac.in/">Sakshat Portal</a>
+	</p>
+        <p>
+	  <a href="http://outreach.vlabs.ac.in/">Outreach Portal</a>
+	</p>
+        <p>
+	  <a href="http://vlab.co.in/faq">FAQ : Virtual Labs</a>
+	</p>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <h4>Contact Us</h4>
+	<p> <strong>Phone:</strong> General Information : 011-26582050 </p>
+	<p> <strong>Email:</strong> support@vlab.co.in </p>
+      </div>
+      <div class="col-lg-4 col-md-6">
+	<h4>Follow Us</h4>
+	<div class="social-links">
+	  <a class="twitter" href="https://twitter.com/TheVirtualLabs" style="background: #55acee;">
+	    <i class="fa fa-twitter"></i>
+	  </a>
+	  <a class="facebook" href="https://www.facebook.com/Virtual-Labs-IIT-Delhi-301510159983871/" style="background: #3b5998;">
+	    <i class="fa fa-facebook"></i>
+	  </a>
+	  <a class="google-plus" href="https://www.youtube.com/watch?v=asxRaOgk6a0" style="background: #e52d27;">
+	    <i class="fa fa-youtube"></i>
+	  </a>
+	  <a class="linkedin" href="https://in.linkedin.com/in/virtual-labs-008ba9136" style="background: #2867B2;">
+	    <i class="fa fa-linkedin"></i>
+	  </a>
+	</div>
+      </div>
+    </div>
+  </div>
+</div>
+</footer>
 
-  </article>
+  </i></i></article><i><i>
 
 
   <!-- Links to other labs, about us page can be kept the lab 
   footer-->
-  <footer id="lab-footer" class="default">
+  <footer class="default" id="lab-footer">
     <!-- Put the content here-->
   </footer>
 
 
-<footer id="lab-header" class="heading">
+<footer class="heading" id="lab-header">
     <!-- Put the content here-->
-    <div id="lab-header-heading" class="heading">
+    <div class="heading" id="lab-header-heading">
     <!-- Write the name of your lab and link it to the home page
     of your lab. -->
         <center>
-        <table><tr>
-                <td><a href="http://speech.iiit.ac.in/" target=_blank><font size=-3>Developed at the Speech and Vision Lab, IIIT Hyderabad</font></a></td>
-        </tr></table>
+        <table><tbody><tr>
+                <td><a href="http://speech.iiit.ac.in/" target="_blank"><font size="-3">Developed at the Speech and Vision Lab, IIIT Hyderabad</font></a></td>
+        </tr></tbody></table>
         </center>
     </div>
 
 
   </footer>
 
-</div>		
- <script type="text/javascript" src="../js/MathJax/MathJax.js?config=default">
+</i></i></div><i><i>		
+ <script src="../js/MathJax/MathJax.js?config=default" type="text/javascript">
   </script>
-</body>
-</html>
+
+
+</i></i></body></html>

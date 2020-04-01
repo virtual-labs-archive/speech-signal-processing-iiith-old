@@ -1,14 +1,17 @@
-<html>
-<h1>Enabling sound recording and playback using java applets</h1>
+<html><head><!--Google Tag Manager--><script class="gtm">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W59SWTR');</script><!--End Google Tag Manager--></head><body><!--Google Tag Manager (noscript)--><noscript class="gtm"><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-W59SWTR" style="display:none;visibility:hidden" width="0"></iframe></noscript><!--End Google Tag Manager (noscript)--><h1>Enabling sound recording and playback using java applets</h1>
 The experiments in SSP-Speech Signal Processing Virtual Lab are java applets that run in a browser. You need a java plugin to view these applets. Playback of sound works by default. You need to set some java security policies on your system to enable recording. Following are the instructions for doing the same:
 
 <h3>For LINUX (Ubuntu and firefox)</h3>
 As of now the support is only for Linux (Ubuntu) and firefox browser. The instructions would be very similar for other flavours of Linux or Windows and other open source browsers such as Opera or Google-Chrome. The expts do not work on IE-9.
 
 <ol>
-<li> Install Sun Java-6 on your linux m/c. This is essential to enable java plugins on your browser. This step requires sys-admin privilege.<br>
+<li> Install Sun Java-6 on your linux m/c. This is essential to enable java plugins on your browser. This step requires sys-admin privilege.<br/>
 The essential packages are:
-<ol type=i>
+<ol type="i">
 <li> sun-java6-jre</li>
 <li> sun-java6-plugin</li>
 </ol>
@@ -22,15 +25,15 @@ The essential packages are:
 <li>
 <p>To record audio from your sound cards using the java applets, you need to set some permissions (java security settings) on your system. You just need to add a line to a file named "java.policy" normally found at these paths:</p>
 
-/etc/java-6-sun/security/java.policy<br>
-or<br>
-/usr/lib/jvm/java-6-sun/jre/lib/security/java.policy<br>
+/etc/java-6-sun/security/java.policy<br/>
+or<br/>
+/usr/lib/jvm/java-6-sun/jre/lib/security/java.policy<br/>
 
 <p>Add the following line to the bottom of this file (last but one line) just before the last line which typically has a '};':</p>
 
-<p><font color=#000099><i>permission javax.sound.sampled.AudioPermission "record";</i></font></p>
+<p><font color="#000099"><i>permission javax.sound.sampled.AudioPermission "record";</i></font></p>
 
-A sample <a href=wav/java.policy>java.policy</a> file can be downloaded here for reference.
+A sample <a href="wav/java.policy">java.policy</a> file can be downloaded here for reference.
 
 <p>If you do not have sys-admin privileges on your system, you can just download the java.policy and store it in your home directory or in the folder .java/deployment/security/ in your home directory.</p>
 
@@ -42,4 +45,5 @@ Close all browser windows, restart the browser and check if recording of sound w
 </ol>
 <p>Ofcourse you need to have a microphone and connect it to the proper jack (normally pink/red colored for mic or recording, green for playback or speakers), check the audio or sound card settings for recording to work. </p>
 
-</html>
+
+</body></html>

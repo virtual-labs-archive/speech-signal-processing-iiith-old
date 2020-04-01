@@ -1,28 +1,27 @@
 <!-- This file needs to be edited by the lab developer to suit
-the requirements of their lab in particular.-->
-
-<!-- Add class="default" to include any element as it is
+the requirements of their lab in particular.--><!-- Add class="default" to include any element as it is
 specified in default.html. 
 Do not include class="default" to the elements that you want to
-edit -->
-
-<!DOCTYPE html>
-<html>
-<head></head>
-<body>
+edit --><!DOCTYPE html>
+<html><head><!--Google Tag Manager--><script class="gtm">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W59SWTR');</script><!--End Google Tag Manager--></head>
+<body><!--Google Tag Manager (noscript)--><noscript class="gtm"><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-W59SWTR" style="display:none;visibility:hidden" width="0"></iframe></noscript><!--End Google Tag Manager (noscript)-->
 
 <div id="experiment"> <!-- The Experiment Document Container-->
 
   <!-- The lab Header contains the logo and the name of the lab,
   usually displayed on the top of the page-->
 
-  <header id="experiment-header" class="default">
+  <header class="default" id="experiment-header">
   
-    <div id="experiment-header-logo" class="logo">
-      <img src="../images/logo.jpg" />
+    <div class="logo" id="experiment-header-logo">
+      <img src="../images/logo.jpg"/>
     </div>
 
-    <div id="experiment-header-heading" class="heading">
+    <div class="heading" id="experiment-header-heading">
       <!-- Write the name of your lab and link it to the home 
       page of your lab (h1 tag is preferred while writing your 
       lab name)-->
@@ -44,7 +43,7 @@ edit -->
     menu, number of sections, an optional sidebar and a closing 
     footer-->
     
-      <header id="experiment-article-heading" class="heading">
+      <header class="heading" id="experiment-article-heading">
         <!-- You can add a welcome message or title of the 
         experiment here -->
         Expt-5: Short-Time Spectrum Analysis of Speech
@@ -54,7 +53,7 @@ edit -->
 
       <!-- Navigation menu is useful to organize the view of 
       multiple sections inside the article-->
-      <nav id="experiment-article-navigation" class="default">
+      <nav class="default" id="experiment-article-navigation">
         <ul id="experiment-article-navigation-menu">
           <!-- The menu can be dynamically generated to contain 
           the headings of your sections or instead write the 
@@ -70,31 +69,28 @@ edit -->
         <!-- First section of the article-->
         <section id="experiment-article-section-1">
           
-          <div id="experiment-article-section-1-icon" 
-          class="icon">
+          <div class="icon" id="experiment-article-section-1-icon">
 	    <!-- Enclose the icon image of your lab -->
-	    <img src="../images/introduction.jpg" />
+	    <img src="../images/introduction.jpg"/>
 	  </div>	
           
           <!-- The heading for the section can be enclosed in a 
           div tag. -->
-          <div id="experiment-article-section-1-heading" 
-          class="heading">
+          <div class="heading" id="experiment-article-section-1-heading">
             Objective
           </div>
 
           <!-- Write the section content inside a paragraph 
           element, You can also include images with <img> tag -->
-          <div id="experiment-article-section-1-content" 
-          class="content">	
+          <div class="content" id="experiment-article-section-1-content">	
             <p>
 
 	    <!-- PUT CONTENT HERE -->
 	    To understand the issues in short-time spectrum analysis of speech signals.
-<ol>
-<li>To study the effect of size of the analysis window (less than one pitch period, one pitch period, two to four pitch periods).</li><br>
-<li>To study the effect of shape of the analysis window (rectangular, Hamming and Hann window functions).</li><br>
-        </div>
+</p><ol>
+<li>To study the effect of size of the analysis window (less than one pitch period, one pitch period, two to four pitch periods).</li><br/>
+<li>To study the effect of shape of the analysis window (rectangular, Hamming and Hann window functions).</li><br/>
+        </ol></div>
 
 
       </section>
@@ -104,19 +100,16 @@ edit -->
 
       <section id="experiment-article-section-2">
         
-        <div id="experiment-article-section-2-icon" 
-        class="icon">
+        <div class="icon" id="experiment-article-section-2-icon">
 	  <!-- Enclose the icon image of your lab. -->
-	  <img src="../images/theory.jpg" />
+	  <img src="../images/theory.jpg"/>
 	</div>
      
-        <div id="experiment-article-section-2-heading" 
-        class="heading">
+        <div class="heading" id="experiment-article-section-2-heading">
           Tutorial
         </div>
 
-        <div id="experiment-article-section-2-content" 
-        class="content">
+        <div class="content" id="experiment-article-section-2-content">
 	    <!-- PUT CONTENT HERE -->
 <p>
 	Due to time varying nature of the vocal tract system during production of speech, it is necessary to analyse the speech signal to extract the characteristics of the vocal tract system using segments of 10-30 msecs. 
@@ -133,7 +126,7 @@ The phase spectrum is not analysed in this experiment.
 </p>
 
 <p>	
-<ol>
+</p><ol>
 <li><p> First let us examine the short time spectral characteristics of 30 ms segment of voiced speech. The log spectrum is plotted using the points for DFT(i.e.,the choice of NFFT) which is 512 in this case.(Note that the log spectrum is displayed for NFFT/2 points covering the desired frequency range of 0-fs/2).</p>
 </li>
 <li><p> The effect of  points using for DFT can be seen by increasing NFFT to 1024 points or higher. Note that in this case the DFT points nearly bring out the values missing when lower NFFT value is used. Those missing values are seen prominently during the regions of rapid changes in the spectrum(near spectral values). Compare the log-spectrum for this using (NFFT=512) points and for NFFT=4096. Note that the peaks in the spectrum especially with low frequency correspond to harmonics, in the waveform has two or more pitch periods. Note that peaks are not seen in the higher frequency range due to side-lobe leakage of the rectangular window.
@@ -157,29 +150,28 @@ The phase spectrum is not analysed in this experiment.
 </p></li>
 <li><p> Note that if one wants to observe the spectra of two or more different analysis  segments(i.e, unvoiced and voiced, or different sizes of the voiced segments), then the spectra can be displayed by opening another browser for each type of segment and comparing the spectra displayed in different browsers.
 </p></li>
-</p>
-        </div>
+<p></p>
+        </ol></div>
 
       </section>
 
 
      <!-- Second section of the article-->
       <section id="experiment-article-section-3">
-         <div id="experiment-article-section-3-icon" 
-        class="icon">
+         <div class="icon" id="experiment-article-section-3-icon">
           <!-- Enclose the icon image of your lab. -->
-          <img src="../images/procedure.jpg" />
+          <img src="../images/procedure.jpg"/>
         </div>
   			
         <!-- The heading for the section can be enclosed in a 
         div tag. -->
-        <div id="experiment-article-section-3-heading" class="heading">
+        <div class="heading" id="experiment-article-section-3-heading">
           Procedure
         </div>
 
         <!-- Write the section content inside a paragraph 
         element, we can also include images with <img> tag -->
-        <div id="experiment-article-section-3-content" class="content">
+        <div class="content" id="experiment-article-section-3-content">
 	    <!-- PUT CONTENT HERE -->
 	    <ol style="list-style-type: lower-alpha;">
 	      <li>Record or select from existing files about 2 sec of vowel /a/ and fricative /s/. </li>
@@ -188,10 +180,8 @@ The phase spectrum is not analysed in this experiment.
 	      <ul>
 		<li>Consider <span style="font-style: italic;">x(n)</span>, 
 		  160 samples of /a/. </li>
-		<li>Use 512 point DFT to get <span style="font-style: italic;"
-		class="MATH">X(k)</span>. </li>
-		<li>Plot log spectrum <span style="font-style: italic;">log</span><span
-										     style="font-style: italic;" class="MATH"> |X(k)|<sup>2</sup></span> </li>
+		<li>Use 512 point DFT to get <span class="MATH" style="font-style: italic;">X(k)</span>. </li>
+		<li>Plot log spectrum <span style="font-style: italic;">log</span><span class="MATH" style="font-style: italic;"> |X(k)|<sup>2</sup></span> </li>
 		<li>Study the effect of size of window - 5 msec, 20 msec, 50
 		  msec. </li>
 		<li>Study the effect of shape of window on 20 msec data namely,
@@ -211,34 +201,32 @@ The phase spectrum is not analysed in this experiment.
 
       <section id="experiment-article-section-4">
 
-         <div id="experiment-article-section-4-heading" class="heading">
+         <div class="heading" id="experiment-article-section-4-heading">
           Experiment
         </div>
 
-        <div id="experiment-article-section-4-content" class="content">
+        <div class="content" id="experiment-article-section-4-content">
 	    <!-- PUT CONTENT HERE -->
 <p>
-	<font size=-1> <a href="readme.html">README</a>
+	<font size="-1"> <a href="readme.html">README</a>
 <i>
-<ol>
+</i></font></p><ol><font size="-1"><i>
 <li>Select one of the example waveforms and click on the load button.</li>
 <li>Select a short segment of voiced speech and click on the spectrum button.</li>
 <li>Study the effect of NFFT points on the spectrum.</li>
 <li>Recompute the spectrum by selecting different lengths (5 ms, 10 ms and 50 ms) of the speech signal.</li>
 <li>Compare the spectra for two different window shapes using the two spectrum panels provided.</li>
 <li>Study the short-time spectrum for different category of sounds such as fricatives, nasals, semivowels, vowels and stops.</li>
-</ol>
+</i></font></ol><font size="-1"><i>
 </i>
 </font>
 
-                <applet code=audioTransport/SVLAudioTool.class 
-                      archive="media/spectrumAnalysisS.jar"
-                      width=800 height=600>
-               <param name=foo value="bar">
-        Please install the latest version of the Java plugin for your browser. <br>
+                <applet archive="media/spectrumAnalysisS.jar" code="audioTransport/SVLAudioTool.class" height="600" width="800">
+               <param name="foo" value="bar"></param>
+        Please install the latest version of the Java plugin for your browser. <br/>
         </applet>
 
-</p>
+<p></p>
 
         </div>
 
@@ -246,20 +234,17 @@ The phase spectrum is not analysed in this experiment.
 
       <section id="experiment-article-section-5">
 
-   <div id="experiment-article-section-2-icon" 
-        class="icon">
+   <div class="icon" id="experiment-article-section-2-icon">
           <!-- Enclose the icon image of your lab. -->
-          <img src="../images/manual.jpg" />
+          <img src="../images/manual.jpg"/>
         </div>
   
  
-        <div id="experiment-article-section-5-heading" 
-        class="heading">
+        <div class="heading" id="experiment-article-section-5-heading">
           Observations
         </div>
 
-        <div id="experiment-article-section-5-content" 
-        class="content">
+        <div class="content" id="experiment-article-section-5-content">
 	    <!-- PUT CONTENT HERE -->
 	    
 	    <ul>
@@ -271,12 +256,12 @@ difficult to distinguish spectral components of the signal from the
 components introduced by the windowing effect.</p>
 </li>
 <li><p>Side-lobe effect is dominant in the rectangular window.
-<br>
+<br/>
 Pitch harmonics can be clearly seen when Hamming or Hamming window is
 used.
-<br>
+<br/>
 Sidelobe attenuation is more with Hamming and Hamming windows and also
-the main lobe width increases. </li></p>
+the main lobe width increases. </p></li><p></p>
 <li><p>Voiced speech log spectrum shows clearly the harmonic ( source
 feature) and the formant structure (system feature)
 whereas there is no defined structure in the log spectrum of Unvoiced
@@ -291,17 +276,17 @@ speech segment.</p>
 
 <section id="experiment-article-section-6">
       
-	<div id="experiment-article-section-6-icon" class="icon">
-		<img src="../images/quizzes.jpg" />
+	<div class="icon" id="experiment-article-section-6-icon">
+		<img src="../images/quizzes.jpg"/>
 	</div>
 
-	<div id="experiment-article-section-6-heading" class="heading">
+	<div class="heading" id="experiment-article-section-6-heading">
 		Assessment
 	</div>
 
-	<div id="experiment-article-section-6-content" 	class="content">
+	<div class="content" id="experiment-article-section-6-content">
 	<p>
-   	<ol>
+   	</p><ol>
 			<li>What is the need for windowing of the signal?</li>
 			<li>Why rectangular window is not suitable for short-time DFT spectral analysis?</li>
 			<li>Explain the influence of the number of DFT points on the DFT spectrum.</li>
@@ -312,7 +297,7 @@ speech segment.</p>
 			<li>What vocal tract system characteristics are observed in the short-time DFT spectrum?</li>
 			<li>Why is it difficult to analyze the vocal tract system characteristics from a short-time DFT spectrum?</li>
 		</ol>   	
-   </p>     	
+   <p></p>     	
  	</div>
 
 </section>
@@ -340,17 +325,17 @@ speech segment.</p>
 
 <section id="experiment-article-section-9">
    
-	<div id="experiment-article-section-9-icon"  class="icon">
+	<div class="icon" id="experiment-article-section-9-icon">
 	    <!-- Enclose the icon image of your lab.-->
-		<img src="../images/readings.jpg" />
+		<img src="../images/readings.jpg"/>
 	</div>
 
 
-	<div id="experiment-article-section-9-heading"  class="heading">
+	<div class="heading" id="experiment-article-section-9-heading">
         References
 	</div>
 
-	<div id="experiment-article-section-9-content"  class="content">
+	<div class="content" id="experiment-article-section-9-content">
 		<ul>
 			<li> <i>Digital Processing of Speech Signals</i>, L.R. Rabiner and L.R. Schafer, Chapter 6</li>
 			<li> <i>Discrete-Time Speech Signal Processing</i>, Thomas F. Quatieri , Chapter 7</li>
@@ -366,7 +351,7 @@ speech segment.</p>
     <!-- An article can have a sidebar that contain related 
     links and additional material (however it is kept optional 
     at this moment) -->
-    <aside id="lab-article-sidebar" class="default">
+    <aside class="default" id="lab-article-sidebar">
       <!-- put the content that you want to appear in the 
       sidebar -->	
     </aside>
@@ -374,28 +359,66 @@ speech segment.</p>
 
     <!-- Article footer can display related content and 
     additional links -->						
-    <footer id="lab-article-footer" class="default">
-      <!-- Put the content that you want to appear here -->
-    </footer>
+    <footer class="default" id="footer"><div class="footer-top" id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6">
+        <h4>Community Links</h4>
+        <p>
+	  <a href="http://www.sakshat.ac.in/">Sakshat Portal</a>
+	</p>
+        <p>
+	  <a href="http://outreach.vlabs.ac.in/">Outreach Portal</a>
+	</p>
+        <p>
+	  <a href="http://vlab.co.in/faq">FAQ : Virtual Labs</a>
+	</p>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <h4>Contact Us</h4>
+	<p> <strong>Phone:</strong> General Information : 011-26582050 </p>
+	<p> <strong>Email:</strong> support@vlab.co.in </p>
+      </div>
+      <div class="col-lg-4 col-md-6">
+	<h4>Follow Us</h4>
+	<div class="social-links">
+	  <a class="twitter" href="https://twitter.com/TheVirtualLabs" style="background: #55acee;">
+	    <i class="fa fa-twitter"></i>
+	  </a>
+	  <a class="facebook" href="https://www.facebook.com/Virtual-Labs-IIT-Delhi-301510159983871/" style="background: #3b5998;">
+	    <i class="fa fa-facebook"></i>
+	  </a>
+	  <a class="google-plus" href="https://www.youtube.com/watch?v=asxRaOgk6a0" style="background: #e52d27;">
+	    <i class="fa fa-youtube"></i>
+	  </a>
+	  <a class="linkedin" href="https://in.linkedin.com/in/virtual-labs-008ba9136" style="background: #2867B2;">
+	    <i class="fa fa-linkedin"></i>
+	  </a>
+	</div>
+      </div>
+    </div>
+  </div>
+</div>
+</footer>
 
   </article>
 
 
   <!-- Links to other labs, about us page can be kept the lab 
   footer-->
-  <footer id="lab-footer" class="default">
+  <footer class="default" id="lab-footer">
     <!-- Put the content here-->
   </footer>
 
-<footer id="lab-header" class="heading">
+<footer class="heading" id="lab-header">
     <!-- Put the content here-->
-    <div id="lab-header-heading" class="heading">
+    <div class="heading" id="lab-header-heading">
     <!-- Write the name of your lab and link it to the home page
     of your lab. -->
         <center>
-        <table><tr>
-                <td><a href="http://speech.iiit.ac.in/" target=_blank><font size=-3>Developed at the Speech and Vision Lab, IIIT Hyderabad</font></a></td>
-        </tr></table>
+        <table><tbody><tr>
+                <td><a href="http://speech.iiit.ac.in/" target="_blank"><font size="-3">Developed at the Speech and Vision Lab, IIIT Hyderabad</font></a></td>
+        </tr></tbody></table>
         </center>
     </div>
 
@@ -404,8 +427,9 @@ speech segment.</p>
 
 
 </div>		
-  <script type="text/javascript" src="../js/MathJax/MathJax.js?config=default">
+  <script src="../js/MathJax/MathJax.js?config=default" type="text/javascript">
   </script>
 
-</body>
-</html>
+
+
+</body></html>
