@@ -1,26 +1,25 @@
 <!-- This file needs to be edited by the lab developer to suit
-the requirements of their lab in particular.-->
-
-<!-- Add class="default" to include any element as it is
+the requirements of their lab in particular.--><!-- Add class="default" to include any element as it is
 specified in default.html. 
 Do not include class="default" to the elements that you want to
-edit -->
-
-<!DOCTYPE html>
-<html>
-<head></head>
-<body>
+edit --><!DOCTYPE html>
+<html><head><!--Google Tag Manager--><script class="gtm">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W59SWTR');</script><!--End Google Tag Manager--></head>
+<body><!--Google Tag Manager (noscript)--><noscript class="gtm"><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-W59SWTR" style="display:none;visibility:hidden" width="0"></iframe></noscript><!--End Google Tag Manager (noscript)-->
 
 <div id="experiment"> <!-- The Experiment Document Container-->
 
   <!-- The lab Header contains the logo and the name of the lab,
   usually displayed on the top of the page-->
 
-  <header id="experiment-header" class="default">
-    <div id="experiment-header-logo" class="logo">
-      <img src="../images/logo.jpg" /> 
+  <header class="default" id="experiment-header">
+    <div class="logo" id="experiment-header-logo">
+      <img src="../images/logo.jpg"/> 
     </div>
-    <div id="experiment-header-heading" class="heading">
+    <div class="heading" id="experiment-header-heading">
       <!-- Write the name of your lab and link it to the home 
       page of your lab (h1 tag is preferred while writing your 
       lab name)-->
@@ -42,7 +41,7 @@ edit -->
     menu, number of sections, an optional sidebar and a closing 
     footer-->
     
-      <header id="experiment-article-heading" class="heading">
+      <header class="heading" id="experiment-article-heading">
         <!-- You can add a welcome message or title of the 
         experiment here -->
         Expt-10: Analysis by synthesis
@@ -52,7 +51,7 @@ edit -->
 
       <!-- Navigation menu is useful to organize the view of 
       multiple sections inside the article-->
-      <nav id="experiment-article-navigation" class="default">
+      <nav class="default" id="experiment-article-navigation">
         <ul id="experiment-article-navigation-menu">
           <!-- The menu can be dynamically generated to contain 
           the headings of your sections or instead write the 
@@ -68,23 +67,20 @@ edit -->
         <!-- First section of the article-->
         <section id="experiment-article-section-1">
           
-          <div id="experiment-article-section-1-icon" 
-          class="icon">
+          <div class="icon" id="experiment-article-section-1-icon">
 	    <!-- Enclose the icon image of your lab -->
-	    <img src="../images/introduction.jpg" />
+	    <img src="../images/introduction.jpg"/>
 	  </div>	
           
           <!-- The heading for the section can be enclosed in a 
           div tag. -->
-          <div id="experiment-article-section-1-heading" 
-          class="heading">
+          <div class="heading" id="experiment-article-section-1-heading">
             Objective
           </div>
 
           <!-- Write the section content inside a paragraph 
           element, You can also include images with <img> tag -->
-          <div id="experiment-article-section-1-content" 
-          class="content">	
+          <div class="content" id="experiment-article-section-1-content">	
             <p>
 
 	    <!-- PUT CONTENT HERE -->
@@ -92,7 +88,7 @@ The objective of this analysis-by-synthesis experiment is to break down the spee
 The various components derived by analysis of the speech signal is used to resynthesise the speech signal.
 The use of analysis-by-synthesis framework is illustrated for prosody (pitch and duration) modification.
 
-        </div>
+        </p></div>
 
 
       </section>
@@ -101,20 +97,17 @@ The use of analysis-by-synthesis framework is illustrated for prosody (pitch and
      
       <section id="experiment-article-section-3">
         
-        <div id="experiment-article-section-3-icon" 
-        class="icon">
+        <div class="icon" id="experiment-article-section-3-icon">
 	  <!-- Enclose the icon image of your lab. -->
 
-	  <img src="../images/theory.jpg" />
+	  <img src="../images/theory.jpg"/>
 	</div>
      
-        <div id="experiment-article-section-3-heading" 
-        class="heading">
+        <div class="heading" id="experiment-article-section-3-heading">
           Tutorial
         </div>
 
-        <div id="experiment-article-section-3-content" 
-        class="content">
+        <div class="content" id="experiment-article-section-3-content">
 	    <!-- PUT CONTENT HERE -->
 	    
 
@@ -142,22 +135,22 @@ is sufficient.
 The primary reason for using the all-pole model is the distinct computational
 advantage in calculating the filter coefficients, as will be discussed
 shortly.Recall that the transfer function of an all-pole filter has the form
-          $$V(z)=\frac{1}{1−\sum_{k=1}^{P} a_k z^−k}$$,
+          $$V(z)=\frac{1}{1Ã¢Ë†â€™\sum_{k=1}^{P} a_k z^Ã¢Ë†â€™k}$$,
 where \(P\) is the order of the filter.
 
 This is an IIR filter that may be implemented with a recursive difference equation.
 With the input \(G x(n)\), the speech signal \(s(n)\) may be written as
 			
-          $$ s(n)=\sum\limits_{k=1}^{P} a_k s(n−k)+G x(n)$$</p>
+          $$ s(n)=\sum\limits_{k=1}^{P} a_k s(nÃ¢Ë†â€™k)+G x(n)$$</p>
  <table width="600">
- <tr>
+ <tbody><tr>
  	<td height="200">
- 			<img src="images/lpmodel.png" alt="Speech production model"  style="height:100%;width:90%">
+ 			<img alt="Speech production model" src="images/lpmodel.png" style="height:100%;width:90%"/>
  	</td>
  </tr>
-<caption align="bottom"> <em> <b>Figure 1. </b>Impulse+noise model of speech production</em> </caption> 
+</tbody><caption align="bottom"> <em> <b>Figure 1. </b>Impulse+noise model of speech production</em> </caption> 
  </table> 
- <br>        
+ <br/>        
  <p> Keep in mind that the filter coefficients will change continuously as
 the shape of the vocal tract changes, but speech segments of an
 appropriately small length may be approximated by a time-invariant model.
@@ -175,7 +168,7 @@ Most telephone systems use some form of this approach.
 Another example is speech recognition.
 Most recognition methods involve comparisons between short
 segments of the speech signals, and the filter coefficients of this model
-are often used in computing the “difference" between segments.</p>
+are often used in computing the Ã¢â‚¬Å“difference" between segments.</p>
 
 
 <h3>Speech Coding and Synthesis</h3>
@@ -193,8 +186,8 @@ First, in the analysis section,
 the original speech signal will be split into short time frames.
 For each frame, we will compute the signal energy, the LPC coefficients,
 and determine whether the segment is voiced or unvoiced.	</p>    
-<br>
-<br>
+<br/>
+<br/>
 <p>
 <b>Adapted from: </b> Bouman, Charles A., "Lab 9b - Speech Processing (part 2)." Connexions. 
 	    September 17, 2009. from http://cnx.org/content/m18087/1.3/ under the
@@ -207,29 +200,26 @@ and determine whether the segment is voiced or unvoiced.	</p>
       </section>
  <section id="experiment-article-section-2">
         
-        <div id="experiment-article-section-2-icon" 
-        class="icon">
+        <div class="icon" id="experiment-article-section-2-icon">
 	  <!-- Enclose the icon image of your lab. -->
-	  <img src="../images/procedure.jpg" />
+	  <img src="../images/procedure.jpg"/>
 	</div>
 				
         <!-- The heading for the section can be enclosed in a 
         div tag. -->
-        <div id="experiment-article-section-2-heading" 
-        class="heading">
+        <div class="heading" id="experiment-article-section-2-heading">
           Procedure
         </div>
 
         <!-- Write the section content inside a paragraph 
         element, we can also include images with <img> tag -->
-        <div id="experiment-article-section-2-content" 
-        class="content">
+        <div class="content" id="experiment-article-section-2-content">
 	    <!-- PUT CONTENT HERE -->
 	    <ol>
-		<li>Study the characteristics of LP residual signal.</li><br>
-		<li>Study the characteristics of the resynthesised speech by using different excitation types, namely, LP residual, impulse excitation and random noise excitation.</li><br>
-		<li>Study the effect of using the vocal tract system derived using different LP orders for resynthesis.</li><br>
-		<li>Repeat the experiment for sentences recorded with your own voice.</li><br>
+		<li>Study the characteristics of LP residual signal.</li><br/>
+		<li>Study the characteristics of the resynthesised speech by using different excitation types, namely, LP residual, impulse excitation and random noise excitation.</li><br/>
+		<li>Study the effect of using the vocal tract system derived using different LP orders for resynthesis.</li><br/>
+		<li>Repeat the experiment for sentences recorded with your own voice.</li><br/>
 
 	</ol>
 
@@ -240,22 +230,19 @@ and determine whether the segment is voiced or unvoiced.	</p>
 
       <section id="experiment-article-section-4">
 
-        <div id="experiment-article-section-4-icon" 
-        class="icon">
+        <div class="icon" id="experiment-article-section-4-icon">
 	  <!-- Enclose the icon image of your lab.-->
-	  <img src="../images/simulation.jpg" />
+	  <img src="../images/simulation.jpg"/>
 	</div>
 
-        <div id="experiment-article-section-4-heading" 
-        class="heading">
+        <div class="heading" id="experiment-article-section-4-heading">
           Experiment
         </div>
 
-        <div id="experiment-article-section-4-content" 
-        class="content">
+        <div class="content" id="experiment-article-section-4-content">
 	    <!-- PUT CONTENT HERE -->
 	<p>
-		<applet code=analysisSynthesis.AnalysisSynthesisApplet.class archive="media/analysisSynthesisS.jar" width="900" height="800" >
+		<applet archive="media/analysisSynthesisS.jar" code="analysisSynthesis.AnalysisSynthesisApplet.class" height="800" width="900">
 		</applet>
 	</p>
         </div>
@@ -264,30 +251,27 @@ and determine whether the segment is voiced or unvoiced.	</p>
 
       <section id="experiment-article-section-5">
    
-        <div id="experiment-article-section-5-icon" 
-        class="icon">
+        <div class="icon" id="experiment-article-section-5-icon">
 	  <!-- Enclose the icon image of your lab.-->
-	  <img src="../images/manual.jpg" />
+	  <img src="../images/manual.jpg"/>
 	</div>
 
-        <div id="experiment-article-section-5-heading" 
-        class="heading">
+        <div class="heading" id="experiment-article-section-5-heading">
           Observations
         </div>
 
-        <div id="experiment-article-section-5-content" 
-        class="content">
+        <div class="content" id="experiment-article-section-5-content">
 	    <!-- PUT CONTENT HERE -->
 <ol>
-<li>The LP residual signal within voiced regions of speech has large error values at regular intervals. These are the instants of glottal closure at which the vocal tract system is excited. Hence the LP residual signal can be approximated to the excitation source signal.</li><br>
+<li>The LP residual signal within voiced regions of speech has large error values at regular intervals. These are the instants of glottal closure at which the vocal tract system is excited. Hence the LP residual signal can be approximated to the excitation source signal.</li><br/>
 
-<li>Resynthesis of the speech signal using the LP residual (excitation source) and the LPCs (vocal tract system) gives back the original speech signal.</li><br>
+<li>Resynthesis of the speech signal using the LP residual (excitation source) and the LPCs (vocal tract system) gives back the original speech signal.</li><br/>
 
-<li>The excitation source signal can be approximated by a train of impulses, but the quality of speech is poor though the message can be inferred easily.</li><br>
+<li>The excitation source signal can be approximated by a train of impulses, but the quality of speech is poor though the message can be inferred easily.</li><br/>
 
-<li>The resynthesised speech signal sounds like a whispered speech when a random noise signal is used as the excitation source.</li><br>
+<li>The resynthesised speech signal sounds like a whispered speech when a random noise signal is used as the excitation source.</li><br/>
 
-<li>It can be seen that an LP order of as low as 3 can capture significant information on the message front even when an impulse train or random noise is used as the excitation. The quality of speech improves with the increase in the LP order. But using the original LP residual signal gives very good synthesis even for the 3rd order LP coefficients.</li><br>
+<li>It can be seen that an LP order of as low as 3 can capture significant information on the message front even when an impulse train or random noise is used as the excitation. The quality of speech improves with the increase in the LP order. But using the original LP residual signal gives very good synthesis even for the 3rd order LP coefficients.</li><br/>
 </ol>
           </div>
 
@@ -314,22 +298,19 @@ and determine whether the segment is voiced or unvoiced.	</p>
 
         <section id="experiment-article-section-7">
 	  
-          <div id="experiment-article-section-7-icon" 
-          class="icon">
+          <div class="icon" id="experiment-article-section-7-icon">
 	    <!-- Enclose the icon image of your lab. -->
-	    <img src="../images/quizzes.jpg" />
+	    <img src="../images/quizzes.jpg"/>
 	  </div>
 	
-          <div id="experiment-article-section-7-heading" 
-          class="heading">
+          <div class="heading" id="experiment-article-section-7-heading">
 	    Assessment
 	  </div>
 	
-          <div id="experiment-article-section-7-content" 
-          class="content">
+          <div class="content" id="experiment-article-section-7-content">
             	    <!-- PUT CONTENT HERE -->
 		    <ol>
-	<li>Write a program (C/Matlab/Octave/Scilab) to separate the source and system of a given speech signal of 1 to 2 seconds using short-time LP analysis. Use a window size of 20 ms, a window shift of 10 ms, an LP order of 10. Plot the original signal and the LP residual signal.</li><br>
+	<li>Write a program (C/Matlab/Octave/Scilab) to separate the source and system of a given speech signal of 1 to 2 seconds using short-time LP analysis. Use a window size of 20 ms, a window shift of 10 ms, an LP order of 10. Plot the original signal and the LP residual signal.</li><br/>
 
 	<li>Write a program (C/Matlab/Octave/Scilab) to resynthesize the speech signal given the sequence of LPCs and the following excitation signals:
 	<ul>
@@ -338,7 +319,7 @@ and determine whether the segment is voiced or unvoiced.	</p>
 	<li>Train of impulses with the gain varying proportional to the LP residual signal</li>
 	<li>White Gaussian random noise sequence with and without the gain of the LP residual signal imposed.</li>
 	</ul>
-	</li><br>
+	</li><br/>
 
 </ol>
 	  </div>
@@ -348,19 +329,16 @@ and determine whether the segment is voiced or unvoiced.	</p>
 		
         <section id="experiment-article-section-8">
    
-          <div id="experiment-article-section-8-icon" 
-          class="icon">
+          <div class="icon" id="experiment-article-section-8-icon">
 	    <!-- Enclose the icon image of your lab.-->
-	    <img src="../images/readings.jpg" />
+	    <img src="../images/readings.jpg"/>
 	  </div>
 
-          <div id="experiment-article-section-8-heading" 
-          class="heading">
+          <div class="heading" id="experiment-article-section-8-heading">
         References  
 		</div>
 
-          <div id="experiment-article-section-8-content" 
-          class="content">
+          <div class="content" id="experiment-article-section-8-content">
     <ul>
                         <li> <i>Digital Processing of Speech Signals</i>, L.R. Rabiner and L.R. Schafer, Chapter 8</li>
                         <li> <i>Discrete-Time Speech Signal Processing</i>, Thomas F. Quatieri , Chapter 5</li>
@@ -376,7 +354,7 @@ and determine whether the segment is voiced or unvoiced.	</p>
     <!-- An article can have a sidebar that contain related 
     links and additional material (however it is kept optional 
     at this moment) -->
-    <aside id="lab-article-sidebar" class="default">
+    <aside class="default" id="lab-article-sidebar">
       <!-- put the content that you want to appear in the 
       sidebar -->	
     </aside>
@@ -384,28 +362,66 @@ and determine whether the segment is voiced or unvoiced.	</p>
 
     <!-- Article footer can display related content and 
     additional links -->						
-    <footer id="lab-article-footer" class="default">
-      <!-- Put the content that you want to appear here -->
-    </footer>
+    <footer class="default" id="footer"><div class="footer-top" id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6">
+        <h4>Community Links</h4>
+        <p>
+	  <a href="http://www.sakshat.ac.in/">Sakshat Portal</a>
+	</p>
+        <p>
+	  <a href="http://outreach.vlabs.ac.in/">Outreach Portal</a>
+	</p>
+        <p>
+	  <a href="http://vlab.co.in/faq">FAQ : Virtual Labs</a>
+	</p>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <h4>Contact Us</h4>
+	<p> <strong>Phone:</strong> General Information : 011-26582050 </p>
+	<p> <strong>Email:</strong> support@vlab.co.in </p>
+      </div>
+      <div class="col-lg-4 col-md-6">
+	<h4>Follow Us</h4>
+	<div class="social-links">
+	  <a class="twitter" href="https://twitter.com/TheVirtualLabs" style="background: #55acee;">
+	    <i class="fa fa-twitter"></i>
+	  </a>
+	  <a class="facebook" href="https://www.facebook.com/Virtual-Labs-IIT-Delhi-301510159983871/" style="background: #3b5998;">
+	    <i class="fa fa-facebook"></i>
+	  </a>
+	  <a class="google-plus" href="https://www.youtube.com/watch?v=asxRaOgk6a0" style="background: #e52d27;">
+	    <i class="fa fa-youtube"></i>
+	  </a>
+	  <a class="linkedin" href="https://in.linkedin.com/in/virtual-labs-008ba9136" style="background: #2867B2;">
+	    <i class="fa fa-linkedin"></i>
+	  </a>
+	</div>
+      </div>
+    </div>
+  </div>
+</div>
+</footer>
 
   </article>
 
 
   <!-- Links to other labs, about us page can be kept the lab 
   footer-->
-  <footer id="lab-footer" class="default">
+  <footer class="default" id="lab-footer">
     <!-- Put the content here-->
   </footer>
 
-<footer id="lab-header" class="heading">
+<footer class="heading" id="lab-header">
     <!-- Put the content here-->
-    <div id="lab-header-heading" class="heading">
+    <div class="heading" id="lab-header-heading">
     <!-- Write the name of your lab and link it to the home page
     of your lab. -->
         <center>
-        <table><tr>
-                <td><a href="http://speech.iiit.ac.in/" target=_blank><font size=-3>Developed at the Speech and Vision Lab, IIIT Hyderabad</font></a></td>
-        </tr></table>
+        <table><tbody><tr>
+                <td><a href="http://speech.iiit.ac.in/" target="_blank"><font size="-3">Developed at the Speech and Vision Lab, IIIT Hyderabad</font></a></td>
+        </tr></tbody></table>
         </center>
     </div>
 
@@ -414,8 +430,9 @@ and determine whether the segment is voiced or unvoiced.	</p>
 
 
 </div>		
-  <script type="text/javascript" src="../js/MathJax/MathJax.js?config=default">
+  <script src="../js/MathJax/MathJax.js?config=default" type="text/javascript">
   </script>
 
-</body>
-</html>
+
+
+</body></html>
